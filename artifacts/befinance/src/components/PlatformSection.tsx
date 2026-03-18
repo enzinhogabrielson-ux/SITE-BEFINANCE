@@ -10,8 +10,8 @@ export default function PlatformSection() {
   });
 
   // Lid animation: starts closed (-90deg), opens to 0deg as you scroll
-  const lidRotation = useTransform(scrollYProgress, [0.1, 0.5], [-90, 0]);
-  const screenOpacity = useTransform(scrollYProgress, [0.2, 0.4], [0, 1]);
+  const lidRotation = useTransform(scrollYProgress, [0, 0.6], [-90, 0]);
+  const screenOpacity = useTransform(scrollYProgress, [0.1, 0.5], [0, 1]);
 
   return (
     <section
