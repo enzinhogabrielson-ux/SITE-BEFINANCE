@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence, useMotionValue } from "framer-motion";
 import heroBg from "/hero-bg.png";
 
 const cycleWords = ["commodities", "ações", "cripto moedas", "ETFs", "futuros"];
@@ -15,6 +15,12 @@ export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY }  = useScroll();
   const bgY          = useTransform(scrollY, [0, 600], [0, 120]);
+  
+  // Mouse tracking for shark parallax
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const sharkX = useTransform(mouseX, (x) => (x - 640) * 0.08);
+  const sharkY = useTransform(mouseY, (y) => (y - 360) * 0.08);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,6 +32,16 @@ export default function Hero() {
     }, 2800);
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
+    };
+    
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [mouseX, mouseY]);
 
   return (
     <section
@@ -64,6 +80,8 @@ export default function Hero() {
           top: "18%",
           width: "58%",
           maxWidth: "820px",
+          x: sharkX,
+          y: sharkY,
         }}
       >
         <img
