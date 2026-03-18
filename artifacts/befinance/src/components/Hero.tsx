@@ -61,7 +61,7 @@ export default function Hero() {
         transition={{ duration: 2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
         style={{
           right: "-2%",
-          top: "30%",
+          top: "18%",
           width: "58%",
           maxWidth: "820px",
         }}
