@@ -99,7 +99,7 @@ export default function Hero() {
             <span
               className="px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide"
               style={{
-                background: "linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%)",
+                background: "linear-gradient(135deg, #00d4ff 0%, #00bfff 100%)",
                 color: "#ffffff",
                 fontFamily: "'Inter', sans-serif",
                 letterSpacing: "0.05em",
