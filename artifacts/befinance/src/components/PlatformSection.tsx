@@ -6,12 +6,12 @@ export default function PlatformSection() {
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end start"],
+    offset: ["start center", "end center"],
   });
 
   // Lid animation: starts closed (-90deg), opens to 0deg as you scroll
-  const lidRotation = useTransform(scrollYProgress, [0, 0.6], [-90, 0]);
-  const screenOpacity = useTransform(scrollYProgress, [0.1, 0.5], [0, 1]);
+  const lidRotation = useTransform(scrollYProgress, [0, 1], [-90, 0]);
+  const screenOpacity = useTransform(scrollYProgress, [0.2, 0.8], [0, 1]);
 
   return (
     <section
