@@ -94,7 +94,7 @@ export default function Hero() {
           {/* Badge — blur-fade in */}
           <motion.div
             {...blurFade(0.2)}
-            className="inline-flex items-center mb-7 rounded-full"
+            className="inline-flex items-center mb-7 rounded-full badge-glow"
             style={{
               border: "1px solid rgba(255, 255, 255, 0.3)",
               paddingRight: "1rem",

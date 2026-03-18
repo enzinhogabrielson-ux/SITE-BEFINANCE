@@ -382,3 +382,26 @@
   color: #040d18;
   font-weight: 700;
 }
+
+/* Glow light animation around badge */
+@keyframes borderLightGlow {
+  0% {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3),
+                0 0 0 0px rgba(0, 212, 255, 0.8),
+                inset 0 0 12px rgba(0, 212, 255, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3),
+                0 0 20px 6px rgba(0, 212, 255, 0.6),
+                inset 0 0 12px rgba(0, 212, 255, 0.25);
+  }
+  100% {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3),
+                0 0 0 0px rgba(0, 212, 255, 0.8),
+                inset 0 0 12px rgba(0, 212, 255, 0.15);
+  }
+}
+
+.badge-glow {
+  animation: borderLightGlow 3s ease-in-out infinite;
+}
