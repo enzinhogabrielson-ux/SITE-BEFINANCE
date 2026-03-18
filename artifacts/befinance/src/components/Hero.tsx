@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform, AnimatePresence, useMotionValue } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 import heroBg from "/hero-bg.png";
 
 const cycleWords = ["commodities", "ações", "cripto moedas", "ETFs", "futuros"];
@@ -16,11 +16,13 @@ export default function Hero() {
   const { scrollY }  = useScroll();
   const bgY          = useTransform(scrollY, [0, 600], [0, 120]);
   
-  // Mouse tracking for shark parallax
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const sharkX = useTransform(mouseX, (x) => (x - 640) * 0.08);
-  const sharkY = useTransform(mouseY, (y) => (y - 360) * 0.08);
+  const rawMouseX = useMotionValue(0);
+  const rawMouseY = useMotionValue(0);
+  const smoothMouseX = useSpring(rawMouseX, { stiffness: 15, damping: 30, mass: 2 });
+  const smoothMouseY = useSpring(rawMouseY, { stiffness: 15, damping: 30, mass: 2 });
+  const sharkX = useTransform(smoothMouseX, (x) => (x - 640) * 0.04);
+  const sharkY = useTransform(smoothMouseY, (y) => (y - 360) * 0.03);
+  const sharkRotate = useTransform(smoothMouseX, (x) => (x - 640) * 0.003);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -35,13 +37,13 @@ export default function Hero() {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
+      rawMouseX.set(e.clientX);
+      rawMouseY.set(e.clientY);
     };
     
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouseX, mouseY]);
+  }, [rawMouseX, rawMouseY]);
 
   return (
     <section
@@ -82,6 +84,7 @@ export default function Hero() {
           maxWidth: "820px",
           x: sharkX,
           y: sharkY,
+          rotate: sharkRotate,
         }}
       >
         <img
