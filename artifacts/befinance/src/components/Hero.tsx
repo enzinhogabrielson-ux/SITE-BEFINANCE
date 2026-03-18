@@ -191,16 +191,14 @@ export default function Hero() {
           >
             <motion.a
               href="#"
-              whileHover={{ scale: 1.05, boxShadow: "0 0 48px rgba(0, 191, 255, 0.55)" }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold text-sm badge-glow"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold text-sm btn-border-light"
               style={{
                 fontFamily: "'Inter', sans-serif",
-                background: "linear-gradient(135deg, #00bfff, #0066ff)",
                 color: "#ffffff",
                 textDecoration: "none",
                 letterSpacing: "0.01em",
-                boxShadow: "0 0 24px rgba(0, 191, 255, 0.35)",
               }}
             >
               Abra sua conta gratuita
