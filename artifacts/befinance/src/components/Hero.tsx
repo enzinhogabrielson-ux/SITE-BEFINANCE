@@ -53,6 +53,31 @@ export default function Hero() {
           style={{ background: "linear-gradient(to right, rgba(4,13,24,0.75) 0%, rgba(4,13,24,0.5) 40%, transparent 70%)" }} />
       </motion.div>
 
+      {/* ── Holographic shark overlay ── */}
+      <motion.div
+        className="absolute z-[2] pointer-events-none"
+        initial={{ opacity: 0, scale: 0.92 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        style={{
+          right: "-2%",
+          top: "8%",
+          width: "58%",
+          maxWidth: "820px",
+        }}
+      >
+        <img
+          src="/shark.png"
+          alt=""
+          style={{
+            width: "100%",
+            height: "auto",
+            mixBlendMode: "screen",
+            filter: "brightness(1.1) contrast(1.05)",
+          }}
+        />
+      </motion.div>
+
       {/* ── Kyvoo-style glow orbs ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Large diffuse cyan orb — center left */}
