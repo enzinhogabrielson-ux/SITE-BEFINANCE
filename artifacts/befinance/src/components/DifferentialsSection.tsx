@@ -107,44 +107,42 @@ export default function DifferentialsSection() {
         {/* Section header */}
         <div className="text-center mb-16">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, filter: "blur(8px)", y: 16 }}
+            whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full"
-            style={{ background: "rgba(0,191,255,0.08)", border: "1px solid rgba(0,191,255,0.2)" }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            className="inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full"
+            style={{ background: "rgba(0,191,255,0.07)", border: "1px solid rgba(0,191,255,0.18)" }}
           >
             <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#00bfff" }} />
-            <span style={{ color: "#00bfff", fontSize: "0.75rem", fontFamily: "'Inter', sans-serif", fontWeight: 600, letterSpacing: "0.08em" }}>
-              DIFERENCIAIS
+            <span style={{ color: "#00bfff", fontSize: "0.7rem", fontFamily: "'Inter', sans-serif", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" }}>
+              Diferenciais
             </span>
           </motion.div>
 
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}
+            whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             style={{
               fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontWeight: 800,
-              fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+              fontSize: "clamp(1.8rem, 3.5vw, 2.9rem)",
               color: "#ffffff",
-              letterSpacing: "-0.02em",
+              letterSpacing: "-0.025em",
               marginBottom: "1rem",
             }}
           >
             Por que escolher a{" "}
-            <span style={{ background: "linear-gradient(135deg, #00bfff, #0099ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              BeFinance?
-            </span>
+            <span className="shimmer-text">BeFinance?</span>
           </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, filter: "blur(8px)", y: 16 }}
+            whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.65, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: "1rem",
@@ -163,23 +161,23 @@ export default function DifferentialsSection() {
           {differentials.map((item, i) => (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, filter: "blur(14px)", y: 28 }}
+              whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.12 }}
-              className="group relative p-7 rounded-2xl cursor-default transition-all duration-300"
+              transition={{ duration: 0.7, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="kyvoo-card group relative p-7 rounded-2xl cursor-default"
               style={{
                 background: activeId === item.id
                   ? "rgba(0, 191, 255, 0.06)"
                   : "rgba(4, 20, 40, 0.5)",
                 border: activeId === item.id
-                  ? "1px solid rgba(0, 191, 255, 0.3)"
-                  : "1px solid rgba(0, 191, 255, 0.1)",
-                backdropFilter: "blur(10px)",
+                  ? "1px solid rgba(0, 191, 255, 0.28)"
+                  : "1px solid rgba(0, 191, 255, 0.09)",
+                backdropFilter: "blur(12px)",
+                transition: "background 0.3s ease, border-color 0.3s ease",
               }}
               onHoverStart={() => setActiveId(item.id)}
               onHoverEnd={() => setActiveId(null)}
-              whileHover={{ y: -3 }}
             >
               {/* Number badge */}
               <div

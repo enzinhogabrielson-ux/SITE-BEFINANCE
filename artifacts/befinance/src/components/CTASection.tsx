@@ -26,23 +26,26 @@ export default function CTASection() {
 
       <div className="relative max-w-4xl mx-auto px-6 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, filter: "blur(14px)", y: 32 }}
+          whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="p-10 md:p-16 rounded-3xl"
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="kyvoo-card p-10 md:p-16 rounded-3xl"
           style={{
             background: "rgba(4, 20, 40, 0.5)",
-            border: "1px solid rgba(0, 191, 255, 0.15)",
+            border: "1px solid rgba(0, 191, 255, 0.12)",
             backdropFilter: "blur(20px)",
           }}
         >
           {/* Badge */}
           <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full"
-            style={{ background: "rgba(0,191,255,0.1)", border: "1px solid rgba(0,191,255,0.25)" }}>
-            <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#00bfff" }} />
-            <span style={{ color: "#00bfff", fontSize: "0.75rem", fontFamily: "'Inter', sans-serif", fontWeight: 600, letterSpacing: "0.08em" }}>
-              COMECE AGORA — É GRÁTIS
+            style={{ background: "rgba(0,191,255,0.08)", border: "1px solid rgba(0,191,255,0.2)" }}>
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full rounded-full opacity-75 animate-ping" style={{ background: "#00bfff" }} />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full" style={{ background: "#00bfff" }} />
+            </span>
+            <span style={{ color: "#00bfff", fontSize: "0.7rem", fontFamily: "'Inter', sans-serif", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" }}>
+              Comece agora — É grátis
             </span>
           </div>
 
@@ -52,20 +55,13 @@ export default function CTASection() {
               fontWeight: 800,
               fontSize: "clamp(2rem, 4vw, 3.2rem)",
               color: "#fff",
-              letterSpacing: "-0.02em",
+              letterSpacing: "-0.025em",
               lineHeight: 1.2,
               marginBottom: "1.2rem",
             }}
           >
             Pronto para começar a{" "}
-            <span style={{
-              background: "linear-gradient(135deg, #00bfff, #00e5ff)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}>
-              investir de verdade?
-            </span>
+            <span className="shimmer-text">investir de verdade?</span>
           </h2>
 
           <p

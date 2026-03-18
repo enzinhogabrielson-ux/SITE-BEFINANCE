@@ -1,5 +1,6 @@
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 const features = [
   {
@@ -11,7 +12,7 @@ const features = [
       </svg>
     ),
     title: "Gráficos Avançados",
-    description: "Analise o mercado com ferramentas profissionais de gráficos, indicadores técnicos e análises em tempo real para tomar as melhores decisões.",
+    description: "Analise o mercado com ferramentas profissionais, indicadores técnicos e análises em tempo real para tomar as melhores decisões.",
   },
   {
     icon: (
@@ -22,7 +23,7 @@ const features = [
       </svg>
     ),
     title: "Execução Instantânea",
-    description: "Ordens executadas em milissegundos com a melhor tecnologia de trading disponível no mercado, garantindo que você nunca perca uma oportunidade.",
+    description: "Ordens executadas em milissegundos com a melhor tecnologia de trading disponível, garantindo que você nunca perca uma oportunidade.",
   },
   {
     icon: (
@@ -45,7 +46,7 @@ const features = [
       </svg>
     ),
     title: "Conta Demo Gratuita",
-    description: "Pratique com R$10.000 em conta de treinamento sem risco. Aprenda, teste estratégias e ganhe confiança antes de investir dinheiro real.",
+    description: "Pratique com R$10.000 em conta de treinamento sem risco. Aprenda e teste estratégias antes de investir dinheiro real.",
   },
   {
     icon: (
@@ -54,7 +55,7 @@ const features = [
       </svg>
     ),
     title: "Suporte 24/7",
-    description: "Equipe de especialistas disponível 24 horas por dia, 7 dias por semana para te auxiliar em qualquer questão técnica ou operacional.",
+    description: "Especialistas disponíveis 24 horas por dia, 7 dias por semana para te auxiliar em qualquer questão técnica ou operacional.",
   },
   {
     icon: (
@@ -69,84 +70,68 @@ const features = [
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.1 }
-  }
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-};
-
 export default function PlatformSection() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
     <section
       id="plataforma"
       ref={ref}
-      className="relative py-24 overflow-hidden"
+      className="relative py-28 overflow-hidden section-glow-border"
       style={{ background: "linear-gradient(180deg, #020814 0%, #040d18 100%)" }}
     >
-      {/* Background glow */}
+      {/* Ambient glow */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(0,191,255,0.04) 0%, transparent 70%)",
-        }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(circle, rgba(0,191,255,0.04) 0%, transparent 65%)" }}
       />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Section header */}
         <div className="text-center mb-16">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, filter: "blur(8px)", y: 16 }}
+            whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full"
-            style={{ background: "rgba(0,191,255,0.08)", border: "1px solid rgba(0,191,255,0.2)" }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            className="inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full"
+            style={{ background: "rgba(0,191,255,0.07)", border: "1px solid rgba(0,191,255,0.18)" }}
           >
             <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#00bfff" }} />
-            <span style={{ color: "#00bfff", fontSize: "0.75rem", fontFamily: "'Inter', sans-serif", fontWeight: 600, letterSpacing: "0.08em" }}>
-              PLATAFORMA
+            <span style={{ color: "#00bfff", fontSize: "0.7rem", fontFamily: "'Inter', sans-serif", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" }}>
+              Plataforma
             </span>
           </motion.div>
 
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}
+            whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             style={{
               fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontWeight: 800,
-              fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+              fontSize: "clamp(1.8rem, 3.5vw, 2.9rem)",
               color: "#ffffff",
-              letterSpacing: "-0.02em",
+              letterSpacing: "-0.025em",
               marginBottom: "1rem",
             }}
           >
             Tudo que você precisa para{" "}
-            <span style={{ background: "linear-gradient(135deg, #00bfff, #0099ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              investir melhor
-            </span>
+            <span className="shimmer-text">investir melhor</span>
           </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, filter: "blur(8px)", y: 16 }}
+            whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.65, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: "1rem",
-              color: "rgba(240,248,255,0.6)",
-              maxWidth: "520px",
+              color: "rgba(240,248,255,0.58)",
+              maxWidth: "500px",
               margin: "0 auto",
               lineHeight: 1.7,
             }}
@@ -155,28 +140,33 @@ export default function PlatformSection() {
           </motion.p>
         </div>
 
-        {/* Features grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
-        >
+        {/* Features grid — blur-fade stagger */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {features.map((feature, i) => (
             <motion.div
               key={feature.title}
-              variants={cardVariants}
-              className="card-glow group p-6 rounded-2xl transition-all duration-300 cursor-default"
-              style={{
-                background: "rgba(4, 20, 40, 0.5)",
-                border: "1px solid rgba(0, 191, 255, 0.1)",
-                backdropFilter: "blur(10px)",
+              initial={{ opacity: 0, filter: "blur(12px)", y: 32 }}
+              animate={inView ? { opacity: 1, filter: "blur(0px)", y: 0 } : {}}
+              transition={{
+                duration: 0.65,
+                delay: 0.05 * i + 0.1,
+                ease: [0.22, 1, 0.36, 1],
               }}
-              whileHover={{ y: -4 }}
+              className="kyvoo-card group p-6 rounded-2xl cursor-default"
+              style={{
+                background: "rgba(4, 20, 40, 0.45)",
+                border: "1px solid rgba(0, 191, 255, 0.09)",
+                backdropFilter: "blur(12px)",
+                borderRadius: "16px",
+              }}
             >
               <div
-                className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110"
-                style={{ background: "rgba(0, 191, 255, 0.08)", border: "1px solid rgba(0,191,255,0.15)" }}
+                className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:border-cyan-400/30"
+                style={{
+                  background: "rgba(0, 191, 255, 0.07)",
+                  border: "1px solid rgba(0,191,255,0.13)",
+                  transition: "all 0.3s cubic-bezier(0.22, 1, 0.36, 1)",
+                }}
               >
                 {feature.icon}
               </div>
@@ -186,7 +176,7 @@ export default function PlatformSection() {
                   fontWeight: 700,
                   fontSize: "1.05rem",
                   color: "#fff",
-                  marginBottom: "0.6rem",
+                  marginBottom: "0.65rem",
                   letterSpacing: "-0.01em",
                 }}
               >
@@ -196,15 +186,15 @@ export default function PlatformSection() {
                 style={{
                   fontFamily: "'Inter', sans-serif",
                   fontSize: "0.875rem",
-                  color: "rgba(240,248,255,0.55)",
-                  lineHeight: 1.65,
+                  color: "rgba(240,248,255,0.52)",
+                  lineHeight: 1.68,
                 }}
               >
                 {feature.description}
               </p>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
