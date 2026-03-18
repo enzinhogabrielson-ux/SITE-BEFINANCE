@@ -94,23 +94,30 @@ export default function Hero() {
           {/* Badge — blur-fade in */}
           <motion.div
             {...blurFade(0.2)}
-            className="inline-flex items-center gap-2.5 mb-7"
+            className="inline-flex items-center gap-2 mb-7"
           >
-            {/* Pulse dot */}
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full opacity-75 animate-ping" style={{ background: "#00bfff" }} />
-              <span className="relative inline-flex h-2 w-2 rounded-full" style={{ background: "#00bfff" }} />
+            <span
+              className="px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide"
+              style={{
+                background: "linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%)",
+                color: "#ffffff",
+                fontFamily: "'Inter', sans-serif",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+              }}
+            >
+              A melhor
             </span>
             <span
               className="text-xs font-semibold tracking-widest"
               style={{
-                color: "#00bfff",
+                color: "#ffffff",
                 fontFamily: "'Inter', sans-serif",
-                letterSpacing: "0.12em",
+                letterSpacing: "0.08em",
                 textTransform: "uppercase",
               }}
             >
-              A melhor corretora do mundo
+              corretora do mundo!
             </span>
           </motion.div>
 
