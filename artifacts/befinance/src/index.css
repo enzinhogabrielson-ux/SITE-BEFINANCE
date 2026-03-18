@@ -421,3 +421,124 @@
   border-radius: inherit;
   background: linear-gradient(135deg, #00bfff, #0066ff);
 }
+
+/* ===== MacBook Pro Mockup ===== */
+.macbook-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  perspective: 1800px;
+}
+
+.macbook-container {
+  position: relative;
+  transform: rotateX(12deg) rotateY(0deg);
+  transform-style: preserve-3d;
+}
+
+/* Screen / Lid */
+.macbook-screen {
+  position: relative;
+  z-index: 2;
+}
+
+.macbook-bezel {
+  background: linear-gradient(180deg, #1a1a1c 0%, #111113 100%);
+  border-radius: 16px 16px 0 0;
+  padding: 20px 16px 8px;
+  position: relative;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    0 0 0 1px rgba(255,255,255,0.04),
+    0 -2px 40px rgba(0,191,255,0.03);
+}
+
+.macbook-camera {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #0a0a0a;
+  border: 1px solid #333;
+  box-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+
+.macbook-display {
+  background: #000;
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
+}
+
+.macbook-display-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Chin / hinge bar */
+.macbook-chin {
+  height: 16px;
+  background: linear-gradient(
+    180deg,
+    #3a3a3c 0%,
+    #555558 30%,
+    #6a6a6e 50%,
+    #555558 70%,
+    #2c2c2e 100%
+  );
+  position: relative;
+  z-index: 3;
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    inset 0 -1px 0 rgba(0,0,0,0.3);
+}
+
+/* Keyboard base */
+.macbook-base {
+  height: 12px;
+  background: linear-gradient(180deg, #1c1c1e 0%, #0f0f11 100%);
+  border-radius: 0 0 12px 12px;
+  position: relative;
+  z-index: 1;
+  box-shadow:
+    0 6px 30px rgba(0,0,0,0.6),
+    0 2px 8px rgba(0,0,0,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.03);
+  transform: perspective(800px) rotateX(6deg);
+  transform-origin: top center;
+}
+
+.macbook-base-top-edge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18%;
+  height: 3px;
+  border-radius: 0 0 3px 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.06),
+    rgba(255,255,255,0.04),
+    transparent
+  );
+}
+
+/* Shadow reflection */
+.macbook-shadow {
+  margin: 8px auto 0;
+  width: 70%;
+  height: 20px;
+  background: radial-gradient(ellipse, rgba(0,0,0,0.35) 0%, transparent 70%);
+  filter: blur(10px);
+  border-radius: 50%;
+}
