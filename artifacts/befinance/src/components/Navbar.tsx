@@ -119,21 +119,14 @@ export default function Navbar() {
             initial={{ opacity: 0, scale: 0.93 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.85, duration: 0.4 }}
-            whileHover={{
-              scale: 1.04,
-              background: "rgba(255,255,255,0.12)",
-              borderColor: "rgba(255,255,255,0.28)",
-            }}
+            whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className="px-5 py-2 rounded-full text-sm font-semibold transition-all"
+            className="px-5 py-2 rounded-full text-sm font-semibold transition-all btn-border-light"
             style={{
               fontFamily: "'Inter', sans-serif",
-              background: "rgba(255,255,255,0.07)",
               color: "#ffffff",
               textDecoration: "none",
               letterSpacing: "0.01em",
-              border: "1px solid rgba(255,255,255,0.15)",
-              boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)",
             }}
           >
             Abra sua conta gratuita
@@ -197,12 +190,10 @@ export default function Navbar() {
                 </a>
                 <a
                   href="#"
-                  className="px-5 py-2.5 rounded-full text-sm font-semibold text-center"
+                  className="px-5 py-2.5 rounded-full text-sm font-semibold text-center btn-border-light"
                   style={{
-                    background: "rgba(255,255,255,0.08)",
                     color: "#fff",
                     textDecoration: "none",
-                    border: "1px solid rgba(255,255,255,0.15)",
                     fontFamily: "'Inter', sans-serif",
                   }}
                 >

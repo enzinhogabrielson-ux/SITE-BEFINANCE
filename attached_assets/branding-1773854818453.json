@@ -1,0 +1,140 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "role": "body"
+    },
+    {
+      "family": "Hanken Grotesk",
+      "role": "heading"
+    },
+    {
+      "family": "Satoshi",
+      "role": "unknown"
+    },
+    {
+      "family": "Figtree",
+      "role": "unknown"
+    },
+    {
+      "family": "Inter",
+      "role": "unknown"
+    }
+  ],
+  "colors": {
+    "primary": "#070218",
+    "accent": "#030112",
+    "background": "#FFFFFF",
+    "textPrimary": "#030112",
+    "link": "#030112"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "DM Sans",
+      "heading": "Hanken Grotesk"
+    },
+    "fontStacks": {
+      "heading": [
+        "DM Sans",
+        "sans-serif"
+      ],
+      "body": [
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Hanken Grotesk",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "72px",
+      "h2": "40px",
+      "body": "15px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "10px"
+  },
+  "components": {
+    "buttonPrimary": {
+      "background": "#030112",
+      "textColor": "#0000EE",
+      "borderRadius": "118px",
+      "borderRadiusCorners": {
+        "topLeft": "118px",
+        "topRight": "118px",
+        "bottomRight": "118px",
+        "bottomLeft": "118px"
+      },
+      "shadow": "none"
+    },
+    "buttonSecondary": {
+      "background": "#08041A",
+      "textColor": "#0000EE",
+      "borderRadius": "118px",
+      "borderRadiusCorners": {
+        "topLeft": "118px",
+        "topRight": "118px",
+        "bottomRight": "118px",
+        "bottomLeft": "118px"
+      },
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "favicon": "File saved at: attached_assets/favicon.png",
+    "ogImage": "File saved at: attached_assets/ogImage.png"
+  },
+  "__llm_logo_reasoning": {
+    "selectedIndex": -1,
+    "reasoning": "No valid brand logo was found. Candidate #0 is not in the header and Candidate #1 is too small and likely an icon. Neither matches the favicon or provides a clear brand representation.",
+    "confidence": 0.3,
+    "rejected": true,
+    "source": "llm"
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 0,
+      "text": "Abra sua conta gratuita",
+      "reasoning": "Button #0 is selected as the primary CTA because it shares the same text and style as Button #1 but is from a different color group. Both buttons have action-oriented text ('Abra sua conta gratuita'), but Button #0's color group (#030112) is prioritized here."
+    },
+    "secondary": {
+      "index": 1,
+      "text": "Abra sua conta gratuita",
+      "reasoning": "Button #1 is selected as the secondary CTA because it is from a different color group (#08041A) than the primary button, fulfilling the requirement for distinct color groups."
+    },
+    "confidence": 0.9
+  },
+  "personality": {
+    "tone": "professional",
+    "energy": "medium",
+    "targetAudience": "individuals interested in trading CFDs, Forex, and cryptocurrency"
+  },
+  "designSystem": {
+    "framework": "custom",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0.9,
+    "colors": 0.9,
+    "overall": 0.9
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": true,
+      "llmSucceeded": true,
+      "finalSource": "llm",
+      "rawLogoSelection": {
+        "selectedLogoIndex": -1,
+        "selectedLogoReasoning": "No valid brand logo was found. Candidate #0 is not in the header and Candidate #1 is too small and likely an icon. Neither matches the favicon or provides a clear brand representation.",
+        "confidence": 0.3
+      }
+    },
+    "buttonClassification": {
+      "llmCalled": true,
+      "llmSucceeded": true
+    }
+  }
+}

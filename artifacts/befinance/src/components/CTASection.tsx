@@ -85,14 +85,12 @@ export default function CTASection() {
               href="#"
               whileHover={{ scale: 1.05, boxShadow: "0 0 50px rgba(0, 191, 255, 0.5)" }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base transition-all"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base transition-all btn-border-light"
               style={{
                 fontFamily: "'Inter', sans-serif",
-                background: "linear-gradient(135deg, #00bfff, #0066ff)",
                 color: "#ffffff",
                 textDecoration: "none",
                 letterSpacing: "0.01em",
-                boxShadow: "0 0 30px rgba(0, 191, 255, 0.3)",
               }}
             >
               Abra sua conta gratuita

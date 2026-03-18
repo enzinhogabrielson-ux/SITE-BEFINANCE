@@ -62,7 +62,7 @@ export default function PlatformSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.65, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <a href="#" className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-medium" style={{ fontFamily: "'Inter', sans-serif", color: "rgba(240,248,255,0.85)", textDecoration: "none", border: "1px solid rgba(255,255,255,0.18)", background: "rgba(255,255,255,0.04)", backdropFilter: "blur(10px)" }}>
+            <a href="#" className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-semibold btn-border-light" style={{ fontFamily: "'Inter', sans-serif", color: "#ffffff", textDecoration: "none", letterSpacing: "0.01em" }}>
               Abra sua conta gratuita
             </a>
           </motion.div>
