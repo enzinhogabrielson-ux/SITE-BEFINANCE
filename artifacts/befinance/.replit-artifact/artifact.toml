@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "BeFinance - Landing Page"
+version = "1.0.0"
+id = "artifacts/befinance"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+localPort = 18340
+name = "web"
+paths = ["/"]
+
+[services.development]
+run = "pnpm --filter @workspace/befinance run dev"
+
+[services.env]
+PORT = "18340"
+BASE_PATH = "/"
+
+[services.production]
+build = ["pnpm", "--filter", "@workspace/befinance", "run", "build"]
+publicDir = "artifacts/befinance/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"

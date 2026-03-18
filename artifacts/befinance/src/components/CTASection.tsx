@@ -1,0 +1,151 @@
+import { motion } from "framer-motion";
+
+export default function CTASection() {
+  return (
+    <section className="relative py-24 overflow-hidden">
+      {/* Background */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(135deg, rgba(0,60,120,0.4) 0%, rgba(4,13,24,0.95) 50%, rgba(0,40,80,0.4) 100%)",
+        }}
+      />
+
+      {/* Glow orbs */}
+      <div
+        className="absolute top-0 left-1/4 w-96 h-96 rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(circle, rgba(0,191,255,0.12) 0%, transparent 70%)", filter: "blur(60px)" }}
+      />
+      <div
+        className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(circle, rgba(0,102,255,0.10) 0%, transparent 70%)", filter: "blur(60px)" }}
+      />
+
+      {/* Top border */}
+      <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(0,191,255,0.4), transparent)" }} />
+
+      <div className="relative max-w-4xl mx-auto px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="p-10 md:p-16 rounded-3xl"
+          style={{
+            background: "rgba(4, 20, 40, 0.5)",
+            border: "1px solid rgba(0, 191, 255, 0.15)",
+            backdropFilter: "blur(20px)",
+          }}
+        >
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full"
+            style={{ background: "rgba(0,191,255,0.1)", border: "1px solid rgba(0,191,255,0.25)" }}>
+            <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#00bfff" }} />
+            <span style={{ color: "#00bfff", fontSize: "0.75rem", fontFamily: "'Inter', sans-serif", fontWeight: 600, letterSpacing: "0.08em" }}>
+              COMECE AGORA — É GRÁTIS
+            </span>
+          </div>
+
+          <h2
+            style={{
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontWeight: 800,
+              fontSize: "clamp(2rem, 4vw, 3.2rem)",
+              color: "#fff",
+              letterSpacing: "-0.02em",
+              lineHeight: 1.2,
+              marginBottom: "1.2rem",
+            }}
+          >
+            Pronto para começar a{" "}
+            <span style={{
+              background: "linear-gradient(135deg, #00bfff, #00e5ff)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}>
+              investir de verdade?
+            </span>
+          </h2>
+
+          <p
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: "1.05rem",
+              color: "rgba(240,248,255,0.65)",
+              lineHeight: 1.7,
+              maxWidth: "480px",
+              margin: "0 auto 2.5rem",
+            }}
+          >
+            Abra sua conta gratuita hoje e receba{" "}
+            <strong style={{ color: "#00bfff" }}>R$10.000</strong>{" "}
+            na sua conta de treinamento. Sem riscos, sem compromissos.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <motion.a
+              href="#"
+              whileHover={{ scale: 1.05, boxShadow: "0 0 50px rgba(0, 191, 255, 0.5)" }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base transition-all"
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                background: "linear-gradient(135deg, #00bfff, #0066ff)",
+                color: "#ffffff",
+                textDecoration: "none",
+                letterSpacing: "0.01em",
+                boxShadow: "0 0 30px rgba(0, 191, 255, 0.3)",
+              }}
+            >
+              Abra sua conta gratuita
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M3.5 9H14.5M10.5 5L14.5 9L10.5 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </motion.a>
+
+            <motion.a
+              href="#plataforma"
+              whileHover={{ scale: 1.03, borderColor: "rgba(0,191,255,0.5)" }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-medium text-base transition-all"
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                color: "rgba(240,248,255,0.85)",
+                textDecoration: "none",
+                border: "1px solid rgba(0,191,255,0.25)",
+                background: "rgba(0,191,255,0.05)",
+              }}
+            >
+              Conhecer a plataforma
+            </motion.a>
+          </div>
+
+          {/* Trust badges */}
+          <div className="mt-10 flex flex-wrap justify-center gap-6">
+            {[
+              { icon: "🔒", text: "SSL 256-bit" },
+              { icon: "🏆", text: "Regulamentada CVM" },
+              { icon: "⚡", text: "Execução < 1ms" },
+              { icon: "🌍", text: "+40 países" },
+            ].map((badge) => (
+              <div
+                key={badge.text}
+                className="flex items-center gap-2"
+                style={{
+                  color: "rgba(240,248,255,0.5)",
+                  fontSize: "0.8rem",
+                  fontFamily: "'Inter', sans-serif",
+                }}
+              >
+                <span>{badge.icon}</span>
+                <span>{badge.text}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
