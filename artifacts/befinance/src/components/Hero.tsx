@@ -94,28 +94,32 @@ export default function Hero() {
           {/* Badge — blur-fade in */}
           <motion.div
             {...blurFade(0.2)}
-            className="inline-flex items-center gap-2 mb-7"
+            className="inline-flex items-center mb-7 rounded-full"
+            style={{
+              border: "1px solid rgba(255, 255, 255, 0.3)",
+              paddingRight: "1rem",
+            }}
           >
             <span
-              className="px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide"
+              className="px-3.5 py-1.5 text-xs font-bold tracking-wide"
               style={{
                 background: "linear-gradient(135deg, #00d4ff 0%, #00bfff 100%)",
                 color: "#ffffff",
                 fontFamily: "'Inter', sans-serif",
                 letterSpacing: "0.05em",
                 textTransform: "uppercase",
+                borderRadius: "9999px",
               }}
             >
               A melhor
             </span>
             <span
-              className="text-xs font-semibold tracking-widest px-3 py-1.5 rounded-full"
+              className="text-xs font-semibold tracking-widest px-2"
               style={{
                 color: "#ffffff",
                 fontFamily: "'Inter', sans-serif",
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
-                border: "1px solid rgba(255, 255, 255, 0.3)",
               }}
             >
               corretora do mundo!
