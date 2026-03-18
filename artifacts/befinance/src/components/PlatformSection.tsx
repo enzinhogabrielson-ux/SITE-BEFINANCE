@@ -9,8 +9,8 @@ export default function PlatformSection() {
     offset: ["start end", "end start"],
   });
 
-  const lidAngle = useTransform(scrollYProgress, [0.15, 0.5], [-85, 0]);
-  const screenGlow = useTransform(scrollYProgress, [0.35, 0.5], [0, 1]);
+  const lidAngle = useTransform(scrollYProgress, [0.05, 0.4], [-80, 0]);
+  const screenGlow = useTransform(scrollYProgress, [0.2, 0.4], [0, 1]);
 
   return (
     <section
@@ -19,31 +19,13 @@ export default function PlatformSection() {
       className="relative overflow-hidden section-glow-border"
       style={{
         background: "linear-gradient(180deg, #020814 0%, #06081a 50%, #040d18 100%)",
-        paddingTop: "8rem",
+        paddingTop: "6rem",
         paddingBottom: "6rem",
       }}
     >
-      {/* Candlestick background */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.12]">
-        {[...Array(16)].map((_, i) => {
-          const bodyH = 50 + (i * 37 % 180);
-          const wickTop = 15 + (i * 23 % 60);
-          const wickBot = 10 + (i * 19 % 40);
-          const left = 3 + i * 6.2;
-          const bottom = 5 + (i * 13 % 20);
-          return (
-            <div key={i} className="absolute flex flex-col items-center" style={{ left: `${left}%`, bottom: `${bottom}%` }}>
-              <div style={{ width: "1px", height: `${wickTop}px`, background: "rgba(120,70,200,0.6)" }} />
-              <div style={{ width: "6px", height: `${bodyH}px`, background: "rgba(100,50,180,0.2)", borderRadius: "2px" }} />
-              <div style={{ width: "1px", height: `${wickBot}px`, background: "rgba(120,70,200,0.6)" }} />
-            </div>
-          );
-        })}
-      </div>
-
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <motion.div
             initial={{ opacity: 0, filter: "blur(8px)", y: 16 }}
             whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
@@ -53,11 +35,7 @@ export default function PlatformSection() {
           >
             <div className="flex -space-x-2.5">
               {["#00bfff", "#8b5cf6", "#f59e0b", "#10b981"].map((color, i) => (
-                <div
-                  key={i}
-                  className="w-8 h-8 rounded-full border-2 flex items-center justify-center text-[10px] font-bold"
-                  style={{ background: `linear-gradient(135deg, ${color}, ${color}88)`, borderColor: "#06081a", color: "#fff", fontFamily: "'Inter', sans-serif" }}
-                >
+                <div key={i} className="w-8 h-8 rounded-full border-2 flex items-center justify-center text-[10px] font-bold" style={{ background: `linear-gradient(135deg, ${color}, ${color}88)`, borderColor: "#06081a", color: "#fff", fontFamily: "'Inter', sans-serif" }}>
                   {["M", "A", "R", "L"][i]}
                 </div>
               ))}
@@ -83,20 +61,16 @@ export default function PlatformSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.65, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-medium"
-              style={{ fontFamily: "'Inter', sans-serif", color: "rgba(240,248,255,0.85)", textDecoration: "none", border: "1px solid rgba(255,255,255,0.18)", background: "rgba(255,255,255,0.04)", backdropFilter: "blur(10px)" }}
-            >
+            <a href="#" className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-medium" style={{ fontFamily: "'Inter', sans-serif", color: "rgba(240,248,255,0.85)", textDecoration: "none", border: "1px solid rgba(255,255,255,0.18)", background: "rgba(255,255,255,0.04)", backdropFilter: "blur(10px)" }}>
               Abra sua conta gratuita
             </a>
           </motion.div>
         </div>
 
-        {/* MacBook 3D */}
-        <div className="relative max-w-[820px] mx-auto" style={{ perspective: "1800px" }}>
+        {/* ===== MACBOOK PRO MOCKUP ===== */}
+        <div className="relative max-w-[820px] mx-auto" style={{ perspective: "2000px" }}>
 
-          {/* === LID (screen) - rotates open === */}
+          {/* LID (screen) — rotates open on scroll */}
           <motion.div
             style={{
               rotateX: lidAngle,
@@ -104,149 +78,138 @@ export default function PlatformSection() {
               transformStyle: "preserve-3d",
             }}
           >
-            {/* Screen outer shell */}
-            <div
-              style={{
-                background: "linear-gradient(180deg, #2c2c2e, #1c1c1e)",
-                borderRadius: "12px 12px 0 0",
-                padding: "10px 10px 0",
-                position: "relative",
-              }}
-            >
-              {/* Camera notch */}
-              <div
-                className="absolute left-1/2 -translate-x-1/2"
-                style={{ top: "4px", width: "6px", height: "6px", borderRadius: "50%", background: "#0a0a0a", border: "1px solid #3a3a3a" }}
-              />
-
-              {/* Inner screen bezel */}
-              <div
-                style={{
-                  background: "#0a0a0a",
-                  borderRadius: "4px 4px 0 0",
-                  overflow: "hidden",
-                  aspectRatio: "16 / 10",
-                }}
-              >
+            <div style={{
+              background: "linear-gradient(180deg, #2e2e30 0%, #1d1d1f 100%)",
+              borderRadius: "14px 14px 0 0",
+              padding: "14px 14px 6px",
+              position: "relative",
+              boxShadow: "inset 0 1px 0 rgba(255,255,255,0.08), 0 -4px 30px rgba(0,191,255,0.04)",
+            }}>
+              <div className="flex items-center justify-center mb-1" style={{ height: "8px" }}>
+                <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#0d0d0d", border: "1px solid #3a3a3c" }} />
+              </div>
+              <div style={{
+                background: "#000",
+                borderRadius: "6px",
+                overflow: "hidden",
+                aspectRatio: "16 / 10",
+                boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.04)",
+              }}>
                 <motion.div className="w-full h-full" style={{ opacity: screenGlow }}>
-                  <div className="w-full h-full" style={{ background: "linear-gradient(135deg, #0a0e27, #1a1040 30%, #0d1530 60%, #080c20)" }}>
-                    <div className="w-full h-full p-3 flex flex-col gap-2">
-                      <div className="flex items-center gap-2 px-1">
-                        <div className="w-14 h-4 rounded-sm" style={{ background: "rgba(0,191,255,0.35)" }} />
-                        <div className="w-20 h-4 rounded-sm" style={{ background: "rgba(139,92,246,0.3)" }} />
-                        <div className="flex-1" />
-                        <div className="w-16 h-4 rounded-sm" style={{ background: "rgba(16,185,129,0.3)" }} />
-                      </div>
-                      <div className="flex-1 flex gap-2">
-                        <div className="flex-1 rounded-md p-2" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)" }}>
-                          <svg width="100%" height="100%" viewBox="0 0 400 180" preserveAspectRatio="none">
-                            {[30, 70, 110, 150, 190, 230, 270, 310, 350].map((x, j) => {
-                              const green = [0, 2, 4, 5, 7, 8].includes(j);
-                              const bh = 12 + ((j * 31) % 50);
-                              const y = 30 + ((j * 17) % 90);
-                              return (
-                                <g key={j}>
-                                  <line x1={x} y1={y - 12} x2={x} y2={y + bh + 12} stroke={green ? "#10b981" : "#ef4444"} strokeWidth="1" />
-                                  <rect x={x - 7} y={y} width="14" height={bh} fill={green ? "#10b981" : "#ef4444"} rx="1" />
-                                </g>
-                              );
-                            })}
-                          </svg>
-                        </div>
-                        <div className="w-[22%] rounded-md p-2 flex flex-col gap-1.5" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)" }}>
-                          <div className="w-full h-3 rounded-sm" style={{ background: "rgba(0,191,255,0.25)" }} />
-                          <div className="w-3/4 h-2.5 rounded-sm" style={{ background: "rgba(255,255,255,0.08)" }} />
-                          <div className="w-full h-2.5 rounded-sm" style={{ background: "rgba(255,255,255,0.05)" }} />
-                          <div className="mt-auto flex flex-col gap-1.5">
-                            <div className="w-full h-6 rounded-sm" style={{ background: "rgba(16,185,129,0.45)" }} />
-                            <div className="w-full h-6 rounded-sm" style={{ background: "rgba(239,68,68,0.4)" }} />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <img src="/laptop-screen.png" alt="Trading platform" className="w-full h-full object-cover object-center" />
                 </motion.div>
               </div>
             </div>
           </motion.div>
 
-          {/* === HINGE === */}
-          <div
-            style={{
-              height: "8px",
-              background: "linear-gradient(180deg, #3a3a3c, #2c2c2e, #48484a)",
-              borderRadius: "0",
-              position: "relative",
-              zIndex: 2,
-              boxShadow: "0 1px 4px rgba(0,0,0,0.4)",
-            }}
-          />
-
-          {/* === KEYBOARD BASE === */}
-          <div
-            style={{
-              background: "linear-gradient(180deg, #2c2c2e 0%, #1c1c1e 40%, #161618 100%)",
-              borderRadius: "0 0 12px 12px",
-              padding: "12px 24px 10px",
-              position: "relative",
-              boxShadow: "0 8px 40px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.4)",
-            }}
-          >
-            {/* Keyboard rows */}
-            <div className="flex flex-col gap-[3px] mb-3">
-              {[14, 14, 13, 12, 8].map((keys, row) => (
-                <div key={row} className="flex gap-[3px] justify-center">
-                  {[...Array(keys)].map((_, k) => {
-                    const isSpace = row === 4 && k === 4;
-                    return (
-                      <div
-                        key={k}
-                        style={{
-                          width: isSpace ? "28%" : row === 4 ? "5%" : `${90 / keys}%`,
-                          height: "6px",
-                          borderRadius: "1.5px",
-                          background: "rgba(255,255,255,0.06)",
-                          border: "0.5px solid rgba(255,255,255,0.04)",
-                        }}
-                      />
-                    );
-                  })}
-                </div>
-              ))}
-            </div>
-
-            {/* Trackpad */}
-            <div
-              className="mx-auto"
-              style={{
-                width: "38%",
-                height: "28px",
-                borderRadius: "4px",
-                background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(255,255,255,0.06)",
-              }}
-            />
+          {/* HINGE BAR */}
+          <div style={{
+            height: "14px",
+            background: "linear-gradient(180deg, #48484a 0%, #3a3a3c 20%, #636366 50%, #3a3a3c 80%, #2c2c2e 100%)",
+            position: "relative",
+            zIndex: 5,
+            boxShadow: "0 2px 8px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08)",
+          }}>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style={{ width: "60px", height: "3px", borderRadius: "2px", background: "rgba(255,255,255,0.04)" }} />
           </div>
 
-          {/* Bottom lip / feet */}
-          <div
-            className="mx-auto"
-            style={{
-              width: "30%",
-              height: "3px",
-              background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent)",
-              borderRadius: "0 0 4px 4px",
-            }}
-          />
+          {/* KEYBOARD BODY — perspective tilt */}
+          <div style={{
+            background: "linear-gradient(180deg, #2c2c2e 0%, #1c1c1e 100%)",
+            borderRadius: "0 0 14px 14px",
+            padding: "14px 28px 12px",
+            position: "relative",
+            zIndex: 4,
+            transform: "perspective(1200px) rotateX(5deg)",
+            transformOrigin: "top center",
+            boxShadow: "0 12px 50px rgba(0,0,0,0.6), 0 4px 16px rgba(0,0,0,0.4)",
+          }}>
+            {/* Speaker grilles */}
+            <div className="flex justify-between mb-3 px-4">
+              <div className="flex gap-[2px]">
+                {[...Array(20)].map((_, i) => (
+                  <div key={i} style={{ width: "1.5px", height: "3px", background: "rgba(255,255,255,0.08)", borderRadius: "1px" }} />
+                ))}
+              </div>
+              <div className="flex gap-[2px]">
+                {[...Array(20)].map((_, i) => (
+                  <div key={i} style={{ width: "1.5px", height: "3px", background: "rgba(255,255,255,0.08)", borderRadius: "1px" }} />
+                ))}
+              </div>
+            </div>
 
-          {/* Glow reflection */}
+            {/* Keyboard */}
+            <div className="flex flex-col gap-[4px] mb-4">
+              <div className="flex gap-[3px]">
+                {[...Array(16)].map((_, k) => (
+                  <div key={k} style={{ flex: k === 0 ? "1.4" : "1", height: "10px", borderRadius: "2px", background: "rgba(255,255,255,0.055)", border: "0.5px solid rgba(255,255,255,0.04)" }} />
+                ))}
+              </div>
+              <div className="flex gap-[3px]">
+                {[...Array(14)].map((_, k) => (
+                  <div key={k} style={{ flex: k === 13 ? "1.6" : "1", height: "14px", borderRadius: "2.5px", background: "rgba(255,255,255,0.06)", border: "0.5px solid rgba(255,255,255,0.04)" }} />
+                ))}
+              </div>
+              <div className="flex gap-[3px]">
+                {[...Array(14)].map((_, k) => (
+                  <div key={k} style={{ flex: k === 0 ? "1.5" : k === 13 ? "1.5" : "1", height: "14px", borderRadius: "2.5px", background: "rgba(255,255,255,0.06)", border: "0.5px solid rgba(255,255,255,0.04)" }} />
+                ))}
+              </div>
+              <div className="flex gap-[3px]">
+                {[...Array(13)].map((_, k) => (
+                  <div key={k} style={{ flex: k === 0 ? "1.8" : k === 12 ? "2" : "1", height: "14px", borderRadius: "2.5px", background: "rgba(255,255,255,0.06)", border: "0.5px solid rgba(255,255,255,0.04)" }} />
+                ))}
+              </div>
+              <div className="flex gap-[3px]">
+                {[...Array(12)].map((_, k) => (
+                  <div key={k} style={{ flex: k === 0 ? "2.2" : k === 11 ? "2.2" : "1", height: "14px", borderRadius: "2.5px", background: "rgba(255,255,255,0.06)", border: "0.5px solid rgba(255,255,255,0.04)" }} />
+                ))}
+              </div>
+              <div className="flex gap-[3px] items-end">
+                <div style={{ flex: "1.2", height: "14px", borderRadius: "2.5px", background: "rgba(255,255,255,0.06)", border: "0.5px solid rgba(255,255,255,0.04)" }} />
+                <div style={{ flex: "1.2", height: "14px", borderRadius: "2.5px", background: "rgba(255,255,255,0.06)", border: "0.5px solid rgba(255,255,255,0.04)" }} />
+                <div style={{ flex: "1.2", height: "14px", borderRadius: "2.5px", background: "rgba(255,255,255,0.06)", border: "0.5px solid rgba(255,255,255,0.04)" }} />
+                <div style={{ flex: "5", height: "14px", borderRadius: "2.5px", background: "rgba(255,255,255,0.06)", border: "0.5px solid rgba(255,255,255,0.04)" }} />
+                <div style={{ flex: "1.2", height: "14px", borderRadius: "2.5px", background: "rgba(255,255,255,0.06)", border: "0.5px solid rgba(255,255,255,0.04)" }} />
+                <div style={{ flex: "1.2", height: "14px", borderRadius: "2.5px", background: "rgba(255,255,255,0.06)", border: "0.5px solid rgba(255,255,255,0.04)" }} />
+                <div className="flex flex-col gap-[2px]" style={{ flex: "1" }}>
+                  <div style={{ height: "6px", borderRadius: "1.5px", background: "rgba(255,255,255,0.05)", border: "0.5px solid rgba(255,255,255,0.03)" }} />
+                  <div style={{ height: "6px", borderRadius: "1.5px", background: "rgba(255,255,255,0.05)", border: "0.5px solid rgba(255,255,255,0.03)" }} />
+                </div>
+                <div className="flex gap-[2px] items-end" style={{ flex: "2" }}>
+                  <div style={{ flex: "1", height: "6px", borderRadius: "1.5px", background: "rgba(255,255,255,0.05)", border: "0.5px solid rgba(255,255,255,0.03)" }} />
+                  <div style={{ flex: "1", height: "6px", borderRadius: "1.5px", background: "rgba(255,255,255,0.05)", border: "0.5px solid rgba(255,255,255,0.03)" }} />
+                </div>
+              </div>
+            </div>
+
+            {/* TRACKPAD */}
+            <div className="mx-auto" style={{
+              width: "42%",
+              height: "56px",
+              borderRadius: "8px",
+              background: "rgba(255,255,255,0.025)",
+              border: "1px solid rgba(255,255,255,0.06)",
+              boxShadow: "inset 0 0 8px rgba(0,0,0,0.2)",
+            }} />
+          </div>
+
+          {/* Bottom edge */}
+          <div className="mx-auto" style={{
+            width: "80%",
+            height: "4px",
+            background: "linear-gradient(90deg, transparent 5%, rgba(80,80,85,0.3) 20%, rgba(80,80,85,0.4) 50%, rgba(80,80,85,0.3) 80%, transparent 95%)",
+            borderRadius: "0 0 4px 4px",
+          }} />
+
+          {/* Glow under laptop */}
           <motion.div
             className="mx-auto mt-4 rounded-full pointer-events-none"
             style={{
               width: "50%",
-              height: "24px",
-              background: "radial-gradient(ellipse, rgba(0,191,255,0.1), transparent 70%)",
-              filter: "blur(12px)",
+              height: "30px",
+              background: "radial-gradient(ellipse, rgba(0,191,255,0.08), transparent 70%)",
+              filter: "blur(14px)",
               opacity: screenGlow,
             }}
           />
