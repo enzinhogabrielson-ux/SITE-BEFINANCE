@@ -118,25 +118,62 @@ export default function CTASection() {
             </motion.a>
           </div>
 
-          {/* Trust badges */}
-          <div className="mt-10 flex flex-wrap justify-center gap-6">
+          {/* Trust badges — single-color SVG icons */}
+          <div className="mt-10 flex flex-wrap justify-center items-center gap-0">
             {[
-              { icon: "🔒", text: "SSL 256-bit" },
-              { icon: "🏆", text: "Regulamentada CVM" },
-              { icon: "⚡", text: "Execução < 1ms" },
-              { icon: "🌍", text: "+40 países" },
-            ].map((badge) => (
-              <div
-                key={badge.text}
-                className="flex items-center gap-2"
-                style={{
-                  color: "rgba(240,248,255,0.5)",
-                  fontSize: "0.8rem",
-                  fontFamily: "'Inter', sans-serif",
-                }}
-              >
-                <span>{badge.icon}</span>
-                <span>{badge.text}</span>
+              {
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <rect x="3" y="6" width="8" height="7" rx="1.5" stroke="#00bfff" strokeWidth="1.3"/>
+                    <path d="M5 6V4.5C5 3.4 5.9 2.5 7 2.5C8.1 2.5 9 3.4 9 4.5V6" stroke="#00bfff" strokeWidth="1.3" strokeLinecap="round"/>
+                    <circle cx="7" cy="9.5" r="1" fill="#00bfff"/>
+                  </svg>
+                ),
+                text: "SSL 256-bit",
+              },
+              {
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M7 1L8.5 5H12.5L9.5 7.5L10.5 11.5L7 9L3.5 11.5L4.5 7.5L1.5 5H5.5L7 1Z" stroke="#00bfff" strokeWidth="1.3" strokeLinejoin="round"/>
+                  </svg>
+                ),
+                text: "Regulamentada CVM",
+              },
+              {
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M8 1.5L4 7.5H7L6 12.5L10 6.5H7L8 1.5Z" stroke="#00bfff" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                ),
+                text: "Execução < 1ms",
+              },
+              {
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <circle cx="7" cy="7" r="5.5" stroke="#00bfff" strokeWidth="1.3"/>
+                    <path d="M1.5 7H12.5" stroke="#00bfff" strokeWidth="1.3" strokeLinecap="round"/>
+                    <path d="M7 1.5C7 1.5 5 4 5 7C5 10 7 12.5 7 12.5M7 1.5C7 1.5 9 4 9 7C9 10 7 12.5 7 12.5" stroke="#00bfff" strokeWidth="1.3" strokeLinecap="round"/>
+                  </svg>
+                ),
+                text: "+40 países",
+              },
+            ].map((badge, i) => (
+              <div key={badge.text} className="flex items-center">
+                <div
+                  className="flex items-center gap-1.5"
+                  style={{
+                    color: "rgba(240,248,255,0.48)",
+                    fontSize: "0.77rem",
+                    fontFamily: "'Inter', sans-serif",
+                    letterSpacing: "0.01em",
+                  }}
+                >
+                  {badge.icon}
+                  <span>{badge.text}</span>
+                </div>
+                {i < 3 && (
+                  <div className="mx-4 h-3" style={{ width: "1px", background: "rgba(255,255,255,0.1)" }} />
+                )}
               </div>
             ))}
           </div>

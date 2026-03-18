@@ -216,27 +216,67 @@ export default function Hero() {
             </motion.a>
           </motion.div>
 
-          {/* Trust indicators — blur-fade */}
+          {/* Trust indicators — Kyvoo-style single-color SVG icons */}
           <motion.div
             {...blurFade(1.0)}
-            className="mt-10 flex flex-wrap gap-6"
+            className="mt-10 flex flex-wrap items-center gap-0"
           >
             {[
-              { icon: "🔒", text: "100% Seguro" },
-              { icon: "⚡", text: "Execução rápida" },
-              { icon: "🌍", text: "Mercado global" },
-            ].map((item) => (
-              <div
-                key={item.text}
-                className="flex items-center gap-2"
-                style={{
-                  color: "rgba(240,248,255,0.55)",
-                  fontSize: "0.8rem",
-                  fontFamily: "'Inter', sans-serif",
-                }}
-              >
-                <span>{item.icon}</span>
-                <span>{item.text}</span>
+              {
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M7 1L12 3V7C12 10 9.5 12.5 7 13C4.5 12.5 2 10 2 7V3L7 1Z" stroke="#00bfff" strokeWidth="1.3" strokeLinejoin="round"/>
+                    <path d="M5 7L6.5 8.5L9 6" stroke="#00bfff" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                ),
+                text: "SSL 256-bit",
+              },
+              {
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <circle cx="7" cy="7" r="5.5" stroke="#00bfff" strokeWidth="1.3"/>
+                    <path d="M5 7L6.5 8.5L9 5.5" stroke="#00bfff" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                ),
+                text: "Regulamentada CVM",
+              },
+              {
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M8 1L4 8H7L6 13L10 6H7L8 1Z" stroke="#00bfff" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                ),
+                text: "Execução < 1ms",
+              },
+              {
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <circle cx="7" cy="7" r="5.5" stroke="#00bfff" strokeWidth="1.3"/>
+                    <path d="M2 7H12M7 1.5C7 1.5 5 4 5 7C5 10 7 12.5 7 12.5M7 1.5C7 1.5 9 4 9 7C9 10 7 12.5 7 12.5" stroke="#00bfff" strokeWidth="1.3" strokeLinecap="round"/>
+                  </svg>
+                ),
+                text: "+40 países",
+              },
+            ].map((item, i) => (
+              <div key={item.text} className="flex items-center">
+                <div
+                  className="flex items-center gap-1.5"
+                  style={{
+                    color: "rgba(240,248,255,0.52)",
+                    fontSize: "0.77rem",
+                    fontFamily: "'Inter', sans-serif",
+                    letterSpacing: "0.01em",
+                  }}
+                >
+                  {item.icon}
+                  <span>{item.text}</span>
+                </div>
+                {i < 3 && (
+                  <div
+                    className="mx-4 h-3"
+                    style={{ width: "1px", background: "rgba(255,255,255,0.12)" }}
+                  />
+                )}
               </div>
             ))}
           </motion.div>

@@ -10,14 +10,8 @@ const differentials = [
     highlight: "CVM e Banco Central",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-        <path d="M20 4L34 10V20C34 28.84 27.68 37.12 20 39C12.32 37.12 6 28.84 6 20V10L20 4Z" stroke="url(#shieldGrad)" strokeWidth="1.5" fill="rgba(0,191,255,0.05)"/>
+        <path d="M20 4L34 10V20C34 28.84 27.68 37.12 20 39C12.32 37.12 6 28.84 6 20V10L20 4Z" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.05)"/>
         <path d="M14 20L18 24L26 16" stroke="#00bfff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <defs>
-          <linearGradient id="shieldGrad" x1="6" y1="4" x2="34" y2="39">
-            <stop stopColor="#00bfff"/>
-            <stop offset="1" stopColor="#0066ff"/>
-          </linearGradient>
-        </defs>
       </svg>
     ),
   },
@@ -29,15 +23,9 @@ const differentials = [
     highlight: "0% de comissão",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-        <circle cx="20" cy="20" r="15" stroke="url(#chartGrad)" strokeWidth="1.5" fill="rgba(0,191,255,0.05)"/>
+        <circle cx="20" cy="20" r="15" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.05)"/>
         <path d="M10 26L16 18L22 22L30 12" stroke="#00bfff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <circle cx="30" cy="12" r="2.5" fill="#00bfff"/>
-        <defs>
-          <linearGradient id="chartGrad" x1="5" y1="5" x2="35" y2="35">
-            <stop stopColor="#00bfff"/>
-            <stop offset="1" stopColor="#0066ff"/>
-          </linearGradient>
-        </defs>
       </svg>
     ),
   },
@@ -49,17 +37,11 @@ const differentials = [
     highlight: "Mais de 50 indicadores",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-        <rect x="5" y="8" width="30" height="24" rx="4" stroke="url(#monitorGrad)" strokeWidth="1.5" fill="rgba(0,191,255,0.05)"/>
+        <rect x="5" y="8" width="30" height="24" rx="4" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.05)"/>
         <path d="M5 16H35" stroke="#00bfff" strokeWidth="1" opacity="0.4"/>
         <rect x="10" y="20" width="6" height="6" rx="1.5" fill="#00bfff" opacity="0.7"/>
         <rect x="19" y="20" width="10" height="2.5" rx="1" fill="#00bfff" opacity="0.4"/>
         <rect x="19" y="24" width="7" height="2" rx="1" fill="#00bfff" opacity="0.25"/>
-        <defs>
-          <linearGradient id="monitorGrad" x1="5" y1="8" x2="35" y2="32">
-            <stop stopColor="#00bfff"/>
-            <stop offset="1" stopColor="#0066ff"/>
-          </linearGradient>
-        </defs>
       </svg>
     ),
   },
@@ -71,14 +53,8 @@ const differentials = [
     highlight: "+200 horas de conteúdo",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-        <path d="M6 14L20 7L34 14V22C34 29 27.5 35 20 37C12.5 35 6 29 6 22V14Z" stroke="url(#eduGrad)" strokeWidth="1.5" fill="rgba(0,191,255,0.05)"/>
+        <path d="M6 14L20 7L34 14V22C34 29 27.5 35 20 37C12.5 35 6 29 6 22V14Z" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.05)"/>
         <path d="M14 20H26M14 24H22" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round"/>
-        <defs>
-          <linearGradient id="eduGrad" x1="6" y1="7" x2="34" y2="37">
-            <stop stopColor="#00bfff"/>
-            <stop offset="1" stopColor="#0066ff"/>
-          </linearGradient>
-        </defs>
       </svg>
     ),
   },
