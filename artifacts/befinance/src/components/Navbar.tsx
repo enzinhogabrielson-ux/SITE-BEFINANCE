@@ -41,37 +41,19 @@ export default function Navbar() {
         {/* Logo */}
         <motion.a
           href="#inicio"
-          className="flex items-center gap-2 select-none"
+          className="flex items-center select-none"
           whileHover={{ scale: 1.03 }}
         >
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-            <path d="M4 4L18 4L28 18L18 32L4 32L14 18L4 4Z" fill="url(#logoGrad)" />
-            <path d="M18 4L32 4L32 32L18 32L28 18Z" fill="url(#logoGrad2)" opacity="0.6" />
-            <defs>
-              <linearGradient id="logoGrad" x1="4" y1="4" x2="28" y2="32" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#00bfff" />
-                <stop offset="1" stopColor="#0066ff" />
-              </linearGradient>
-              <linearGradient id="logoGrad2" x1="18" y1="4" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#00e5ff" />
-                <stop offset="1" stopColor="#0099ff" />
-              </linearGradient>
-            </defs>
-          </svg>
-          <span
+          <img
+            src="/logo-befinance.png"
+            alt="BeFinance"
             style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontWeight: 800,
-              fontSize: "1.3rem",
-              letterSpacing: "-0.02em",
-              background: "linear-gradient(135deg, #00bfff, #ffffff)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
+              height: "100px",
+              width: "auto",
+              mixBlendMode: "screen",
+              objectFit: "contain",
             }}
-          >
-            BeFinance
-          </span>
+          />
         </motion.a>
 
         {/* Desktop Nav */}

@@ -70,33 +70,17 @@ export default function Footer() {
           {/* Brand column */}
           <div className="col-span-2">
             {/* Logo */}
-            <div className="flex items-center gap-2 mb-5">
-              <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
-                <path d="M4 4L18 4L28 18L18 32L4 32L14 18L4 4Z" fill="url(#footerLogoGrad)" />
-                <path d="M18 4L32 4L32 32L18 32L28 18Z" fill="url(#footerLogoGrad2)" opacity="0.6" />
-                <defs>
-                  <linearGradient id="footerLogoGrad" x1="4" y1="4" x2="28" y2="32">
-                    <stop stopColor="#00bfff" />
-                    <stop offset="1" stopColor="#0066ff" />
-                  </linearGradient>
-                  <linearGradient id="footerLogoGrad2" x1="18" y1="4" x2="32" y2="32">
-                    <stop stopColor="#00e5ff" />
-                    <stop offset="1" stopColor="#0099ff" />
-                  </linearGradient>
-                </defs>
-              </svg>
-              <span style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontWeight: 800,
-                fontSize: "1.2rem",
-                letterSpacing: "-0.02em",
-                background: "linear-gradient(135deg, #00bfff, #ffffff)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}>
-                BeFinance
-              </span>
+            <div className="mb-5">
+              <img
+                src="/logo-befinance.png"
+                alt="BeFinance"
+                style={{
+                  height: "48px",
+                  width: "auto",
+                  mixBlendMode: "screen",
+                  objectFit: "contain",
+                }}
+              />
             </div>
 
             <p style={{
