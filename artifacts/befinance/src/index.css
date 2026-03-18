@@ -424,14 +424,14 @@
 
 /* ===== MacBook Pro Mockup ===== */
 .macbook-wrapper {
-  max-width: 860px;
+  max-width: 920px;
   margin: 0 auto;
-  perspective: 1800px;
+  perspective: 1600px;
 }
 
 .macbook-container {
   position: relative;
-  transform: rotateX(12deg) rotateY(0deg);
+  transform: rotateX(16deg) rotateY(0deg);
   transform-style: preserve-3d;
 }
 
@@ -442,35 +442,37 @@
 }
 
 .macbook-bezel {
-  background: linear-gradient(180deg, #1a1a1c 0%, #111113 100%);
-  border-radius: 16px 16px 0 0;
-  padding: 20px 16px 8px;
+  background: linear-gradient(180deg, #1a1a1c 0%, #0d0d0f 100%);
+  border-radius: 18px 18px 0 0;
+  padding: 18px 20px 10px;
   position: relative;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.06),
-    0 0 0 1px rgba(255,255,255,0.04),
-    0 -2px 40px rgba(0,191,255,0.03);
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 0 0 1px rgba(255,255,255,0.05),
+    0 -4px 50px rgba(0,191,255,0.04);
 }
 
 .macbook-camera {
   position: absolute;
-  top: 8px;
+  top: 9px;
   left: 50%;
   transform: translateX(-50%);
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: #0a0a0a;
-  border: 1px solid #333;
-  box-shadow: 0 0 2px rgba(0,0,0,0.5);
+  border: 1px solid #2a2a2a;
+  box-shadow: 0 0 3px rgba(0,0,0,0.6);
 }
 
 .macbook-display {
   background: #000;
-  border-radius: 4px;
+  border-radius: 5px;
   overflow: hidden;
   aspect-ratio: 16 / 10;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
+  box-shadow: 
+    inset 0 0 0 1px rgba(255,255,255,0.03),
+    0 2px 8px rgba(0,0,0,0.3);
 }
 
 .macbook-display-img {
@@ -481,38 +483,43 @@
   display: block;
 }
 
-/* Chin / hinge bar */
+/* Hinge / chin bar */
 .macbook-chin {
-  height: 16px;
+  height: 18px;
   background: linear-gradient(
     180deg,
-    #3a3a3c 0%,
-    #555558 30%,
-    #6a6a6e 50%,
-    #555558 70%,
-    #2c2c2e 100%
+    #4a4a4d 0%,
+    #6a6a70 25%,
+    #7a7a82 50%,
+    #6a6a70 75%,
+    #3a3a3d 100%
   );
   position: relative;
   z-index: 3;
   box-shadow:
-    0 2px 6px rgba(0,0,0,0.5),
-    inset 0 1px 0 rgba(255,255,255,0.1),
-    inset 0 -1px 0 rgba(0,0,0,0.3);
+    0 2px 8px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    inset 0 -1px 0 rgba(0,0,0,0.4);
 }
 
-/* Keyboard base */
+/* Keyboard base - larger and more prominent */
 .macbook-base {
-  height: 12px;
-  background: linear-gradient(180deg, #1c1c1e 0%, #0f0f11 100%);
-  border-radius: 0 0 12px 12px;
+  height: 48px;
+  background: linear-gradient(180deg, #2d2d2f 0%, #1c1c1e 50%, #0f0f11 100%);
+  border-radius: 0 0 16px 16px;
   position: relative;
   z-index: 1;
   box-shadow:
-    0 6px 30px rgba(0,0,0,0.6),
-    0 2px 8px rgba(0,0,0,0.4),
-    inset 0 1px 0 rgba(255,255,255,0.03);
-  transform: perspective(800px) rotateX(6deg);
+    0 12px 50px rgba(0,0,0,0.8),
+    0 4px 12px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.04),
+    inset 0 2px 4px rgba(255,255,255,0.02);
+  transform: perspective(1000px) rotateX(8deg);
   transform-origin: top center;
+  padding: 8px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .macbook-base-top-edge {
@@ -520,25 +527,41 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 18%;
-  height: 3px;
-  border-radius: 0 0 3px 3px;
+  width: 12%;
+  height: 2px;
+  border-radius: 1px;
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255,255,255,0.04),
     rgba(255,255,255,0.06),
-    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.09),
+    rgba(255,255,255,0.06),
     transparent
   );
 }
 
+/* Keyboard visualization */
+.macbook-base::before {
+  content: '';
+  position: absolute;
+  inset: 10px 16px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,255,255,0.02) 0px,
+    rgba(255,255,255,0.02) 2px,
+    transparent 2px,
+    transparent 8px
+  );
+  border-radius: 4px;
+  pointer-events: none;
+}
+
 /* Shadow reflection */
 .macbook-shadow {
-  margin: 8px auto 0;
-  width: 70%;
-  height: 20px;
-  background: radial-gradient(ellipse, rgba(0,0,0,0.35) 0%, transparent 70%);
-  filter: blur(10px);
+  margin: 12px auto 0;
+  width: 75%;
+  height: 24px;
+  background: radial-gradient(ellipse, rgba(0,0,0,0.4) 0%, transparent 75%);
+  filter: blur(12px);
   border-radius: 50%;
 }
