@@ -109,12 +109,13 @@ export default function Hero() {
               A melhor
             </span>
             <span
-              className="text-xs font-semibold tracking-widest"
+              className="text-xs font-semibold tracking-widest px-3 py-1.5 rounded-full"
               style={{
                 color: "#ffffff",
                 fontFamily: "'Inter', sans-serif",
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
               }}
             >
               corretora do mundo!
