@@ -1,9 +1,22 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export default function PlatformSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  // Lid animation: starts closed (-90deg), opens to 0deg as you scroll
+  const lidRotation = useTransform(scrollYProgress, [0.1, 0.5], [-90, 0]);
+  const screenOpacity = useTransform(scrollYProgress, [0.2, 0.4], [0, 1]);
+
   return (
     <section
       id="plataforma"
+      ref={sectionRef}
       className="relative overflow-hidden section-glow-border"
       style={{
         background: "linear-gradient(180deg, #020814 0%, #06081a 50%, #040d18 100%)",
@@ -55,44 +68,44 @@ export default function PlatformSection() {
           </motion.div>
         </div>
 
-        {/* ===== MACBOOK PRO — kyvoo style ===== */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="macbook-wrapper"
-        >
+        {/* ===== MACBOOK PRO — scroll-driven opening/closing ===== */}
+        <div className="macbook-wrapper">
           <div className="macbook-container">
-            {/* Screen / Lid */}
-            <div className="macbook-screen">
-              {/* Bezel */}
-              <div className="macbook-bezel">
-                {/* Camera */}
-                <div className="macbook-camera" />
-                {/* Display */}
-                <div className="macbook-display">
-                  <img
-                    src="/laptop-screen.png"
-                    alt="BeFinance Trading Platform"
-                    className="macbook-display-img"
-                  />
+            {/* Screen / Lid — rotates on scroll */}
+            <motion.div
+              style={{
+                rotateX: lidRotation,
+                transformOrigin: "bottom center",
+                transformStyle: "preserve-3d",
+              }}
+            >
+              <div className="macbook-screen">
+                <div className="macbook-bezel">
+                  <div className="macbook-camera" />
+                  <div className="macbook-display">
+                    <motion.img
+                      src="/laptop-screen.png"
+                      alt="BeFinance Trading Platform"
+                      className="macbook-display-img"
+                      style={{ opacity: screenOpacity }}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Bottom chin / hinge */}
+            {/* Chin / hinge bar */}
             <div className="macbook-chin" />
 
-            {/* Base / keyboard area */}
+            {/* Keyboard base */}
             <div className="macbook-base">
               <div className="macbook-base-top-edge" />
             </div>
 
-            {/* Shadow underneath */}
+            {/* Shadow reflection */}
             <div className="macbook-shadow" />
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
