@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { useRef } from "react";
 
 const assets = [
   { name: "Bitcoin", symbol: "BTC", price: "R$ 484.250,33", change: "+1,71%", positive: true, color: "#f7931a" },
@@ -42,32 +41,34 @@ function TickerItem({ asset }: { asset: typeof assets[0] }) {
       </div>
       <div>
         <div className="flex items-center gap-2">
-          <span style={{ color: "#fff", fontSize: "0.8rem", fontWeight: 600, fontFamily: "'Inter', sans-serif" }}>
+          <span style={{
+            color: "#fff", fontSize: "0.8rem", fontWeight: 600,
+            fontFamily: "'DM Sans','Inter', sans-serif", letterSpacing: "-0.01em",
+          }}>
             {asset.name}
           </span>
-          <span
-            style={{
-              fontSize: "0.65rem",
-              fontFamily: "'Inter', sans-serif",
-              color: "rgba(240,248,255,0.4)",
-              fontWeight: 500,
-            }}
-          >
+          <span style={{
+            fontSize: "0.65rem",
+            fontFamily: "'DM Sans','Inter', sans-serif",
+            color: "rgba(240,248,255,0.4)",
+            fontWeight: 500,
+          }}>
             {asset.symbol}
           </span>
         </div>
         <div className="flex items-center gap-2 mt-0.5">
-          <span style={{ color: "rgba(240,248,255,0.85)", fontSize: "0.75rem", fontFamily: "'Inter', sans-serif" }}>
+          <span style={{
+            color: "rgba(240,248,255,0.85)", fontSize: "0.75rem",
+            fontFamily: "'DM Sans','Inter', sans-serif", letterSpacing: "-0.01em",
+          }}>
             {asset.price}
           </span>
-          <span
-            style={{
-              color: asset.positive ? "#00d084" : "#ff4d4d",
-              fontSize: "0.7rem",
-              fontWeight: 600,
-              fontFamily: "'Inter', sans-serif",
-            }}
-          >
+          <span style={{
+            color: asset.positive ? "#00d084" : "#ff4d4d",
+            fontSize: "0.7rem",
+            fontWeight: 600,
+            fontFamily: "'DM Sans','Inter', sans-serif",
+          }}>
             {asset.change}
           </span>
         </div>
@@ -88,38 +89,35 @@ export default function MarketTicker() {
       }}
     >
       {/* Section header */}
-      <div className="text-center mb-8 pt-4">
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
+      <div className="text-center mb-10 pt-4">
+        <motion.div
+          initial={{ opacity: 0, filter: "blur(10px)", y: 16 }}
+          whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          style={{
-            fontFamily: "'Inter', sans-serif",
-            fontSize: "0.8rem",
-            color: "#00bfff",
-            fontWeight: 600,
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-            marginBottom: "0.4rem",
-          }}
+          transition={{ type: "tween", duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+          className="inline-flex justify-center mb-4"
         >
-          Negocie Agora Mesmo!
-        </motion.p>
+          <div className="hero-badge">
+            <span className="badge-tag">Mercado</span>
+            <span className="badge-text">Negocie agora mesmo</span>
+          </div>
+        </motion.div>
+
         <motion.h2
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, filter: "blur(12px)", y: 20 }}
+          whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          transition={{ type: "tween", duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           style={{
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
-            fontWeight: 800,
+            fontFamily: "'DM Sans','Plus Jakarta Sans', sans-serif",
+            fontWeight: 700,
             fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
             color: "#ffffff",
-            letterSpacing: "-0.02em",
+            letterSpacing: "-0.035em",
           }}
         >
-          Principais ativos do mercado
+          Principais ativos do{" "}
+          <span className="shimmer-text">mercado</span>
         </motion.h2>
       </div>
 

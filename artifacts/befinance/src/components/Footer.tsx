@@ -70,24 +70,29 @@ export default function Footer() {
           {/* Brand column */}
           <div className="col-span-2">
             {/* Logo */}
-            <div className="mb-5">
+            <div className="mb-5" style={{ overflow: "hidden", height: "50px", width: "250px", position: "relative" }}>
               <img
                 src="/logo-befinance.png"
                 alt="BeFinance"
                 style={{
-                  height: "48px",
+                  position: "absolute",
+                  height: "198px",
                   width: "auto",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
                   mixBlendMode: "screen",
-                  objectFit: "contain",
+                  maxWidth: "none",
                 }}
               />
             </div>
 
             <p style={{
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'DM Sans','Inter', sans-serif",
               fontSize: "0.85rem",
               color: "rgba(240,248,255,0.45)",
-              lineHeight: 1.7,
+              lineHeight: 1.65,
+              letterSpacing: "-0.01em",
               marginBottom: "1.5rem",
               maxWidth: "240px",
             }}>
@@ -121,12 +126,13 @@ export default function Footer() {
             <div key={key}>
               <h4
                 style={{
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontFamily: "'DM Sans','Plus Jakarta Sans', sans-serif",
                   fontWeight: 700,
-                  fontSize: "0.85rem",
+                  fontSize: "0.8rem",
                   color: "#fff",
                   marginBottom: "1rem",
-                  letterSpacing: "0.02em",
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
                 }}
               >
                 {section.title}
@@ -137,11 +143,12 @@ export default function Footer() {
                     <a
                       href="#"
                       style={{
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'DM Sans','Inter', sans-serif",
                         fontSize: "0.82rem",
                         color: "rgba(240,248,255,0.45)",
                         textDecoration: "none",
-                        transition: "color 0.2s",
+                        letterSpacing: "-0.01em",
+                        transition: "color 0.22s cubic-bezier(0.16,1,0.3,1)",
                       }}
                       onMouseEnter={(e) => (e.currentTarget.style.color = "#00bfff")}
                       onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(240,248,255,0.45)")}
@@ -158,8 +165,9 @@ export default function Footer() {
         {/* Bottom row */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p style={{
-            fontFamily: "'Inter', sans-serif",
-            fontSize: "0.78rem",
+            fontFamily: "'DM Sans','Inter', sans-serif",
+            fontSize: "0.75rem",
+            letterSpacing: "-0.01em",
             color: "rgba(240,248,255,0.3)",
           }}>
             © 2026 BeFinance. Todos os direitos reservados. Trading envolve riscos. Leia nossos termos.
@@ -171,11 +179,12 @@ export default function Footer() {
                 key={item}
                 href="#"
                 style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: "0.78rem",
+                  fontFamily: "'DM Sans','Inter', sans-serif",
+                  fontSize: "0.75rem",
                   color: "rgba(240,248,255,0.3)",
                   textDecoration: "none",
-                  transition: "color 0.2s",
+                  letterSpacing: "-0.01em",
+                  transition: "color 0.22s cubic-bezier(0.16,1,0.3,1)",
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#00bfff")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(240,248,255,0.3)")}
