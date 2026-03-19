@@ -18,10 +18,10 @@ export default function Hero() {
   
   const targetX = useMotionValue(0);
   const targetY = useMotionValue(0);
-  const sharkX = useSpring(targetX, { stiffness: 8, damping: 40, mass: 4 });
-  const sharkY = useSpring(targetY, { stiffness: 6, damping: 35, mass: 5 });
+  const sharkX = useSpring(targetX, { stiffness: 20, damping: 60, mass: 3 });
+  const sharkY = useSpring(targetY, { stiffness: 18, damping: 55, mass: 3 });
   const rotTarget = useMotionValue(0);
-  const sharkRotate = useSpring(rotTarget, { stiffness: 5, damping: 30, mass: 5 });
+  const sharkRotate = useSpring(rotTarget, { stiffness: 15, damping: 50, mass: 3 });
 
   useEffect(() => {
     const interval = setInterval(() => {
