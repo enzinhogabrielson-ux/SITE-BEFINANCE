@@ -18,11 +18,11 @@ export default function Hero() {
   
   const rawMouseX = useMotionValue(0);
   const rawMouseY = useMotionValue(0);
-  const smoothMouseX = useSpring(rawMouseX, { stiffness: 15, damping: 30, mass: 2 });
-  const smoothMouseY = useSpring(rawMouseY, { stiffness: 15, damping: 30, mass: 2 });
-  const sharkX = useTransform(smoothMouseX, (x) => (x - 640) * 0.04);
-  const sharkY = useTransform(smoothMouseY, (y) => (y - 360) * 0.03);
-  const sharkRotate = useTransform(smoothMouseX, (x) => (x - 640) * 0.003);
+  const smoothMouseX = useSpring(rawMouseX, { stiffness: 12, damping: 25, mass: 2.5 });
+  const smoothMouseY = useSpring(rawMouseY, { stiffness: 12, damping: 25, mass: 2.5 });
+  const sharkX = useTransform(smoothMouseX, (x) => (x - 640) * 0.12);
+  const sharkY = useTransform(smoothMouseY, (y) => (y - 360) * 0.08);
+  const sharkRotate = useTransform(smoothMouseX, (x) => (x - 640) * 0.008);
 
   useEffect(() => {
     const interval = setInterval(() => {
