@@ -88,7 +88,7 @@ export default function Hero() {
         }}
       >
         <img
-          src="/shark.png"
+          src="/TUBASVG.svg"
           alt=""
           style={{
             width: "100%",
