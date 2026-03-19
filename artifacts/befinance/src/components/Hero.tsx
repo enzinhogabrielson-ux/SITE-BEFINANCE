@@ -16,13 +16,12 @@ export default function Hero() {
   const { scrollY }  = useScroll();
   const bgY          = useTransform(scrollY, [0, 600], [0, 120]);
   
-  const rawMouseX = useMotionValue(0);
-  const rawMouseY = useMotionValue(0);
-  const smoothMouseX = useSpring(rawMouseX, { stiffness: 12, damping: 25, mass: 2.5 });
-  const smoothMouseY = useSpring(rawMouseY, { stiffness: 12, damping: 25, mass: 2.5 });
-  const sharkX = useTransform(smoothMouseX, (x) => (x - 640) * 0.12);
-  const sharkY = useTransform(smoothMouseY, (y) => (y - 360) * 0.08);
-  const sharkRotate = useTransform(smoothMouseX, (x) => (x - 640) * 0.008);
+  const targetX = useMotionValue(0);
+  const targetY = useMotionValue(0);
+  const sharkX = useSpring(targetX, { stiffness: 8, damping: 40, mass: 4 });
+  const sharkY = useSpring(targetY, { stiffness: 6, damping: 35, mass: 5 });
+  const rotTarget = useMotionValue(0);
+  const sharkRotate = useSpring(rotTarget, { stiffness: 5, damping: 30, mass: 5 });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -37,13 +36,16 @@ export default function Hero() {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      rawMouseX.set(e.clientX);
-      rawMouseY.set(e.clientY);
+      const cx = window.innerWidth / 2;
+      const cy = window.innerHeight / 2;
+      targetX.set((e.clientX - cx) * 0.025);
+      targetY.set((e.clientY - cy) * 0.018);
+      rotTarget.set((e.clientX - cx) * 0.003);
     };
     
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [rawMouseX, rawMouseY]);
+  }, [targetX, targetY, rotTarget]);
 
   return (
     <section
