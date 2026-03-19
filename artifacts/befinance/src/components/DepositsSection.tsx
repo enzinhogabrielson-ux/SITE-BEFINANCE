@@ -182,13 +182,47 @@ export default function DepositsSection() {
           className="flex flex-wrap justify-center items-center gap-6"
         >
           {[
-            { icon: "⚡", text: "Depósito instantâneo via PIX" },
-            { icon: "🔒", text: "SSL 256-bit em todas transações" },
-            { icon: "💸", text: "Saque em até 24 horas" },
-            { icon: "0️⃣", text: "Zero taxas de depósito" },
+            {
+              icon: (
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M8 1L11.5 7H4.5L8 1Z" fill="#FF6B35" />
+                  <path d="M4.5 9H11.5L11 15H5L4.5 9Z" fill="#FF6B35" opacity="0.7" />
+                </svg>
+              ),
+              text: "Depósito instantâneo via PIX"
+            },
+            {
+              icon: (
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <rect x="3" y="7" width="10" height="7" rx="1" stroke="#00BFFF" strokeWidth="1.2" />
+                  <path d="M6 7V5C6 3.9 6.9 3 8 3C9.1 3 10 3.9 10 5V7" stroke="#00BFFF" strokeWidth="1.2" strokeLinecap="round" />
+                </svg>
+              ),
+              text: "SSL 256-bit em todas transações"
+            },
+            {
+              icon: (
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M8 2V14" stroke="#2ECC71" strokeWidth="1.5" strokeLinecap="round" />
+                  <path d="M5 11L8 14L11 11" stroke="#2ECC71" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              ),
+              text: "Saque em até 24 horas"
+            },
+            {
+              icon: (
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <circle cx="8" cy="8" r="7" stroke="#0066FF" strokeWidth="1.5" fill="none" />
+                  <text x="8" y="10" fontSize="10" fontWeight="700" textAnchor="middle" fill="#0066FF" fontFamily="Arial, sans-serif">0</text>
+                </svg>
+              ),
+              text: "Zero taxas de depósito"
+            },
           ].map((b) => (
             <div key={b.text} className="flex items-center gap-2">
-              <span style={{ fontSize: "1rem" }}>{b.icon}</span>
+              <div className="w-5 h-5 flex items-center justify-center">
+                {b.icon}
+              </div>
               <span style={{ fontFamily: "'DM Sans','Inter',sans-serif", fontSize: "0.82rem", color: "rgba(240,248,255,0.5)", letterSpacing: "-0.01em" }}>
                 {b.text}
               </span>
