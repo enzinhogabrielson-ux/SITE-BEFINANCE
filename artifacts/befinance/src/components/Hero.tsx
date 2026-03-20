@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValue } from "framer-motion";
 import heroBg from "/hero-bg.png";
 
-const cycleWords = ["opções", "ações", "criptomoedas", "commodities", "futuros"];
+const cycleWords = ["opções", "ações", "commodities", "índices", "futuros"];
 
 // Kyvoo-style spring presets
 const springFast   = { type: "spring", stiffness: 400, damping: 40 } as const;

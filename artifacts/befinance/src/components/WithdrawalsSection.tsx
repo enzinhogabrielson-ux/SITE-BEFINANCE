@@ -11,7 +11,7 @@ const cards = [
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <circle cx="20" cy="20" r="16" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.06)" />
-        <text x="20" y="25" textAnchor="middle" fill="#00bfff" fontSize="14" fontWeight="700" fontFamily="DM Sans">R$</text>
+        <text x="20" y="25" textAnchor="middle" fill="#00bfff" fontSize="14" fontWeight="700" fontFamily="DM Sans">$</text>
       </svg>
     ),
   },

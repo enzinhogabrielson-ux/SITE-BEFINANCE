@@ -4,8 +4,8 @@ const posts = [
   {
     tag: "Mercado",
     date: "15 Mar 2026",
-    title: "Bitcoin supera R$500.000 pela primeira vez na história",
-    excerpt: "O Bitcoin atingiu uma nova máxima histórica, impulsionado pela aprovação de ETFs institucionais e pela crescente adoção global da criptomoeda como reserva de valor.",
+    title: "S&P 500 atinge nova máxima histórica em 2026",
+    excerpt: "O principal índice americano atingiu um novo recorde, impulsionado por resultados corporativos acima das expectativas e pela confiança dos investidores no crescimento econômico.",
     readTime: "5 min",
     chartPath: "M0 50L30 35L60 42L90 20L120 30L150 10L200 25",
     chartFill: "M0 50L30 35L60 42L90 20L120 30L150 10L200 25L200 60L0 60Z",

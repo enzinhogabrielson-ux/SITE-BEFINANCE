@@ -188,7 +188,7 @@ export default function TraderbotSection() {
               {/* Stats */}
               <div className="grid grid-cols-3 gap-3 mb-5">
                 {[
-                  { label: "Lucro hoje", value: "+R$842", positive: true },
+                  { label: "Lucro hoje", value: "+$842", positive: true },
                   { label: "Operações", value: "47", positive: null },
                   { label: "Taxa acerto", value: "78.4%", positive: true },
                 ].map((stat) => (
@@ -207,10 +207,10 @@ export default function TraderbotSection() {
               {/* Bot activity feed */}
               <div className="flex flex-col gap-2">
                 {[
-                  { type: "buy", pair: "BTC/USD", price: "R$484.250", profit: "+R$142", time: "14:23" },
-                  { type: "sell", pair: "ETH/USD", price: "R$13.109", profit: "+R$89", time: "14:18" },
-                  { type: "buy", pair: "SOL/USD", price: "R$979,46", profit: "+R$35", time: "14:12" },
-                  { type: "sell", pair: "XRP/USD", price: "R$12,07", profit: "-R$22", time: "14:05" },
+                  { type: "buy", pair: "AAPL/USD", price: "$198.50", profit: "+$142", time: "14:23" },
+                  { type: "sell", pair: "XAU/USD", price: "$2.340", profit: "+$89", time: "14:18" },
+                  { type: "buy", pair: "TSLA/USD", price: "$312.80", profit: "+$35", time: "14:12" },
+                  { type: "sell", pair: "WTI/USD", price: "$78,45", profit: "-$22", time: "14:05" },
                 ].map((op, i) => (
                   <motion.div
                     key={i}

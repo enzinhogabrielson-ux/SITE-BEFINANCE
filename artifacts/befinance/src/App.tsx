@@ -8,7 +8,6 @@ import Home from "@/pages/Home";
 
 const OpcoesDigitais = lazy(() => import("@/pages/negociacao/OpcoesDigitais"));
 const Acoes = lazy(() => import("@/pages/negociacao/Acoes"));
-const Criptomoedas = lazy(() => import("@/pages/negociacao/Criptomoedas"));
 const Commodities = lazy(() => import("@/pages/negociacao/Commodities"));
 
 const TradingWeb = lazy(() => import("@/pages/plataforma/TradingWeb"));
@@ -47,7 +46,6 @@ function Router() {
 
         <Route path="/negociacao/opcoes-digitais" component={OpcoesDigitais} />
         <Route path="/negociacao/acoes" component={Acoes} />
-        <Route path="/negociacao/criptomoedas" component={Criptomoedas} />
         <Route path="/negociacao/commodities" component={Commodities} />
 
         <Route path="/plataforma/trading-web" component={TradingWeb} />

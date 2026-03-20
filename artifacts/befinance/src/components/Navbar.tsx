@@ -8,7 +8,6 @@ const megaMenuData: Record<string, { items: { title: string; desc: string; href:
     items: [
       { title: "Opções Digitais", desc: "Retornos de até 92% com operações a partir de $1", href: "/negociacao/opcoes-digitais" },
       { title: "Ações", desc: "Blue chips globais sem comissão", href: "/negociacao/acoes" },
-      { title: "Criptomoedas", desc: "Bitcoin, Ethereum e +30 altcoins 24/7", href: "/negociacao/criptomoedas" },
       { title: "Commodities", desc: "Ouro, prata, petróleo e mais", href: "/negociacao/commodities" },
     ],
   },
@@ -76,7 +75,6 @@ const languages = [
 const megaIcons: Record<string, React.ReactNode> = {
   "Opções Digitais": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 20L10 12L14 16L20 8M20 8H15M20 8V13" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
   "Ações": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 3V21H21M7 14L11 10L15 14L21 8" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  "Criptomoedas": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7L12 12L22 7L12 2ZM2 17L12 22L22 17M2 12L12 17L22 12" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
   "Commodities": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 8.5L22 9.5L17 14.5L18 21.5L12 18L6 21.5L7 14.5L2 9.5L9 8.5L12 2Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
   "Trading Web": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4H20V16H4ZM8 20H16M12 16V20" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
   "App Mobile": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 18H12.01M7 2H17A2 2 0 0 1 19 4V20A2 2 0 0 1 17 22H7A2 2 0 0 1 5 20V4A2 2 0 0 1 7 2Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,

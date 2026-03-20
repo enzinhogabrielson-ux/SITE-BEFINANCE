@@ -6,7 +6,7 @@ const expo = { type: "tween", duration: 0.85, ease: [0.16, 1, 0.3, 1] } as const
 const faqs = [
   {
     q: "O que é a BeFinance e como ela funciona?",
-    a: "A BeFinance é uma plataforma de trading regulamentada que permite investir em ações, criptomoedas, ETFs, commodities e mais de 1000 ativos. Após criar sua conta gratuita, você recebe $10.000 em conta de treinamento para praticar sem risco antes de investir dinheiro real.",
+    a: "A BeFinance é uma plataforma de trading regulamentada que permite investir em ações, índices, ETFs, commodities e mais de 1000 ativos. Após criar sua conta gratuita, você recebe $10.000 em conta de treinamento para praticar sem risco antes de investir dinheiro real.",
   },
   {
     q: "É preciso ter experiência para operar na BeFinance?",
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "Quais ativos posso negociar na BeFinance?",
-    a: "Oferecemos mais de 1000 ativos incluindo: ações brasileiras e internacionais (B3, NYSE, NASDAQ), criptomoedas (BTC, ETH, SOL e +200 moedas), ETFs, commodities (ouro, petróleo, soja) e contratos futuros. Tudo em uma única plataforma.",
+    a: "Oferecemos mais de 1000 ativos incluindo: ações brasileiras e internacionais (B3, NYSE, NASDAQ), ETFs, commodities (ouro, petróleo, soja), índices globais e contratos futuros. Tudo em uma única plataforma.",
   },
 ];
 

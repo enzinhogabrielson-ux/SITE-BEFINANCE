@@ -1,25 +1,25 @@
 import { motion } from "framer-motion";
 
 const assets = [
-  { name: "Bitcoin", symbol: "BTC", price: "R$ 484.250,33", change: "+1,71%", positive: true, color: "#f7931a" },
-  { name: "Solana", symbol: "SOL", price: "R$ 979,46", change: "-0,65%", positive: false, color: "#9945ff" },
-  { name: "Dash", symbol: "DASH", price: "R$ 124,68", change: "+1,71%", positive: true, color: "#008de4" },
-  { name: "XRP", symbol: "XRP", price: "R$ 12,07", change: "+1,66%", positive: true, color: "#00aae4" },
-  { name: "Ethereum", symbol: "ETH", price: "R$ 13.109,21", change: "+1,71%", positive: true, color: "#627eea" },
-  { name: "Litecoin", symbol: "LTC", price: "R$ 562,22", change: "-1,71%", positive: false, color: "#bfbbbb" },
-  { name: "Cardano", symbol: "ADA", price: "R$ 3,74", change: "+2,15%", positive: true, color: "#0d1e6f" },
-  { name: "Polkadot", symbol: "DOT", price: "R$ 35,47", change: "+0,83%", positive: true, color: "#e6007a" },
+  { name: "Apple", symbol: "AAPL", price: "$198.50", change: "+1,42%", positive: true, color: "#555555" },
+  { name: "Tesla", symbol: "TSLA", price: "$312.80", change: "+2,15%", positive: true, color: "#cc0000" },
+  { name: "Amazon", symbol: "AMZN", price: "$185.30", change: "-0,65%", positive: false, color: "#ff9900" },
+  { name: "Ouro", symbol: "XAU", price: "$2.340,20", change: "+0,83%", positive: true, color: "#d4a017" },
+  { name: "Petróleo", symbol: "WTI", price: "$78,45", change: "+1,71%", positive: true, color: "#2b5f2b" },
+  { name: "S&P 500", symbol: "SPX", price: "5.420,30", change: "+0,52%", positive: true, color: "#1a5276" },
+  { name: "Microsoft", symbol: "MSFT", price: "$428.60", change: "-0,38%", positive: false, color: "#00a4ef" },
+  { name: "Prata", symbol: "XAG", price: "$29,85", change: "+1,66%", positive: true, color: "#c0c0c0" },
 ];
 
-const cryptoIcons: Record<string, string> = {
-  BTC: "₿",
-  SOL: "◎",
-  DASH: "D",
-  XRP: "✕",
-  ETH: "Ξ",
-  LTC: "Ł",
-  ADA: "₳",
-  DOT: "●",
+const assetIcons: Record<string, string> = {
+  AAPL: "",
+  TSLA: "T",
+  AMZN: "A",
+  XAU: "Au",
+  WTI: "⛽",
+  SPX: "S",
+  MSFT: "M",
+  XAG: "Ag",
 };
 
 function TickerItem({ asset }: { asset: typeof assets[0] }) {
@@ -37,7 +37,7 @@ function TickerItem({ asset }: { asset: typeof assets[0] }) {
         className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0"
         style={{ background: asset.color, color: "#fff" }}
       >
-        {cryptoIcons[asset.symbol] || asset.symbol[0]}
+        {assetIcons[asset.symbol] || asset.symbol[0]}
       </div>
       <div>
         <div className="flex items-center gap-2">
@@ -88,7 +88,6 @@ export default function MarketTicker() {
         paddingBottom: "60px",
       }}
     >
-      {/* Section header */}
       <div className="text-center mb-10 pt-4">
         <motion.div
           initial={{ opacity: 0, filter: "blur(10px)", y: 16 }}
@@ -121,9 +120,7 @@ export default function MarketTicker() {
         </motion.h2>
       </div>
 
-      {/* Ticker strip */}
       <div className="relative">
-        {/* Fade edges */}
         <div
           className="absolute left-0 top-0 bottom-0 z-10 w-20 pointer-events-none"
           style={{ background: "linear-gradient(to right, rgba(2,8,20,1), transparent)" }}
@@ -133,7 +130,6 @@ export default function MarketTicker() {
           style={{ background: "linear-gradient(to left, rgba(2,8,20,1), transparent)" }}
         />
 
-        {/* Ticker row 1 */}
         <div className="ticker-wrapper mb-3">
           <div className="ticker-inner">
             {[...assets, ...assets].map((asset, i) => (
@@ -142,7 +138,6 @@ export default function MarketTicker() {
           </div>
         </div>
 
-        {/* Ticker row 2 - reverse direction */}
         <div className="ticker-wrapper" style={{ overflow: "hidden" }}>
           <div
             className="ticker-inner"

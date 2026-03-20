@@ -6,7 +6,7 @@ const methods = [
   {
     name: "PIX",
     detail: "Instantâneo",
-    amount: "R$ 50",
+    amount: "$ 10",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
         <path d="M14 3L25 14L14 25L3 14L14 3Z" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.08)"/>
@@ -18,7 +18,7 @@ const methods = [
   {
     name: "Visa",
     detail: "Crédito/Débito",
-    amount: "R$ 500",
+    amount: "$ 50",
     icon: (
       <svg width="36" height="18" viewBox="0 0 36 18" fill="none">
         <text x="0" y="14" fontSize="16" fontWeight="800" fontFamily="Arial, sans-serif" fill="#1a1f71">VISA</text>
@@ -30,7 +30,7 @@ const methods = [
   {
     name: "Mastercard",
     detail: "Crédito/Débito",
-    amount: "R$ 300",
+    amount: "$ 30",
     icon: (
       <svg width="32" height="24" viewBox="0 0 32 24" fill="none">
         <circle cx="11" cy="12" r="10" fill="#eb001b"/>
@@ -41,33 +41,33 @@ const methods = [
     color: "#f79e1b",
   },
   {
-    name: "USDT",
-    detail: "Tether TRC-20",
+    name: "PayPal",
+    detail: "Conta PayPal",
     amount: "$ 30",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <circle cx="14" cy="14" r="12" fill="#26a17b" opacity="0.9"/>
-        <text x="14" y="19" fontSize="12" fontWeight="700" textAnchor="middle" fill="white" fontFamily="Arial">₮</text>
+        <circle cx="14" cy="14" r="12" fill="#003087" opacity="0.9"/>
+        <text x="14" y="19" fontSize="12" fontWeight="700" textAnchor="middle" fill="white" fontFamily="Arial">P</text>
       </svg>
     ),
-    color: "#26a17b",
+    color: "#003087",
   },
   {
-    name: "Bitcoin",
-    detail: "BTC On-Chain",
-    amount: "R$ 5.000",
+    name: "Skrill",
+    detail: "E-wallet",
+    amount: "$ 20",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <circle cx="14" cy="14" r="12" fill="#f7931a" opacity="0.9"/>
-        <text x="14" y="19" fontSize="12" fontWeight="700" textAnchor="middle" fill="white" fontFamily="Arial">₿</text>
+        <circle cx="14" cy="14" r="12" fill="#862165" opacity="0.9"/>
+        <text x="14" y="19" fontSize="12" fontWeight="700" textAnchor="middle" fill="white" fontFamily="Arial">S</text>
       </svg>
     ),
-    color: "#f7931a",
+    color: "#862165",
   },
   {
     name: "TED / DOC",
     detail: "Transferência",
-    amount: "R$ 800",
+    amount: "$ 50",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
         <rect x="4" y="6" width="20" height="16" rx="3" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.06)"/>
