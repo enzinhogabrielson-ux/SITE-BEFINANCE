@@ -1,21 +1,21 @@
 import { motion } from "framer-motion";
 
 const footerLinks = {
+  negociacao: {
+    title: "Negociação",
+    links: ["Opções Digitais", "Forex", "Ações", "Criptomoedas", "Commodities"],
+  },
   plataforma: {
     title: "Plataforma",
-    links: ["Trading Web", "App Mobile", "API para Traders", "Conta Demo", "Ferramentas Analíticas"],
+    links: ["Trading Web", "App Mobile", "Conta Demo", "Ferramentas Analíticas", "Baixar o App"],
   },
-  mercados: {
-    title: "Mercados",
-    links: ["Commodities", "Ações", "Cripto Moedas", "ETFs", "Forex", "Futuros"],
+  sobre: {
+    title: "Sobre",
+    links: ["Sobre nós", "Regulamentação", "Premiações", "Parceiros", "Afiliados"],
   },
-  empresa: {
-    title: "Empresa",
-    links: ["Sobre nós", "Regulamentação", "Parceiros", "Afiliados", "Carreiras"],
-  },
-  suporte: {
-    title: "Suporte",
-    links: ["Central de Ajuda", "Contato", "Webinars", "Academia", "Blog"],
+  ajuda: {
+    title: "Ajuda",
+    links: ["Central de Ajuda", "Contato", "Central de Aprendizagem", "FAQ", "Suporte 24/7"],
   },
 };
 

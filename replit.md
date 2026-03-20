@@ -21,7 +21,8 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 ```text
 artifacts-monorepo/
 ├── artifacts/              # Deployable applications
-│   └── api-server/         # Express API server
+│   ├── api-server/         # Express API server
+│   └── befinance/          # BeFinance institutional landing page (React + Vite)
 ├── lib/                    # Shared libraries
 │   ├── api-spec/           # OpenAPI spec + Orval codegen config
 │   ├── api-client-react/   # Generated React Query hooks
@@ -61,6 +62,46 @@ Express 5 API server. Routes live in `src/routes/` and use `@workspace/api-zod` 
 - `pnpm --filter @workspace/api-server run dev` — run the dev server
 - `pnpm --filter @workspace/api-server run build` — production esbuild bundle (`dist/index.cjs`)
 - Build bundles an allowlist of deps (express, cors, pg, drizzle-orm, zod, etc.) and externalizes the rest
+
+### `artifacts/befinance` (`@workspace/befinance`)
+
+BeFinance institutional landing page for a financial trading/broker company focused on Options Binary (O.B.) trading.
+
+- **Framework**: React + Vite + Tailwind CSS + Framer Motion
+- **Fonts**: DM Sans (headings) + Inter (body/nav) via Google Fonts
+- **Colors**: Dark background `#040d18`, cyan accent `#00bfff`
+- **Language**: All content in Portuguese (pt-BR)
+- **Style reference**: Olymptrade + kyvoo.io
+
+#### Key Components
+- **Navbar**: Institutional nav — Negociação, Plataforma, Sobre, Ajuda + Login + "Comece a negociar" CTA
+- **Hero**: Kyvoo-style wavy bg with holographic shark SVG (`public/TUBASVG.svg`), `mix-blend-mode: screen`, mouse-follow animation using lerp + RAF (NOT useSpring)
+- **MarketTicker**: Live market data strip
+- **TrustSection**: "Capacitando traders" stats + badge grid (Plataforma moderna, Recursos exclusivos, etc.)
+- **PlatformSection**: MacBook scroll animation with platform showcase
+- **InstrumentsSection**: Risk-free trading instruments grid (demo account, stop loss, deposits, etc.)
+- **RegulationSection**: Licensing/regulation info (CVM, BACEN, SSL, AML)
+- **TradingConfidenceSection**: Support, signals, strategies, learning materials
+- **WithdrawalsSection**: Fast withdrawals + payment methods (PIX, Boleto, etc.)
+- **DepositsSection**: Deposit security badges
+- **TestimonialsSection**: User reviews
+- **AwardsSection**: Awards and recognition grid
+- **FAQSection**: Accordion FAQ (id="ajuda")
+- **CTASection**: Final CTA with "Comece a negociar com confiança"
+- **Footer**: 4-column institutional footer (Negociação, Plataforma, Sobre, Ajuda)
+
+#### CSS Classes (index.css)
+- `btn-glow`: Primary CTA with spinning conic-gradient border glow
+- `btn-login`: Outline login pill button
+- `kyvoo-card`: Hover `translateY(-4px)` + radial glow + cyan border
+- `hero-badge`: Pill badge with tag + text
+- `.macbook-*`: MacBook mockup CSS classes
+- `shimmer-text`: Animated gradient text
+
+#### Critical Notes
+- NEVER use `useSpring` for shark motion — causes oscillation. Always use manual lerp with RAF
+- Shark: `/TUBASVG.svg` as `<img>` with `mixBlendMode: screen`; mouse tracking uses lerp RAF loop in `useEffect`
+- Accent `#00bfff` used consistently across all icons, borders, glows
 
 ### `lib/db` (`@workspace/db`)
 

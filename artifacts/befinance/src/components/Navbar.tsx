@@ -3,11 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Lock } from "lucide-react";
 
 const navLinks = [
-  { label: "Início",       href: "#inicio" },
-  { label: "Plataforma",   href: "#plataforma" },
-  { label: "Diferenciais", href: "#diferenciais" },
-  { label: "Depoimentos",  href: "#depoimentos" },
-  { label: "Blog",         href: "#blog" },
+  { label: "Negociação",  href: "#negociacao" },
+  { label: "Plataforma",  href: "#plataforma" },
+  { label: "Sobre",       href: "#sobre" },
+  { label: "Ajuda",       href: "#ajuda" },
 ];
 
 const FlagBR = () => (
@@ -155,7 +154,7 @@ export default function Navbar() {
           {/* Primary CTA — radial glow border (Kyvoo pattern, cyan) */}
           <a href="#" className="btn-glow">
             <span className="btn-glow-face">
-              Abra sua conta gratuita
+              Comece a negociar
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
                 <path d="M2.5 7H11.5M8 3.5L11.5 7L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -258,7 +257,7 @@ export default function Navbar() {
               </div>
               <a href="#" className="btn-glow mt-2" style={{ width: "100%", justifyContent: "center" }}>
                 <span className="btn-glow-face" style={{ width: "100%", justifyContent: "center" }}>
-                  Abra sua conta gratuita
+                  Comece a negociar
                 </span>
               </a>
             </div>

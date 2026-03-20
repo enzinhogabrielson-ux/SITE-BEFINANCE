@@ -48,8 +48,8 @@ export default function CTASection() {
               color: "#fff", letterSpacing: "-0.035em", lineHeight: 1.1, marginBottom: "1.2rem",
             }}
           >
-            Pronto para começar a{" "}
-            <span className="shimmer-text">investir de verdade?</span>
+            Comece a negociar{" "}
+            <span className="shimmer-text">com confiança</span>
           </motion.h2>
 
           <motion.p
@@ -63,9 +63,9 @@ export default function CTASection() {
               margin: "0 auto 2.5rem", letterSpacing: "-0.01em",
             }}
           >
-            Abra sua conta gratuita hoje e receba{" "}
-            <strong style={{ color: "#00bfff" }}>R$10.000</strong>{" "}
-            na sua conta de treinamento. Sem riscos, sem compromissos.
+            Plataforma disponível para qualquer dispositivo. Comece a negociar{" "}
+            <strong style={{ color: "#00bfff" }}>agora mesmo</strong>{" "}
+            e descubra o poder das operações digitais.
           </motion.p>
 
           <motion.div
@@ -77,7 +77,7 @@ export default function CTASection() {
           >
             <a href="#" className="btn-glow">
               <span className="btn-glow-face" style={{ padding: "0 32px" }}>
-                Abra sua conta gratuita
+                Comece a negociar
                 <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
                   <path d="M2.5 7H11.5M8 3.5L11.5 7L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>

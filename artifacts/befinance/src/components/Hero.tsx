@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValue } from "framer-motion";
 import heroBg from "/hero-bg.png";
 
-const cycleWords = ["commodities", "ações", "cripto moedas", "ETFs", "futuros"];
+const cycleWords = ["opções", "ações", "criptomoedas", "forex", "futuros"];
 
 // Kyvoo-style spring presets
 const springFast   = { type: "spring", stiffness: 400, damping: 40 } as const;
@@ -186,7 +186,7 @@ export default function Hero() {
           >
             <div className="hero-badge">
               <span className="badge-tag">Novo</span>
-              <span className="badge-text">A melhor plataforma de trading do Brasil</span>
+              <span className="badge-text">Plataforma de negociação digital do Brasil</span>
             </div>
           </motion.div>
 
@@ -205,9 +205,8 @@ export default function Hero() {
               marginBottom: "0.2rem",
             }}
           >
-            Invista de forma
-            <br />
-            simplificada em
+            Aumente sua confiança{" "}
+            a cada negociação em
           </motion.h1>
 
           {/* Cycling word — blur-swap animation */}
@@ -254,9 +253,9 @@ export default function Hero() {
               maxWidth: "440px",
             }}
           >
-            Registre-se e receba{" "}
-            <strong style={{ color: "#00bfff", fontWeight: 700 }}>R$10.000</strong>{" "}
-            na sua conta de treinamento. Sem riscos, sem compromissos.
+            Comece agora com{" "}
+            <strong style={{ color: "#00bfff", fontWeight: 700 }}>R$0</strong>{" "}
+            na conta demo. Pratique sem riscos e negocie com confiança.
           </motion.p>
 
           {/* CTAs */}
@@ -269,7 +268,7 @@ export default function Hero() {
             {/* Primary — radial glow (Kyvoo pattern) */}
             <a href="#" className="btn-glow">
               <span className="btn-glow-face">
-                Abra sua conta gratuita
+                Comece agora com R$0
                 <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
                   <path d="M2.5 7H11.5M8 3.5L11.5 7L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -278,7 +277,7 @@ export default function Hero() {
 
             {/* Secondary */}
             <motion.a
-              href="#plataforma"
+              href="#negociacao"
               whileHover={{ borderColor: "rgba(0,191,255,0.45)", background: "rgba(0,191,255,0.08)" } as any}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-medium transition-all"
