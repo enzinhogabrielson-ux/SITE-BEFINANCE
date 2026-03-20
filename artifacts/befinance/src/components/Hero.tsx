@@ -101,10 +101,10 @@ export default function Hero() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
         style={{
-          right: "-2%",
-          top: "18%",
-          width: "58%",
-          maxWidth: "820px",
+          right: "-4%",
+          top: "10%",
+          width: "65%",
+          maxWidth: "1100px",
           x: sharkXVal,
           y: sharkYVal,
           rotate: sharkRotVal,
