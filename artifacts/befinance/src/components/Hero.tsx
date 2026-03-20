@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence, useMotionValue } from "framer-motion";
 import heroBg from "/hero-bg.png";
 
 const cycleWords = ["commodities", "ações", "cripto moedas", "ETFs", "futuros"];
@@ -16,13 +16,9 @@ export default function Hero() {
   const { scrollY }  = useScroll();
   const bgY          = useTransform(scrollY, [0, 600], [0, 120]);
   
-  const rawMouseX = useMotionValue(0);
-  const rawMouseY = useMotionValue(0);
-  const smoothMouseX = useSpring(rawMouseX, { stiffness: 12, damping: 25, mass: 2.5 });
-  const smoothMouseY = useSpring(rawMouseY, { stiffness: 12, damping: 25, mass: 2.5 });
-  const sharkX = useTransform(smoothMouseX, (x) => (x - 640) * 0.12);
-  const sharkY = useTransform(smoothMouseY, (y) => (y - 360) * 0.08);
-  const sharkRotate = useTransform(smoothMouseX, (x) => (x - 640) * 0.008);
+  const sharkXVal = useMotionValue(0);
+  const sharkYVal = useMotionValue(0);
+  const sharkRotVal = useMotionValue(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -36,14 +32,41 @@ export default function Hero() {
   }, []);
 
   useEffect(() => {
+    let currentX = 0;
+    let currentY = 0;
+    let currentRot = 0;
+    let goalX = 0;
+    let goalY = 0;
+    let goalRot = 0;
+    let rafId: number;
+
+    const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+
     const handleMouseMove = (e: MouseEvent) => {
-      rawMouseX.set(e.clientX);
-      rawMouseY.set(e.clientY);
+      const cx = window.innerWidth / 2;
+      const cy = window.innerHeight / 2;
+      goalX = (e.clientX - cx) * 0.02;
+      goalY = (e.clientY - cy) * 0.015;
+      goalRot = (e.clientX - cx) * 0.002;
     };
-    
+
+    const tick = () => {
+      currentX = lerp(currentX, goalX, 0.03);
+      currentY = lerp(currentY, goalY, 0.03);
+      currentRot = lerp(currentRot, goalRot, 0.02);
+      sharkXVal.set(currentX);
+      sharkYVal.set(currentY);
+      sharkRotVal.set(currentRot);
+      rafId = requestAnimationFrame(tick);
+    };
+
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [rawMouseX, rawMouseY]);
+    rafId = requestAnimationFrame(tick);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      cancelAnimationFrame(rafId);
+    };
+  }, [sharkXVal, sharkYVal, sharkRotVal]);
 
   return (
     <section
@@ -78,17 +101,17 @@ export default function Hero() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
         style={{
-          right: "-2%",
-          top: "18%",
-          width: "58%",
-          maxWidth: "820px",
-          x: sharkX,
-          y: sharkY,
-          rotate: sharkRotate,
+          right: "-8%",
+          top: "5%",
+          width: "75%",
+          maxWidth: "1400px",
+          x: sharkXVal,
+          y: sharkYVal,
+          rotate: sharkRotVal,
         }}
       >
         <img
-          src="/shark.png"
+          src="/TUBASVG.svg"
           alt=""
           style={{
             width: "100%",
