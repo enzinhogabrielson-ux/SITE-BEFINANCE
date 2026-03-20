@@ -101,7 +101,7 @@ export default function Hero() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
         style={{
-          right: "-4%",
+          right: "5%",
           top: "10%",
           width: "65%",
           maxWidth: "1100px",
