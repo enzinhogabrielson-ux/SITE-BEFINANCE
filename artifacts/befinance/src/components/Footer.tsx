@@ -6,7 +6,6 @@ const footerLinks = {
     title: "Negociação",
     links: [
       { label: "Opções Digitais", href: "/negociacao/opcoes-digitais" },
-      { label: "Forex", href: "/negociacao/forex" },
       { label: "Ações", href: "/negociacao/acoes" },
       { label: "Criptomoedas", href: "/negociacao/criptomoedas" },
       { label: "Commodities", href: "/negociacao/commodities" },

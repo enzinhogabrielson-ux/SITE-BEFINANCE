@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValue } from "framer-motion";
 import heroBg from "/hero-bg.png";
 
-const cycleWords = ["opções", "ações", "criptomoedas", "forex", "futuros"];
+const cycleWords = ["opções", "ações", "criptomoedas", "commodities", "futuros"];
 
 // Kyvoo-style spring presets
 const springFast   = { type: "spring", stiffness: 400, damping: 40 } as const;
@@ -254,7 +254,7 @@ export default function Hero() {
             }}
           >
             Comece agora com{" "}
-            <strong style={{ color: "#00bfff", fontWeight: 700 }}>R$0</strong>{" "}
+            <strong style={{ color: "#00bfff", fontWeight: 700 }}>$0</strong>{" "}
             na conta demo. Pratique sem riscos e negocie com confiança.
           </motion.p>
 
@@ -268,7 +268,7 @@ export default function Hero() {
             {/* Primary — radial glow (Kyvoo pattern) */}
             <a href="#" className="btn-glow">
               <span className="btn-glow-face">
-                Comece agora com R$0
+                Comece agora com $0
                 <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
                   <path d="M2.5 7H11.5M8 3.5L11.5 7L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>

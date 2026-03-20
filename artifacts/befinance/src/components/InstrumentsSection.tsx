@@ -7,7 +7,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 const cards = [
   {
     title: "Conta demo projetada para praticar",
-    description: "Pratique suas estratégias sem riscos com R$10.000 virtuais. Aprenda no seu ritmo antes de investir de verdade.",
+    description: "Pratique suas estratégias sem riscos com $10.000 virtuais. Aprenda no seu ritmo antes de investir de verdade.",
     cta: "Experimentar agora",
     highlight: true,
     icon: (
@@ -58,11 +58,11 @@ const cards = [
   },
   {
     title: "Você escolhe o valor e a duração de sua negociação",
-    description: "Abra negociações a partir de R$5, com durações a partir de 5 segundos. Total flexibilidade.",
+    description: "Abra negociações a partir de $1, com durações a partir de 5 segundos. Total flexibilidade.",
     cta: "",
     highlight: false,
     stats: [
-      { value: "R$5", label: "Operação mínima" },
+      { value: "$1", label: "Operação mínima" },
       { value: "5s", label: "Duração mínima" },
     ],
     icon: (

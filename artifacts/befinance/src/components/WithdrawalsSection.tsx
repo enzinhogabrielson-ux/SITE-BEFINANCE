@@ -6,7 +6,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 const cards = [
   {
-    title: "Deposite apenas R$50 para começar a negociar",
+    title: "Deposite apenas $10 para começar a negociar",
     description: "Comece com um valor acessível e aumente conforme sua confiança cresce.",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">

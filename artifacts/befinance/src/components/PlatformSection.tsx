@@ -36,7 +36,7 @@ const featureCards = [
       </svg>
     ),
     title: "Conta Demo Grátis",
-    desc: "R$10.000 para treinar sem risco",
+    desc: "$10.000 para treinar sem risco",
   },
   {
     icon: (

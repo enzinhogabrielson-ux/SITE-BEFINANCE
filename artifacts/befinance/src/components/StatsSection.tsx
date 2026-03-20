@@ -5,7 +5,7 @@ const stats = [
   { value: 500000, suffix: "+",   label: "Investidores ativos",  prefix: "" },
   { value: 98,     suffix: "%",   label: "Satisfação dos clientes", prefix: "" },
   { value: 1000,   suffix: "+",   label: "Ativos disponíveis",   prefix: "" },
-  { value: 10,     suffix: " bi", label: "Em volume negociado",  prefix: "R$" },
+  { value: 10,     suffix: " bi", label: "Em volume negociado",  prefix: "$" },
 ];
 
 function CountUp({ target, suffix, prefix }: { target: number; suffix: string; prefix: string }) {

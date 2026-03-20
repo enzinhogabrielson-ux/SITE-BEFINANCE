@@ -17,7 +17,7 @@ const testimonials = [
     location: "Rio de Janeiro, RJ",
     avatar: "AL",
     rating: 5,
-    text: "Comecei a investir há 3 meses pela BeFinance e já me sinto confiante. A conta demo com R$10.000 foi fundamental para aprender sem risco. Os tutoriais são excelentes e a interface é super intuitiva.",
+    text: "Comecei a investir há 3 meses pela BeFinance e já me sinto confiante. A conta demo com $10.000 foi fundamental para aprender sem risco. Os tutoriais são excelentes e a interface é super intuitiva.",
     color: "#0099ff",
   },
   {

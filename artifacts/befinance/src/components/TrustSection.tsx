@@ -83,7 +83,7 @@ const badges = [
 
 const stats = [
   { value: 500, suffix: "K+", prefix: "", label: "Traders ativos" },
-  { value: 10, suffix: "bi+", prefix: "R$", label: "Volume negociado" },
+  { value: 10, suffix: "bi+", prefix: "$", label: "Volume negociado" },
   { value: 98, suffix: "%", prefix: "", label: "Satisfação" },
   { value: 40, suffix: "+", prefix: "", label: "Países" },
 ];

@@ -6,8 +6,7 @@ import { Link, useLocation } from "wouter";
 const megaMenuData: Record<string, { items: { title: string; desc: string; href: string }[] }> = {
   Negociação: {
     items: [
-      { title: "Opções Digitais", desc: "Retornos de até 92% com operações a partir de R$5", href: "/negociacao/opcoes-digitais" },
-      { title: "Forex", desc: "Pares de moedas com spreads a partir de 0.1 pip", href: "/negociacao/forex" },
+      { title: "Opções Digitais", desc: "Retornos de até 92% com operações a partir de $1", href: "/negociacao/opcoes-digitais" },
       { title: "Ações", desc: "Blue chips globais sem comissão", href: "/negociacao/acoes" },
       { title: "Criptomoedas", desc: "Bitcoin, Ethereum e +30 altcoins 24/7", href: "/negociacao/criptomoedas" },
       { title: "Commodities", desc: "Ouro, prata, petróleo e mais", href: "/negociacao/commodities" },
@@ -17,7 +16,7 @@ const megaMenuData: Record<string, { items: { title: string; desc: string; href:
     items: [
       { title: "Trading Web", desc: "Negocie direto do navegador sem downloads", href: "/plataforma/trading-web" },
       { title: "App Mobile", desc: "iOS e Android com notificações push", href: "/plataforma/app-mobile" },
-      { title: "Conta Demo", desc: "R$10.000 virtuais para praticar", href: "/plataforma/conta-demo" },
+      { title: "Conta Demo", desc: "$10.000 virtuais para praticar", href: "/plataforma/conta-demo" },
       { title: "Ferramentas Analíticas", desc: "+50 indicadores técnicos profissionais", href: "/plataforma/ferramentas" },
       { title: "Baixar o App", desc: "Disponível na App Store e Google Play", href: "/plataforma/baixar-app" },
     ],
@@ -76,7 +75,6 @@ const languages = [
 
 const megaIcons: Record<string, React.ReactNode> = {
   "Opções Digitais": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 20L10 12L14 16L20 8M20 8H15M20 8V13" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  "Forex": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2ZM2 12H22M12 2C14.5 4.7 16 8.2 16 12C16 15.8 14.5 19.3 12 22M12 2C9.5 4.7 8 8.2 8 12C8 15.8 9.5 19.3 12 22" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
   "Ações": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 3V21H21M7 14L11 10L15 14L21 8" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
   "Criptomoedas": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7L12 12L22 7L12 2ZM2 17L12 22L22 17M2 12L12 17L22 12" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
   "Commodities": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 8.5L22 9.5L17 14.5L18 21.5L12 18L6 21.5L7 14.5L2 9.5L9 8.5L12 2Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,

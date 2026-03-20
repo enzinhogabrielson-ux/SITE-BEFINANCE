@@ -7,14 +7,14 @@ const blur = { initial: { opacity: 0, filter: "blur(12px)", y: 24 }, animate: { 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const faqs = [
-  { q: "O que é a BeFinance?", a: "A BeFinance é uma corretora digital que permite negociar opções digitais, forex, ações, criptomoedas e commodities. Nossa plataforma é segura, regulamentada e acessível para traders de todos os níveis." },
-  { q: "Qual o depósito mínimo?", a: "O depósito mínimo na BeFinance é de apenas R$10. Você também pode começar com uma conta demo gratuita com R$10.000 virtuais." },
+  { q: "O que é a BeFinance?", a: "A BeFinance é uma corretora digital que permite negociar opções digitais, ações, criptomoedas e commodities. Nossa plataforma é segura, regulamentada e acessível para traders de todos os níveis." },
+  { q: "Qual o depósito mínimo?", a: "O depósito mínimo na BeFinance é de apenas $10. Você também pode começar com uma conta demo gratuita com $10.000 virtuais." },
   { q: "Como faço um depósito?", a: "Aceitamos PIX (processamento instantâneo), boleto bancário, cartão de crédito e transferência bancária. Basta acessar a seção de depósitos na plataforma." },
   { q: "Quanto tempo leva para sacar?", a: "Saques via PIX são processados em até 24 horas. Boleto e transferência bancária podem levar de 1 a 3 dias úteis." },
   { q: "A plataforma é segura?", a: "Sim. Utilizamos criptografia SSL 256-bit, autenticação em dois fatores, e somos regulamentados pela CVM e BACEN. Fundos dos clientes são mantidos em contas segregadas." },
   { q: "Posso negociar pelo celular?", a: "Sim. Nosso app está disponível para iOS e Android, com todas as funcionalidades da versão web." },
   { q: "O que são opções digitais?", a: "Opções digitais são instrumentos financeiros onde você prevê a direção do preço de um ativo em um período determinado. Se sua previsão estiver correta, você recebe um retorno de até 92%." },
-  { q: "Como funciona a conta demo?", a: "A conta demo é gratuita e vem com R$10.000 virtuais. Você pode praticar estratégias sem risco. O saldo é recarregável ilimitadamente." },
+  { q: "Como funciona a conta demo?", a: "A conta demo é gratuita e vem com $10.000 virtuais. Você pode praticar estratégias sem risco. O saldo é recarregável ilimitadamente." },
   { q: "A BeFinance cobra comissões?", a: "Não cobramos comissões na maioria das operações. Nossos ganhos vêm dos spreads competitivos, que estão entre os mais baixos do mercado." },
   { q: "Como verifico minha conta?", a: "Para verificação KYC, envie um documento de identidade (RG ou CNH) e um comprovante de residência recente. O processo leva até 48 horas." },
 ];

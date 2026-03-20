@@ -7,7 +7,6 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 
 const OpcoesDigitais = lazy(() => import("@/pages/negociacao/OpcoesDigitais"));
-const Forex = lazy(() => import("@/pages/negociacao/Forex"));
 const Acoes = lazy(() => import("@/pages/negociacao/Acoes"));
 const Criptomoedas = lazy(() => import("@/pages/negociacao/Criptomoedas"));
 const Commodities = lazy(() => import("@/pages/negociacao/Commodities"));
@@ -47,7 +46,6 @@ function Router() {
         <Route path="/" component={Home} />
 
         <Route path="/negociacao/opcoes-digitais" component={OpcoesDigitais} />
-        <Route path="/negociacao/forex" component={Forex} />
         <Route path="/negociacao/acoes" component={Acoes} />
         <Route path="/negociacao/criptomoedas" component={Criptomoedas} />
         <Route path="/negociacao/commodities" component={Commodities} />
