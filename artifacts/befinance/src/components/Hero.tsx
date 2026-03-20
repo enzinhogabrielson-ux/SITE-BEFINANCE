@@ -103,7 +103,7 @@ export default function Hero() {
         style={{
           right: "clamp(-2%, 1vw, 4%)",
           top: "50%",
-          marginTop: "-4%",
+          marginTop: "-11%",
           width: "clamp(380px, 52vw, 880px)",
           x: sharkXVal,
           y: sharkYVal,
