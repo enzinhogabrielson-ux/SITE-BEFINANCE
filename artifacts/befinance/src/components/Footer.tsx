@@ -1,21 +1,46 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 
 const footerLinks = {
   negociacao: {
     title: "Negociação",
-    links: ["Opções Digitais", "Forex", "Ações", "Criptomoedas", "Commodities"],
+    links: [
+      { label: "Opções Digitais", href: "/negociacao/opcoes-digitais" },
+      { label: "Forex", href: "/negociacao/forex" },
+      { label: "Ações", href: "/negociacao/acoes" },
+      { label: "Criptomoedas", href: "/negociacao/criptomoedas" },
+      { label: "Commodities", href: "/negociacao/commodities" },
+    ],
   },
   plataforma: {
     title: "Plataforma",
-    links: ["Trading Web", "App Mobile", "Conta Demo", "Ferramentas Analíticas", "Baixar o App"],
+    links: [
+      { label: "Trading Web", href: "/plataforma/trading-web" },
+      { label: "App Mobile", href: "/plataforma/app-mobile" },
+      { label: "Conta Demo", href: "/plataforma/conta-demo" },
+      { label: "Ferramentas Analíticas", href: "/plataforma/ferramentas" },
+      { label: "Baixar o App", href: "/plataforma/baixar-app" },
+    ],
   },
   sobre: {
     title: "Sobre",
-    links: ["Sobre nós", "Regulamentação", "Premiações", "Parceiros", "Afiliados"],
+    links: [
+      { label: "Sobre nós", href: "/sobre/sobre-nos" },
+      { label: "Regulamentação", href: "/sobre/regulamentacao" },
+      { label: "Premiações", href: "/sobre/premiacoes" },
+      { label: "Parceiros", href: "/sobre/parceiros" },
+      { label: "Afiliados", href: "/sobre/afiliados" },
+    ],
   },
   ajuda: {
     title: "Ajuda",
-    links: ["Central de Ajuda", "Contato", "Central de Aprendizagem", "FAQ", "Suporte 24/7"],
+    links: [
+      { label: "Central de Ajuda", href: "/ajuda/central-de-ajuda" },
+      { label: "Contato", href: "/ajuda/contato" },
+      { label: "Central de Aprendizagem", href: "/ajuda/central-de-aprendizagem" },
+      { label: "FAQ", href: "/ajuda/faq" },
+      { label: "Suporte 24/7", href: "/ajuda/suporte" },
+    ],
   },
 };
 
@@ -54,6 +79,8 @@ const socialLinks = [
   },
 ];
 
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 export default function Footer() {
   return (
     <footer
@@ -64,15 +91,12 @@ export default function Footer() {
       }}
     >
       <div className="max-w-7xl mx-auto px-6">
-        {/* Top row */}
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 pb-12 border-b"
           style={{ borderColor: "rgba(0,191,255,0.08)" }}>
-          {/* Brand column */}
           <div className="col-span-2">
-            {/* Logo */}
             <div className="mb-5" style={{ overflow: "hidden", height: "50px", width: "250px", position: "relative" }}>
               <img
-                src="/logo-befinance.png"
+                src={`${basePath}/logo-befinance.png`}
                 alt="BeFinance"
                 style={{
                   position: "absolute",
@@ -99,7 +123,6 @@ export default function Footer() {
               A melhor plataforma de trading para investidores que buscam resultados reais no mercado financeiro.
             </p>
 
-            {/* Social links */}
             <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <motion.a
@@ -121,7 +144,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links columns */}
           {Object.entries(footerLinks).map(([key, section]) => (
             <div key={key}>
               <h4
@@ -139,9 +161,9 @@ export default function Footer() {
               </h4>
               <ul className="flex flex-col gap-2.5">
                 {section.links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
                       style={{
                         fontFamily: "'DM Sans','Inter', sans-serif",
                         fontSize: "0.82rem",
@@ -150,11 +172,11 @@ export default function Footer() {
                         letterSpacing: "-0.01em",
                         transition: "color 0.22s cubic-bezier(0.16,1,0.3,1)",
                       }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = "#00bfff")}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(240,248,255,0.45)")}
+                      onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => (e.currentTarget.style.color = "#00bfff")}
+                      onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => (e.currentTarget.style.color = "rgba(240,248,255,0.45)")}
                     >
-                      {link}
-                    </a>
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -162,7 +184,6 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Bottom row */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p style={{
             fontFamily: "'DM Sans','Inter', sans-serif",

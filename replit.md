@@ -73,11 +73,17 @@ BeFinance institutional landing page for a financial trading/broker company focu
 - **Language**: All content in Portuguese (pt-BR)
 - **Style reference**: Olymptrade + kyvoo.io
 
+#### Routing
+- **Router**: wouter with lazy-loaded pages via React.lazy + Suspense
+- **20 internal pages** across 4 categories (Negociação, Plataforma, Sobre, Ajuda)
+- All footer links and mega-menu links use `<Link>` from wouter for SPA navigation
+
 #### Key Components
-- **Navbar**: Institutional nav — Negociação, Plataforma, Sobre, Ajuda + Login + "Comece a negociar" CTA
+- **Navbar**: Mega-menu dropdown (Olymptrade-style) with icons + descriptions for each link. Desktop: hover-triggered full-width dropdown. Mobile: accordion sections.
 - **Hero**: Kyvoo-style wavy bg with holographic shark SVG (`public/TUBASVG.svg`), `mix-blend-mode: screen`, mouse-follow animation using lerp + RAF (NOT useSpring)
 - **MarketTicker**: Live market data strip
-- **TrustSection**: "Capacitando traders" stats + badge grid (Plataforma moderna, Recursos exclusivos, etc.)
+- **TrustSection**: "Capacitando traders" stats + badge grid with CountUp animation on scroll
+- **InternalPageLayout**: Reusable template for all internal pages (badge, title, subtitle, features grid, CTA section)
 - **PlatformSection**: MacBook scroll animation with platform showcase
 - **InstrumentsSection**: Risk-free trading instruments grid (demo account, stop loss, deposits, etc.)
 - **RegulationSection**: Licensing/regulation info (CVM, BACEN, SSL, AML)
@@ -86,9 +92,16 @@ BeFinance institutional landing page for a financial trading/broker company focu
 - **DepositsSection**: Deposit security badges
 - **TestimonialsSection**: User reviews
 - **AwardsSection**: Awards and recognition grid
-- **FAQSection**: Accordion FAQ (id="ajuda")
+- **FAQSection**: Accordion FAQ (home page section)
+- **FAQ Page**: Full standalone FAQ page at /ajuda/faq with animated accordion
 - **CTASection**: Final CTA with "Comece a negociar com confiança"
-- **Footer**: 4-column institutional footer (Negociação, Plataforma, Sobre, Ajuda)
+- **Footer**: 4-column institutional footer with Link components to all internal pages
+
+#### Internal Pages (20 total)
+- **Negociação**: /negociacao/opcoes-digitais, /forex, /acoes, /criptomoedas, /commodities
+- **Plataforma**: /plataforma/trading-web, /app-mobile, /conta-demo, /ferramentas, /baixar-app
+- **Sobre**: /sobre/sobre-nos, /regulamentacao, /premiacoes, /parceiros, /afiliados
+- **Ajuda**: /ajuda/central-de-ajuda, /contato, /central-de-aprendizagem, /faq, /suporte
 
 #### CSS Classes (index.css)
 - `btn-glow`: Primary CTA with spinning conic-gradient border glow
