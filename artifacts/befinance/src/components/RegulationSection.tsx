@@ -1,17 +1,19 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const blur = { initial: { opacity: 0, filter: "blur(12px)", y: 24 }, animate: { opacity: 1, filter: "blur(0px)", y: 0 } };
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const regulators = [
-  { name: "IFMRRC", desc: "International Financial Market Relations Regulation Center" },
-  { name: "FCA", desc: "Financial Conduct Authority" },
-  { name: "SSL", desc: "256-bit encryption" },
-  { name: "AML", desc: "Anti-Money Laundering" },
+const regulatorKeys = [
+  { name: "IFMRRC", descKey: "regulation.ifmrrc" },
+  { name: "FCA", descKey: "regulation.fca" },
+  { name: "SSL", descKey: "regulation.ssl" },
+  { name: "AML", descKey: "regulation.aml" },
 ];
 
 export default function RegulationSection() {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -35,16 +37,15 @@ export default function RegulationSection() {
               className="text-3xl md:text-5xl font-bold mb-6"
               style={{ fontFamily: "'DM Sans',sans-serif", color: "#fff", letterSpacing: "-0.03em", lineHeight: 1.15 }}
             >
-              BeFinance is a licensed and{" "}
-              <span style={{ color: "#00bfff" }}>regulated</span>{" "}
-              online broker
+              {t("regulation.title1")}{" "}
+              <span style={{ color: "#00bfff" }}>{t("regulation.titleHighlight")}</span>{" "}
+              {t("regulation.title2")}
             </h2>
             <p
               className="text-base mb-8"
               style={{ color: "rgba(240,248,255,0.55)", fontFamily: "'Inter',sans-serif", lineHeight: 1.7 }}
             >
-              We operate following the highest regulatory standards in the financial market.
-              Your security is our absolute priority in every operation.
+              {t("regulation.body")}
             </p>
             <a
               href="#"
@@ -56,7 +57,7 @@ export default function RegulationSection() {
                 fontFamily: "'Inter',sans-serif",
               }}
             >
-              Learn more about regulation
+              {t("regulation.cta")}
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path d="M5 3L9 7L5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -69,7 +70,7 @@ export default function RegulationSection() {
             animate={inView ? blur.animate : blur.initial}
             transition={{ duration: 0.8, delay: 0.2, ease }}
           >
-            {regulators.map((reg, i) => (
+            {regulatorKeys.map((reg, i) => (
               <motion.div
                 key={reg.name}
                 className="kyvoo-card rounded-2xl p-6 flex flex-col items-center text-center gap-3"
@@ -94,7 +95,7 @@ export default function RegulationSection() {
                   {reg.name}
                 </span>
                 <span className="text-xs" style={{ color: "rgba(240,248,255,0.5)", fontFamily: "'Inter',sans-serif" }}>
-                  {reg.desc}
+                  {t(reg.descKey)}
                 </span>
               </motion.div>
             ))}

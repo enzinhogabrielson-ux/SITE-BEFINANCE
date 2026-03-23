@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const blur = { initial: { opacity: 0, filter: "blur(12px)", y: 24 }, animate: { opacity: 1, filter: "blur(0px)", y: 0 } };
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -25,9 +26,9 @@ function CountUp({ target, suffix, prefix }: { target: number; suffix: string; p
   return <span ref={ref}>{prefix}{formatted}{suffix}</span>;
 }
 
-const badges = [
+const badgeKeys = [
   {
-    label: "Modern platform",
+    labelKey: "trust.modernPlatform",
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <rect x="2" y="4" width="18" height="13" rx="2.5" stroke="#00bfff" strokeWidth="1.5" />
@@ -37,7 +38,7 @@ const badges = [
     ),
   },
   {
-    label: "Exclusive features",
+    labelKey: "trust.exclusiveFeatures",
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <path d="M11 2L13.5 7.5L19.5 8L15 12.5L16.5 18.5L11 15.5L5.5 18.5L7 12.5L2.5 8L8.5 7.5L11 2Z" stroke="#00bfff" strokeWidth="1.5" strokeLinejoin="round" />
@@ -45,7 +46,7 @@ const badges = [
     ),
   },
   {
-    label: "Easy start",
+    labelKey: "trust.easyStart",
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <circle cx="11" cy="11" r="8.5" stroke="#00bfff" strokeWidth="1.5" />
@@ -54,7 +55,7 @@ const badges = [
     ),
   },
   {
-    label: "24/7 Support",
+    labelKey: "trust.support247",
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <circle cx="11" cy="11" r="8.5" stroke="#00bfff" strokeWidth="1.5" />
@@ -63,7 +64,7 @@ const badges = [
     ),
   },
   {
-    label: "Fast withdrawals",
+    labelKey: "trust.fastWithdrawals",
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <path d="M12 2L6 12H11L10 20L16 10H11L12 2Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -71,7 +72,7 @@ const badges = [
     ),
   },
   {
-    label: "Trusted broker",
+    labelKey: "trust.trustedBroker",
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <path d="M11 2L18 6V11C18 16 15 19.5 11 21C7 19.5 4 16 4 11V6L11 2Z" stroke="#00bfff" strokeWidth="1.5" strokeLinejoin="round" />
@@ -82,13 +83,14 @@ const badges = [
 ];
 
 const stats = [
-  { value: 500, suffix: "K+", prefix: "", label: "Active traders" },
-  { value: 10, suffix: "B+", prefix: "$", label: "Trading volume" },
-  { value: 98, suffix: "%", prefix: "", label: "Satisfaction" },
-  { value: 40, suffix: "+", prefix: "", label: "Countries" },
+  { value: 500, suffix: "K+", prefix: "", labelKey: "trust.stat.traders" },
+  { value: 10, suffix: "B+", prefix: "$", labelKey: "trust.stat.volume" },
+  { value: 98, suffix: "%", prefix: "", labelKey: "trust.stat.satisfaction" },
+  { value: 40, suffix: "+", prefix: "", labelKey: "trust.stat.countries" },
 ];
 
 export default function TrustSection() {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -108,7 +110,7 @@ export default function TrustSection() {
             style={{ background: "rgba(0,191,255,0.08)", border: "1px solid rgba(0,191,255,0.15)" }}
           >
             <span style={{ color: "#00bfff", fontSize: "14px", fontWeight: 600, fontFamily: "'DM Sans',sans-serif" }}>
-              About BeFinance
+              {t("trust.badge")}
             </span>
           </motion.div>
 
@@ -116,25 +118,25 @@ export default function TrustSection() {
             className="text-4xl md:text-6xl font-bold mb-6"
             style={{ fontFamily: "'DM Sans',sans-serif", color: "#fff", letterSpacing: "-0.03em", lineHeight: 1.1 }}
           >
-            A new generation of traders{" "}
+            {t("trust.title1")}{" "}
             <br className="hidden md:block" />
-            is being created.{" "}
+            {t("trust.title2")}{" "}
             <br className="hidden md:block" />
-            And this is just the{" "}
-            <span style={{ color: "#00bfff" }}>beginning.</span>
+            {t("trust.title3")}{" "}
+            <span style={{ color: "#00bfff" }}>{t("trust.title4")}</span>
           </h2>
           <p
             className="text-lg max-w-2xl mx-auto"
             style={{ color: "rgba(240,248,255,0.6)", fontFamily: "'Inter',sans-serif", lineHeight: 1.7 }}
           >
-            Welcome to BeFinance. Evolved to deliver what truly matters: clarity, strategy and control in your operations. Here, you don't trade in the dark.
+            {t("trust.body")}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {badges.map((badge, i) => (
+          {badgeKeys.map((badge, i) => (
             <motion.div
-              key={badge.label}
+              key={badge.labelKey}
               className="flex flex-col items-center gap-3 p-5 rounded-2xl text-center"
               style={{
                 background: "rgba(0,191,255,0.04)",
@@ -152,7 +154,7 @@ export default function TrustSection() {
                 className="text-xs font-medium"
                 style={{ color: "rgba(240,248,255,0.8)", fontFamily: "'Inter',sans-serif" }}
               >
-                {badge.label}
+                {t(badge.labelKey)}
               </span>
             </motion.div>
           ))}
@@ -161,7 +163,7 @@ export default function TrustSection() {
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat) => (
             <motion.div
-              key={stat.label}
+              key={stat.labelKey}
               className="text-center"
               {...blur}
               animate={inView ? blur.animate : blur.initial}
@@ -171,7 +173,7 @@ export default function TrustSection() {
                 <CountUp target={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
               </div>
               <div className="text-sm" style={{ color: "rgba(240,248,255,0.5)", fontFamily: "'Inter',sans-serif" }}>
-                {stat.label}
+                {t(stat.labelKey)}
               </div>
             </motion.div>
           ))}

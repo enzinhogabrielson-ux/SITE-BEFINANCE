@@ -1,29 +1,30 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/i18n/LanguageContext";
 
-const posts = [
+const postDefs = [
   {
-    tag: "Market",
+    tagKey: "blog.post1.tag",
     date: "Mar 15, 2026",
-    title: "S&P 500 hits new all-time high in 2026",
-    excerpt: "The main American index reached a new record, driven by corporate results above expectations and investor confidence in economic growth.",
+    titleKey: "blog.post1.title",
+    excerptKey: "blog.post1.excerpt",
     readTime: "5 min",
     chartPath: "M0 50L30 35L60 42L90 20L120 30L150 10L200 25",
     chartFill: "M0 50L30 35L60 42L90 20L120 30L150 10L200 25L200 60L0 60Z",
   },
   {
-    tag: "Education",
+    tagKey: "blog.post2.tag",
     date: "Mar 12, 2026",
-    title: "How to diversify your portfolio in 2026: complete guide",
-    excerpt: "Learn the best diversification strategies to maximize your returns and protect your assets in different economic scenarios.",
+    titleKey: "blog.post2.title",
+    excerptKey: "blog.post2.excerpt",
     readTime: "8 min",
     chartPath: "M0 45L40 30L80 38L110 20L150 28L200 15",
     chartFill: "M0 45L40 30L80 38L110 20L150 28L200 15L200 60L0 60Z",
   },
   {
-    tag: "Analysis",
+    tagKey: "blog.post3.tag",
     date: "Mar 10, 2026",
-    title: "Commodities on the rise: oil and gold hit records",
-    excerpt: "The commodities market shows strong appreciation in Q1. Understand the macroeconomic factors driving these assets.",
+    titleKey: "blog.post3.title",
+    excerptKey: "blog.post3.excerpt",
     readTime: "6 min",
     chartPath: "M0 40L35 45L70 25L100 35L140 15L175 30L200 20",
     chartFill: "M0 40L35 45L70 25L100 35L140 15L175 30L200 20L200 60L0 60Z",
@@ -31,6 +32,8 @@ const posts = [
 ];
 
 export default function BlogSection() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="blog"
@@ -55,7 +58,7 @@ export default function BlogSection() {
             >
               <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#00bfff" }} />
               <span style={{ color: "#00bfff", fontSize: "0.7rem", fontFamily: "'Inter', sans-serif", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                Blog
+                {t("blog.badge")}
               </span>
             </motion.div>
 
@@ -73,8 +76,8 @@ export default function BlogSection() {
                 lineHeight: 1.2,
               }}
             >
-              Stay updated on the{" "}
-              <span className="shimmer-text">market</span>
+              {t("blog.title")}{" "}
+              <span className="shimmer-text">{t("blog.titleHighlight")}</span>
             </motion.h2>
           </div>
 
@@ -88,7 +91,7 @@ export default function BlogSection() {
             className="flex-shrink-0 flex items-center gap-2 text-sm font-medium"
             style={{ color: "#00bfff", textDecoration: "none", fontFamily: "'Inter', sans-serif" }}
           >
-            View all articles
+            {t("blog.viewAll")}
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -96,10 +99,9 @@ export default function BlogSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Two small cards on top row */}
-          {posts.slice(1).map((post, i) => (
+          {postDefs.slice(1).map((post, i) => (
             <motion.article
-              key={post.title}
+              key={post.titleKey}
               initial={{ opacity: 0, filter: "blur(12px)", y: 28 }}
               whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
               viewport={{ once: true }}
@@ -136,7 +138,7 @@ export default function BlogSection() {
                       letterSpacing: "0.02em",
                     }}
                   >
-                    {post.tag}
+                    {t(post.tagKey)}
                   </span>
                 </div>
               </div>
@@ -148,7 +150,7 @@ export default function BlogSection() {
                 >
                   <span>{post.date}</span>
                   <div style={{ width: "2px", height: "2px", borderRadius: "50%", background: "rgba(255,255,255,0.3)" }} />
-                  <span>{post.readTime} read</span>
+                  <span>{post.readTime} {t("blog.readTime")}</span>
                 </div>
 
                 <h3
@@ -162,7 +164,7 @@ export default function BlogSection() {
                     lineHeight: 1.45,
                   }}
                 >
-                  {post.title}
+                  {t(post.titleKey)}
                 </h3>
 
                 <motion.div
@@ -170,7 +172,7 @@ export default function BlogSection() {
                   style={{ color: "#00bfff", fontFamily: "'Inter', sans-serif" }}
                   whileHover={{ x: 3 }}
                 >
-                  Read more
+                  {t("blog.readMore")}
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path d="M2.5 7H11.5M8 3.5L11.5 7L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -179,7 +181,6 @@ export default function BlogSection() {
             </motion.article>
           ))}
 
-          {/* One large card on bottom, full width */}
           <motion.article
             initial={{ opacity: 0, filter: "blur(12px)", y: 28 }}
             whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
@@ -202,8 +203,8 @@ export default function BlogSection() {
                 />
                 <div className="absolute inset-0 flex items-end justify-center pb-6 px-6 opacity-50 group-hover:opacity-70 transition-opacity duration-300">
                   <svg width="100%" height="80" viewBox="0 0 200 60" fill="none" preserveAspectRatio="none">
-                    <path d={posts[0].chartPath} stroke="#00bfff" strokeWidth="2" fill="none"/>
-                    <path d={posts[0].chartFill} fill="rgba(0,191,255,0.1)"/>
+                    <path d={postDefs[0].chartPath} stroke="#00bfff" strokeWidth="2" fill="none"/>
+                    <path d={postDefs[0].chartFill} fill="rgba(0,191,255,0.1)"/>
                   </svg>
                 </div>
                 <div className="absolute top-4 left-4">
@@ -218,7 +219,7 @@ export default function BlogSection() {
                       letterSpacing: "0.02em",
                     }}
                   >
-                    {posts[0].tag}
+                    {t(postDefs[0].tagKey)}
                   </span>
                 </div>
               </div>
@@ -228,9 +229,9 @@ export default function BlogSection() {
                   className="flex items-center gap-3 mb-3"
                   style={{ color: "rgba(240,248,255,0.38)", fontSize: "0.72rem", fontFamily: "'Inter', sans-serif" }}
                 >
-                  <span>{posts[0].date}</span>
+                  <span>{postDefs[0].date}</span>
                   <div style={{ width: "2px", height: "2px", borderRadius: "50%", background: "rgba(255,255,255,0.3)" }} />
-                  <span>{posts[0].readTime} read</span>
+                  <span>{postDefs[0].readTime} {t("blog.readTime")}</span>
                 </div>
 
                 <h3
@@ -244,7 +245,7 @@ export default function BlogSection() {
                     lineHeight: 1.35,
                   }}
                 >
-                  {posts[0].title}
+                  {t(postDefs[0].titleKey)}
                 </h3>
 
                 <p
@@ -256,7 +257,7 @@ export default function BlogSection() {
                     marginBottom: "1.2rem",
                   }}
                 >
-                  {posts[0].excerpt}
+                  {t(postDefs[0].excerptKey)}
                 </p>
 
                 <motion.div
@@ -264,7 +265,7 @@ export default function BlogSection() {
                   style={{ color: "#00bfff", fontFamily: "'Inter', sans-serif" }}
                   whileHover={{ x: 3 }}
                 >
-                  Read more
+                  {t("blog.readMore")}
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path d="M2.5 7H11.5M8 3.5L11.5 7L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>

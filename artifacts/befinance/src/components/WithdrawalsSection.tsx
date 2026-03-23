@@ -1,13 +1,14 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const blur = { initial: { opacity: 0, filter: "blur(12px)", y: 24 }, animate: { opacity: 1, filter: "blur(0px)", y: 0 } };
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const cards = [
+const cardDefs = [
   {
-    title: "Deposit just $10 to start trading",
-    description: "Start with an accessible amount and increase as your confidence grows.",
+    titleKey: "withdrawals.card1.title",
+    descKey: "withdrawals.card1.desc",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <circle cx="20" cy="20" r="16" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.06)" />
@@ -16,8 +17,8 @@ const cards = [
     ),
   },
   {
-    title: "Assets available 24/7",
-    description: "Trade global assets without interruption, at any time of day.",
+    titleKey: "withdrawals.card2.title",
+    descKey: "withdrawals.card2.desc",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <circle cx="20" cy="20" r="16" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.06)" />
@@ -26,8 +27,8 @@ const cards = [
     ),
   },
   {
-    title: "Profitability up to 92%",
-    description: "Maximize your gains with competitive returns on every successful trade.",
+    titleKey: "withdrawals.card3.title",
+    descKey: "withdrawals.card3.desc",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <path d="M8 32L16 22L22 28L32 14" stroke="#00bfff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -37,8 +38,8 @@ const cards = [
     ),
   },
   {
-    title: "Personal trading advice from experts",
-    description: "Get personalized guidance from experienced traders to improve your strategies.",
+    titleKey: "withdrawals.card4.title",
+    descKey: "withdrawals.card4.desc",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <circle cx="20" cy="14" r="7" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.06)" />
@@ -50,6 +51,7 @@ const cards = [
 ];
 
 export default function WithdrawalsSection() {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -68,9 +70,9 @@ export default function WithdrawalsSection() {
             className="text-3xl md:text-5xl font-bold mb-4"
             style={{ fontFamily: "'DM Sans',sans-serif", color: "#fff", letterSpacing: "-0.03em", lineHeight: 1.15 }}
           >
-            <span style={{ color: "#00bfff" }}>Fast</span> withdrawals{" "}
+            {t("withdrawals.title1")}<span style={{ color: "#00bfff" }}>{t("withdrawals.titleHighlight")}</span> {t("withdrawals.title2")}{" "}
             <br className="hidden md:block" />
-            with local payment options
+            {t("withdrawals.title3")}
           </h2>
         </motion.div>
 
@@ -81,13 +83,13 @@ export default function WithdrawalsSection() {
           animate={inView ? blur.animate : blur.initial}
           transition={{ duration: 0.8, delay: 0.1, ease }}
         >
-          A smooth trading experience
+          {t("withdrawals.body")}
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {cards.map((card, i) => (
+          {cardDefs.map((card, i) => (
             <motion.div
-              key={card.title}
+              key={card.titleKey}
               className="kyvoo-card rounded-2xl p-7 flex gap-5 items-start"
               style={{
                 background: "rgba(0,191,255,0.04)",
@@ -103,13 +105,13 @@ export default function WithdrawalsSection() {
                   className="text-lg font-semibold mb-2"
                   style={{ color: "#fff", fontFamily: "'DM Sans',sans-serif", letterSpacing: "-0.02em", lineHeight: 1.3 }}
                 >
-                  {card.title}
+                  {t(card.titleKey)}
                 </h3>
                 <p
                   className="text-sm"
                   style={{ color: "rgba(240,248,255,0.5)", fontFamily: "'Inter',sans-serif", lineHeight: 1.6 }}
                 >
-                  {card.description}
+                  {t(card.descKey)}
                 </p>
               </div>
             </motion.div>
@@ -122,9 +124,15 @@ export default function WithdrawalsSection() {
           animate={inView ? blur.animate : blur.initial}
           transition={{ duration: 0.8, delay: 0.5, ease }}
         >
-          {["Wire Transfer", "Credit Card", "Debit Card", "PayPal", "Skrill"].map((method) => (
+          {[
+            { key: "withdrawals.method.wire" },
+            { key: "withdrawals.method.credit" },
+            { key: "withdrawals.method.debit" },
+            { key: "withdrawals.method.paypal" },
+            { key: "withdrawals.method.skrill" },
+          ].map((method) => (
             <div
-              key={method}
+              key={method.key}
               className="flex items-center gap-2 px-4 py-2 rounded-full"
               style={{
                 background: "rgba(0,191,255,0.06)",
@@ -136,7 +144,7 @@ export default function WithdrawalsSection() {
                 <circle cx="8" cy="8" r="6.5" stroke="#00bfff" strokeWidth="1" opacity="0.5" />
               </svg>
               <span className="text-xs font-medium" style={{ color: "rgba(240,248,255,0.7)", fontFamily: "'Inter',sans-serif" }}>
-                {method}
+                {t(method.key)}
               </span>
             </div>
           ))}

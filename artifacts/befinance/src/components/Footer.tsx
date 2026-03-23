@@ -1,39 +1,40 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { useLanguage } from "@/i18n/LanguageContext";
 
-const footerLinks = {
+const footerLinkDefs = {
   trading: {
-    title: "Trading",
+    titleKey: "nav.trading",
     links: [
-      { label: "Digital Options", href: "/negociacao/opcoes-digitais" },
-      { label: "Stocks", href: "/negociacao/acoes" },
-      { label: "Commodities", href: "/negociacao/commodities" },
+      { labelKey: "nav.trading.digitalOptions", href: "/negociacao/opcoes-digitais" },
+      { labelKey: "nav.trading.stocks", href: "/negociacao/acoes" },
+      { labelKey: "nav.trading.commodities", href: "/negociacao/commodities" },
     ],
   },
   platform: {
-    title: "Platform",
+    titleKey: "nav.platform",
     links: [
-      { label: "Demo Account", href: "/plataforma/conta-demo" },
-      { label: "Web Trading", href: "/plataforma/trading-web" },
-      { label: "Analytical Tools", href: "/plataforma/ferramentas" },
-      { label: "Download App", href: "/plataforma/baixar-app" },
+      { labelKey: "nav.platform.demoAccount", href: "/plataforma/conta-demo" },
+      { labelKey: "nav.platform.webTrading", href: "/plataforma/trading-web" },
+      { labelKey: "nav.platform.analyticalTools", href: "/plataforma/ferramentas" },
+      { labelKey: "nav.platform.downloadApp", href: "/plataforma/baixar-app" },
     ],
   },
   about: {
-    title: "About",
+    titleKey: "nav.about",
     links: [
-      { label: "About Us", href: "/sobre/sobre-nos" },
-      { label: "Regulation", href: "/sobre/regulamentacao" },
-      { label: "Affiliates", href: "/sobre/afiliados" },
+      { labelKey: "nav.about.aboutUs", href: "/sobre/sobre-nos" },
+      { labelKey: "nav.about.regulation", href: "/sobre/regulamentacao" },
+      { labelKey: "nav.about.affiliates", href: "/sobre/afiliados" },
     ],
   },
   help: {
-    title: "Help",
+    titleKey: "nav.help",
     links: [
-      { label: "Help Center", href: "/ajuda/central-de-ajuda" },
-      { label: "Contact", href: "/ajuda/contato" },
-      { label: "FAQ", href: "/ajuda/faq" },
-      { label: "24/7 Support", href: "/ajuda/suporte" },
+      { labelKey: "nav.help.helpCenter", href: "/ajuda/central-de-ajuda" },
+      { labelKey: "nav.help.contact", href: "/ajuda/contato" },
+      { labelKey: "nav.help.faq", href: "/ajuda/faq" },
+      { labelKey: "nav.help.support", href: "/ajuda/suporte" },
     ],
   },
 };
@@ -76,6 +77,14 @@ const socialLinks = [
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 export default function Footer() {
+  const { t } = useLanguage();
+
+  const bottomLinks = [
+    { labelKey: "footer.privacy" },
+    { labelKey: "footer.terms" },
+    { labelKey: "footer.cookies" },
+  ];
+
   return (
     <footer
       className="relative pt-16 pb-8 overflow-hidden"
@@ -114,7 +123,7 @@ export default function Footer() {
               marginBottom: "1.5rem",
               maxWidth: "240px",
             }}>
-              The best trading platform for investors seeking real results in financial markets.
+              {t("footer.desc")}
             </p>
 
             <div className="flex gap-3">
@@ -138,7 +147,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {Object.entries(footerLinks).map(([key, section]) => (
+          {Object.entries(footerLinkDefs).map(([key, section]) => (
             <div key={key}>
               <h4
                 style={{
@@ -151,11 +160,11 @@ export default function Footer() {
                   textTransform: "uppercase",
                 }}
               >
-                {section.title}
+                {t(section.titleKey)}
               </h4>
               <ul className="flex flex-col gap-2.5">
                 {section.links.map((link) => (
-                  <li key={link.label}>
+                  <li key={link.labelKey}>
                     <Link
                       href={link.href}
                       style={{
@@ -169,7 +178,7 @@ export default function Footer() {
                       onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => (e.currentTarget.style.color = "#00bfff")}
                       onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => (e.currentTarget.style.color = "rgba(240,248,255,0.45)")}
                     >
-                      {link.label}
+                      {t(link.labelKey)}
                     </Link>
                   </li>
                 ))}
@@ -185,13 +194,13 @@ export default function Footer() {
             letterSpacing: "-0.01em",
             color: "rgba(240,248,255,0.3)",
           }}>
-            © 2026 BeFinance. All rights reserved. Trading involves risk. Read our terms.
+            {t("footer.copyright")}
           </p>
 
           <div className="flex gap-6">
-            {["Privacy Policy", "Terms of Use", "Cookies"].map((item) => (
+            {bottomLinks.map((item) => (
               <a
-                key={item}
+                key={item.labelKey}
                 href="#"
                 style={{
                   fontFamily: "'DM Sans','Inter', sans-serif",
@@ -204,7 +213,7 @@ export default function Footer() {
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#00bfff")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(240,248,255,0.3)")}
               >
-                {item}
+                {t(item.labelKey)}
               </a>
             ))}
           </div>

@@ -1,13 +1,14 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const blur = { initial: { opacity: 0, filter: "blur(12px)", y: 24 }, animate: { opacity: 1, filter: "blur(0px)", y: 0 } };
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const features = [
+const featureDefs = [
   {
-    title: "Round-the-clock support in your language",
-    description: "24/7 support with financial market specialists ready to help you at any time.",
+    titleKey: "confidence.card1.title",
+    descKey: "confidence.card1.desc",
     span: "lg:col-span-2",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -19,8 +20,8 @@ const features = [
     ),
   },
   {
-    title: "Trading signals to identify profitable trends",
-    description: "Receive real-time alerts on the best market opportunities.",
+    titleKey: "confidence.card2.title",
+    descKey: "confidence.card2.desc",
     span: "",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -31,10 +32,10 @@ const features = [
     ),
   },
   {
-    title: "Ready-to-use trading strategies",
-    description: "Expert-tested strategies, ready to apply in your operations.",
+    titleKey: "confidence.card3.title",
+    descKey: "confidence.card3.desc",
     span: "",
-    cta: "Try for free",
+    ctaKey: "confidence.card3.cta",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <rect x="6" y="8" width="28" height="24" rx="4" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.06)" />
@@ -48,6 +49,7 @@ const features = [
 ];
 
 export default function TradingConfidenceSection() {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -66,16 +68,16 @@ export default function TradingConfidenceSection() {
             className="text-3xl md:text-5xl font-bold mb-4"
             style={{ fontFamily: "'DM Sans',sans-serif", color: "#fff", letterSpacing: "-0.03em", lineHeight: 1.15 }}
           >
-            On the path to{" "}
+            {t("confidence.title1")}{" "}
             <br className="hidden md:block" />
-            <span style={{ color: "#00bfff" }}>confident trading</span>
+            <span style={{ color: "#00bfff" }}>{t("confidence.titleHighlight")}</span>
           </h2>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-          {features.map((f, i) => (
+          {featureDefs.map((f, i) => (
             <motion.div
-              key={f.title}
+              key={f.titleKey}
               className={`kyvoo-card rounded-2xl p-7 flex flex-col gap-4 ${i === 0 ? "lg:col-span-3" : ""}`}
               style={{
                 background: i === 0
@@ -92,21 +94,21 @@ export default function TradingConfidenceSection() {
                 className="text-xl font-semibold"
                 style={{ color: "#fff", fontFamily: "'DM Sans',sans-serif", letterSpacing: "-0.02em", lineHeight: 1.3 }}
               >
-                {f.title}
+                {t(f.titleKey)}
               </h3>
               <p
                 className="text-sm"
                 style={{ color: "rgba(240,248,255,0.55)", fontFamily: "'Inter',sans-serif", lineHeight: 1.6 }}
               >
-                {f.description}
+                {t(f.descKey)}
               </p>
-              {f.cta && (
+              {f.ctaKey && (
                 <a
                   href="#"
                   className="inline-flex items-center gap-1 text-sm font-medium mt-auto"
                   style={{ color: "#00bfff", fontFamily: "'Inter',sans-serif" }}
                 >
-                  {f.cta}
+                  {t(f.ctaKey)}
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path d="M5 3L9 7L5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>

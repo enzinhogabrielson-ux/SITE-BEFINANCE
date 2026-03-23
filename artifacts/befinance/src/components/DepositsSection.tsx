@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const expo = { type: "tween", duration: 0.85, ease: [0.16, 1, 0.3, 1] } as const;
 
 const methods = [
   {
-    name: "Wire Transfer",
-    detail: "Bank transfer",
+    nameKey: "deposits.wireTransfer",
+    detailKey: "deposits.wireTransfer.detail",
     amount: "$ 50",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -18,8 +19,9 @@ const methods = [
     color: "#00bfff",
   },
   {
+    nameKey: "",
     name: "Visa",
-    detail: "Credit/Debit",
+    detailKey: "deposits.visa.detail",
     amount: "$ 10",
     icon: (
       <svg width="36" height="18" viewBox="0 0 36 18" fill="none">
@@ -30,8 +32,9 @@ const methods = [
     iconBg: "#e8eaf6",
   },
   {
+    nameKey: "",
     name: "Mastercard",
-    detail: "Credit/Debit",
+    detailKey: "deposits.mastercard.detail",
     amount: "$ 10",
     icon: (
       <svg width="32" height="24" viewBox="0 0 32 24" fill="none">
@@ -43,8 +46,9 @@ const methods = [
     color: "#f79e1b",
   },
   {
+    nameKey: "",
     name: "PayPal",
-    detail: "PayPal Account",
+    detailKey: "deposits.paypal.detail",
     amount: "$ 30",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -55,8 +59,9 @@ const methods = [
     color: "#003087",
   },
   {
+    nameKey: "",
     name: "Skrill",
-    detail: "E-wallet",
+    detailKey: "deposits.skrill.detail",
     amount: "$ 20",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -67,8 +72,9 @@ const methods = [
     color: "#862165",
   },
   {
+    nameKey: "",
     name: "Neteller",
-    detail: "E-wallet",
+    detailKey: "deposits.neteller.detail",
     amount: "$ 10",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -81,6 +87,8 @@ const methods = [
 ];
 
 export default function DepositsSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative py-28 overflow-hidden">
       <div className="absolute inset-0"
@@ -100,8 +108,8 @@ export default function DepositsSection() {
             className="inline-flex justify-center mb-5"
           >
             <div className="hero-badge">
-              <span className="badge-tag">Payments</span>
-              <span className="badge-text">Fast deposits and withdrawals</span>
+              <span className="badge-tag">{t("deposits.badge")}</span>
+              <span className="badge-text">{t("deposits.badgeText")}</span>
             </div>
           </motion.div>
 
@@ -116,8 +124,8 @@ export default function DepositsSection() {
               color: "#fff", letterSpacing: "-0.035em", marginBottom: "1rem",
             }}
           >
-            Deposits and withdrawals{" "}
-            <span className="shimmer-text">fast and secure</span>
+            {t("deposits.title")}{" "}
+            <span className="shimmer-text">{t("deposits.titleHighlight")}</span>
           </motion.h2>
 
           <motion.p
@@ -130,14 +138,14 @@ export default function DepositsSection() {
               color: "rgba(240,248,255,0.6)", maxWidth: "460px", margin: "0 auto", lineHeight: 1.65, letterSpacing: "-0.01em",
             }}
           >
-            Choose from multiple payment methods with instant processing and no hidden fees.
+            {t("deposits.body")}
           </motion.p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
           {methods.map((method, i) => (
             <motion.div
-              key={method.name}
+              key={method.name || method.nameKey}
               initial={{ opacity: 0, filter: "blur(12px)", y: 24 }}
               whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
               viewport={{ once: true }}
@@ -150,15 +158,15 @@ export default function DepositsSection() {
               }}
             >
               <div className="w-12 h-12 rounded-xl flex items-center justify-center"
-                style={{ background: method.iconBg ?? "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                style={{ background: (method as any).iconBg ?? "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}>
                 {method.icon}
               </div>
               <div className="text-center">
                 <p style={{ fontFamily: "'DM Sans','Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: "0.85rem", color: "#fff", letterSpacing: "-0.02em" }}>
-                  {method.name}
+                  {method.nameKey ? t(method.nameKey) : method.name}
                 </p>
                 <p style={{ fontFamily: "'DM Sans','Inter',sans-serif", fontSize: "0.7rem", color: "rgba(240,248,255,0.4)", letterSpacing: "-0.01em" }}>
-                  {method.detail}
+                  {t(method.detailKey)}
                 </p>
               </div>
               <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full"
@@ -186,7 +194,7 @@ export default function DepositsSection() {
                   <path d="M4.5 9H11.5L11 15H5L4.5 9Z" fill="#FF6B35" opacity="0.7" />
                 </svg>
               ),
-              text: "Instant deposit processing"
+              textKey: "deposits.badge1"
             },
             {
               icon: (
@@ -195,7 +203,7 @@ export default function DepositsSection() {
                   <path d="M6 7V5C6 3.9 6.9 3 8 3C9.1 3 10 3.9 10 5V7" stroke="#00BFFF" strokeWidth="1.2" strokeLinecap="round" />
                 </svg>
               ),
-              text: "SSL 256-bit on all transactions"
+              textKey: "deposits.badge2"
             },
             {
               icon: (
@@ -204,7 +212,7 @@ export default function DepositsSection() {
                   <path d="M5 11L8 14L11 11" stroke="#2ECC71" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               ),
-              text: "Withdrawal within 24 hours"
+              textKey: "deposits.badge3"
             },
             {
               icon: (
@@ -213,15 +221,15 @@ export default function DepositsSection() {
                   <text x="8" y="10" fontSize="10" fontWeight="700" textAnchor="middle" fill="#0066FF" fontFamily="Arial, sans-serif">0</text>
                 </svg>
               ),
-              text: "Zero deposit fees"
+              textKey: "deposits.badge4"
             },
           ].map((b) => (
-            <div key={b.text} className="flex items-center gap-2">
+            <div key={b.textKey} className="flex items-center gap-2">
               <div className="w-5 h-5 flex items-center justify-center">
                 {b.icon}
               </div>
               <span style={{ fontFamily: "'DM Sans','Inter',sans-serif", fontSize: "0.82rem", color: "rgba(240,248,255,0.5)", letterSpacing: "-0.01em" }}>
-                {b.text}
+                {t(b.textKey)}
               </span>
             </div>
           ))}

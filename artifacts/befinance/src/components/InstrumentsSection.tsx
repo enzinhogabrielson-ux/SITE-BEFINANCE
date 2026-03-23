@@ -1,14 +1,15 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const blur = { initial: { opacity: 0, filter: "blur(12px)", y: 24 }, animate: { opacity: 1, filter: "blur(0px)", y: 0 } };
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const cards = [
+const cardDefs = [
   {
-    title: "Demo account designed for practice",
-    description: "Practice your strategies risk-free with $10,000 in virtual funds. Learn at your own pace before investing real money.",
-    cta: "Try now",
+    titleKey: "instruments.card1.title",
+    descKey: "instruments.card1.desc",
+    ctaKey: "instruments.card1.cta",
     highlight: true,
     icon: (
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -19,9 +20,9 @@ const cards = [
     ),
   },
   {
-    title: "Risk-free trading lets you trade with confidence",
-    description: "Test your strategies in a safe environment. No financial risk, with real market data.",
-    cta: "Learn more",
+    titleKey: "instruments.card2.title",
+    descKey: "instruments.card2.desc",
+    ctaKey: "instruments.card2.cta",
     highlight: false,
     icon: (
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -31,9 +32,9 @@ const cards = [
     ),
   },
   {
-    title: "Stop Loss / Take Profit close trades on your terms",
-    description: "Set automatic profit and loss limits. Protect your investments even when you're offline.",
-    cta: "Learn more",
+    titleKey: "instruments.card3.title",
+    descKey: "instruments.card3.desc",
+    ctaKey: "instruments.card3.cta",
     highlight: false,
     icon: (
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -44,9 +45,9 @@ const cards = [
     ),
   },
   {
-    title: "Negative balance protection",
-    description: "You never lose more than the amount invested in the operation. Your account is always protected.",
-    cta: "Learn more",
+    titleKey: "instruments.card4.title",
+    descKey: "instruments.card4.desc",
+    ctaKey: "instruments.card4.cta",
     highlight: false,
     icon: (
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -57,14 +58,11 @@ const cards = [
     ),
   },
   {
-    title: "You choose the amount and duration of your trade",
-    description: "Open trades starting from $1, with durations from 5 seconds. Total flexibility.",
-    cta: "",
+    titleKey: "instruments.card5.title",
+    descKey: "instruments.card5.desc",
+    ctaKey: "",
     highlight: false,
-    stats: [
-      { value: "$1", label: "Minimum trade" },
-      { value: "5s", label: "Minimum duration" },
-    ],
+    hasStats: true,
     icon: (
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
         <circle cx="24" cy="24" r="18" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.06)" />
@@ -73,9 +71,9 @@ const cards = [
     ),
   },
   {
-    title: "Insured deposits",
-    description: "Your funds are kept in segregated and insured accounts. Maximum protection for your capital.",
-    cta: "Learn more",
+    titleKey: "instruments.card6.title",
+    descKey: "instruments.card6.desc",
+    ctaKey: "instruments.card6.cta",
     highlight: false,
     icon: (
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -89,6 +87,7 @@ const cards = [
 ];
 
 export default function InstrumentsSection() {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -107,20 +106,20 @@ export default function InstrumentsSection() {
             className="text-3xl md:text-5xl font-bold mb-4"
             style={{ fontFamily: "'DM Sans',sans-serif", color: "#fff", letterSpacing: "-0.03em", lineHeight: 1.15 }}
           >
-            Explore trading{" "}
+            {t("instruments.title1")}{" "}
             <br className="hidden md:block" />
-            with{" "}
-            <span style={{ color: "#00bfff" }}>risk-free</span> instruments
+            {t("instruments.title2")}{" "}
+            <span style={{ color: "#00bfff" }}>{t("instruments.titleHighlight")}</span> {t("instruments.title3")}
           </h2>
           <p className="text-base max-w-xl mx-auto" style={{ color: "rgba(240,248,255,0.55)", fontFamily: "'Inter',sans-serif" }}>
-            Discover the perfect combination of attention, reliability and usability
+            {t("instruments.body")}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {cards.map((card, i) => (
+          {cardDefs.map((card, i) => (
             <motion.div
-              key={card.title}
+              key={card.titleKey}
               className={`kyvoo-card rounded-2xl p-6 flex flex-col gap-4 ${card.highlight ? "md:col-span-2 lg:col-span-1" : ""}`}
               style={{
                 background: card.highlight
@@ -139,31 +138,33 @@ export default function InstrumentsSection() {
                 className="text-lg font-semibold"
                 style={{ color: "#fff", fontFamily: "'DM Sans',sans-serif", letterSpacing: "-0.02em", lineHeight: 1.3 }}
               >
-                {card.title}
+                {t(card.titleKey)}
               </h3>
               <p
                 className="text-sm flex-1"
                 style={{ color: "rgba(240,248,255,0.55)", fontFamily: "'Inter',sans-serif", lineHeight: 1.6 }}
               >
-                {card.description}
+                {t(card.descKey)}
               </p>
-              {card.stats && (
+              {card.hasStats && (
                 <div className="flex gap-6 mt-2">
-                  {card.stats.map((s) => (
-                    <div key={s.label}>
-                      <div className="text-2xl font-bold" style={{ color: "#00bfff", fontFamily: "'DM Sans',sans-serif" }}>{s.value}</div>
-                      <div className="text-xs" style={{ color: "rgba(240,248,255,0.45)" }}>{s.label}</div>
-                    </div>
-                  ))}
+                  <div>
+                    <div className="text-2xl font-bold" style={{ color: "#00bfff", fontFamily: "'DM Sans',sans-serif" }}>$1</div>
+                    <div className="text-xs" style={{ color: "rgba(240,248,255,0.45)" }}>{t("instruments.card5.stat1")}</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold" style={{ color: "#00bfff", fontFamily: "'DM Sans',sans-serif" }}>5s</div>
+                    <div className="text-xs" style={{ color: "rgba(240,248,255,0.45)" }}>{t("instruments.card5.stat2")}</div>
+                  </div>
                 </div>
               )}
-              {card.cta && (
+              {card.ctaKey && (
                 <a
                   href="#"
                   className="inline-flex items-center gap-1 text-sm font-medium mt-auto"
                   style={{ color: "#00bfff", fontFamily: "'Inter',sans-serif" }}
                 >
-                  {card.cta}
+                  {t(card.ctaKey)}
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path d="M5 3L9 7L5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>

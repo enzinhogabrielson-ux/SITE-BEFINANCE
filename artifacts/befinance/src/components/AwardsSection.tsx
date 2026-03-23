@@ -1,19 +1,21 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const blur = { initial: { opacity: 0, filter: "blur(12px)", y: 24 }, animate: { opacity: 1, filter: "blur(0px)", y: 0 } };
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const awards = [
-  { year: "2024", title: "Best Trading Platform" },
-  { year: "2024", title: "Most Trusted Broker" },
-  { year: "2023", title: "Best Trading Experience" },
-  { year: "2023", title: "Broker with Best Support" },
-  { year: "2023", title: "Best Mobile Platform" },
-  { year: "2022", title: "Innovative Broker of the Year" },
+const awardDefs = [
+  { year: "2024", titleKey: "awards.a1" },
+  { year: "2024", titleKey: "awards.a2" },
+  { year: "2023", titleKey: "awards.a3" },
+  { year: "2023", titleKey: "awards.a4" },
+  { year: "2023", titleKey: "awards.a5" },
+  { year: "2022", titleKey: "awards.a6" },
 ];
 
 export default function AwardsSection() {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -44,19 +46,19 @@ export default function AwardsSection() {
               className="text-3xl md:text-4xl font-bold mb-3"
               style={{ fontFamily: "'DM Sans',sans-serif", color: "#fff", letterSpacing: "-0.03em", lineHeight: 1.15 }}
             >
-              Awards &{" "}
-              <span style={{ color: "#00bfff" }}>recognition</span>
+              {t("awards.title")}{" "}
+              <span style={{ color: "#00bfff" }}>{t("awards.titleHighlight")}</span>
             </h2>
             <p className="text-sm" style={{ color: "rgba(240,248,255,0.5)", fontFamily: "'Inter',sans-serif", lineHeight: 1.6 }}>
-              Globally recognized for excellence in financial services.
+              {t("awards.body")}
             </p>
           </div>
 
           <div className="lg:w-2/3 w-full overflow-hidden">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {awards.map((award, i) => (
+              {awardDefs.map((award, i) => (
                 <motion.div
-                  key={`${award.year}-${award.title}`}
+                  key={`${award.year}-${award.titleKey}`}
                   className="rounded-xl p-5 flex flex-col gap-2"
                   style={{
                     background: "rgba(0,191,255,0.04)",
@@ -71,7 +73,7 @@ export default function AwardsSection() {
                     {award.year}
                   </span>
                   <span className="text-sm font-medium" style={{ color: "rgba(240,248,255,0.8)", fontFamily: "'DM Sans',sans-serif" }}>
-                    {award.title}
+                    {t(award.titleKey)}
                   </span>
                 </motion.div>
               ))}

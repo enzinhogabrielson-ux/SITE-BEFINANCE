@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const expo = { type: "tween", duration: 0.85, ease: [0.16, 1, 0.3, 1] } as const;
 
 export default function CTASection() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative py-28 overflow-hidden">
       <div className="absolute inset-0"
@@ -31,8 +34,8 @@ export default function CTASection() {
             className="inline-flex justify-center mb-7"
           >
             <div className="hero-badge">
-              <span className="badge-tag">Free</span>
-              <span className="badge-text">Start now, no credit card required</span>
+              <span className="badge-tag">{t("cta.badge")}</span>
+              <span className="badge-text">{t("cta.badgeText")}</span>
             </div>
           </motion.div>
 
@@ -47,8 +50,8 @@ export default function CTASection() {
               color: "#fff", letterSpacing: "-0.035em", lineHeight: 1.1, marginBottom: "1.2rem",
             }}
           >
-            Start trading{" "}
-            <span className="shimmer-text">with confidence</span>
+            {t("cta.title")}{" "}
+            <span className="shimmer-text">{t("cta.titleHighlight")}</span>
           </motion.h2>
 
           <motion.p
@@ -62,9 +65,9 @@ export default function CTASection() {
               margin: "0 auto 2.5rem", letterSpacing: "-0.01em",
             }}
           >
-            Platform available on any device. Start trading{" "}
-            <strong style={{ color: "#00bfff" }}>right now</strong>{" "}
-            and discover the power of digital options.
+            {t("cta.body1")}{" "}
+            <strong style={{ color: "#00bfff" }}>{t("cta.bodyHighlight")}</strong>{" "}
+            {t("cta.body2")}
           </motion.p>
 
           <motion.div
@@ -76,7 +79,7 @@ export default function CTASection() {
           >
             <a href="#" className="btn-glow">
               <span className="btn-glow-face" style={{ padding: "0 32px" }}>
-                Start trading
+                {t("cta.startTrading")}
                 <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
                   <path d="M2.5 7H11.5M8 3.5L11.5 7L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -93,7 +96,7 @@ export default function CTASection() {
                 background: "rgba(0,191,255,0.04)", height: "50px", letterSpacing: "-0.01em",
               }}
             >
-              Explore the platform
+              {t("cta.explorePlatform")}
             </motion.a>
           </motion.div>
 
@@ -105,15 +108,15 @@ export default function CTASection() {
             className="mt-10 flex flex-wrap justify-center items-center gap-0"
           >
             {[
-              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="2.5" y="5.5" width="8" height="6" rx="1.2" stroke="#00bfff" strokeWidth="1.2"/><path d="M4.5 5.5V4C4.5 3 5.2 2.3 6.5 2.3C7.8 2.3 8.5 3 8.5 4V5.5" stroke="#00bfff" strokeWidth="1.2" strokeLinecap="round"/></svg>, text: "SSL 256-bit" },
-              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L7.8 4.5H11L8.5 6.5L9.5 10L6.5 8L3.5 10L4.5 6.5L2 4.5H5.2L6.5 1Z" stroke="#00bfff" strokeWidth="1.2" strokeLinejoin="round"/></svg>, text: "Regulated" },
-              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M7 1.5L4 7H7L6 11.5L9.5 6H6.5L7 1.5Z" stroke="#00bfff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>, text: "Execution < 1ms" },
-              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="#00bfff" strokeWidth="1.2"/><path d="M1.5 6.5H11.5" stroke="#00bfff" strokeWidth="1.2" strokeLinecap="round"/><path d="M6.5 1.5C6.5 1.5 4.5 3.8 4.5 6.5S6.5 11.5 6.5 11.5M6.5 1.5C6.5 1.5 8.5 3.8 8.5 6.5S6.5 11.5 6.5 11.5" stroke="#00bfff" strokeWidth="1.2"/></svg>, text: "+40 countries" },
+              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="2.5" y="5.5" width="8" height="6" rx="1.2" stroke="#00bfff" strokeWidth="1.2"/><path d="M4.5 5.5V4C4.5 3 5.2 2.3 6.5 2.3C7.8 2.3 8.5 3 8.5 4V5.5" stroke="#00bfff" strokeWidth="1.2" strokeLinecap="round"/></svg>, textKey: "cta.ssl" },
+              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L7.8 4.5H11L8.5 6.5L9.5 10L6.5 8L3.5 10L4.5 6.5L2 4.5H5.2L6.5 1Z" stroke="#00bfff" strokeWidth="1.2" strokeLinejoin="round"/></svg>, textKey: "cta.regulated" },
+              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M7 1.5L4 7H7L6 11.5L9.5 6H6.5L7 1.5Z" stroke="#00bfff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>, textKey: "cta.execution" },
+              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="#00bfff" strokeWidth="1.2"/><path d="M1.5 6.5H11.5" stroke="#00bfff" strokeWidth="1.2" strokeLinecap="round"/><path d="M6.5 1.5C6.5 1.5 4.5 3.8 4.5 6.5S6.5 11.5 6.5 11.5M6.5 1.5C6.5 1.5 8.5 3.8 8.5 6.5S6.5 11.5 6.5 11.5" stroke="#00bfff" strokeWidth="1.2"/></svg>, textKey: "cta.countries" },
             ].map((b, i) => (
-              <div key={b.text} className="flex items-center">
+              <div key={b.textKey} className="flex items-center">
                 <div className="flex items-center gap-1.5"
                   style={{ color: "rgba(240,248,255,0.42)", fontSize: "0.75rem", fontFamily: "'DM Sans','Inter',sans-serif", letterSpacing: "-0.01em" }}>
-                  {b.icon}<span>{b.text}</span>
+                  {b.icon}<span>{t(b.textKey)}</span>
                 </div>
                 {i < 3 && <div className="mx-4 h-3" style={{ width: "1px", background: "rgba(255,255,255,0.1)" }} />}
               </div>

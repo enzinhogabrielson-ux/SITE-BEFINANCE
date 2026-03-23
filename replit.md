@@ -70,7 +70,7 @@ BeFinance institutional landing page for a financial trading/broker company focu
 - **Framework**: React + Vite + Tailwind CSS + Framer Motion
 - **Fonts**: DM Sans (headings) + Inter (body/nav) via Google Fonts
 - **Colors**: Dark background `#040d18`, cyan accent `#00bfff`
-- **Language**: All content in English (en-US). Language switcher (PT/EN/ES) exists in Navbar but translations not wired.
+- **Language**: Full i18n support (EN/PT/ES) via React Context. Language switcher in Navbar with flag icons (US/BR/ES). All 14 home page components use `useLanguage()` hook + `t('key')` for translation. Translation keys stored in `src/i18n/translations.ts` (~840 lines). Context provider in `src/i18n/LanguageContext.tsx`.
 - **Style reference**: Olymptrade + kyvoo.io
 - **Currency**: USD ($). Minimum deposit $10, demo account $10,000, minimum operation $1
 - **Scope**: Options Binary (O.B.) trading only. NO Forex, NO Crypto.

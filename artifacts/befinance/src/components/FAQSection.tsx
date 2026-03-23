@@ -1,36 +1,20 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const expo = { type: "tween", duration: 0.85, ease: [0.16, 1, 0.3, 1] } as const;
 
-const faqs = [
-  {
-    q: "What is BeFinance and how does it work?",
-    a: "BeFinance is a regulated trading platform that allows you to invest in stocks, indices, ETFs, commodities and over 1,000 assets. After creating your free account, you receive $10,000 in a training account to practice risk-free before investing real money.",
-  },
-  {
-    q: "Do I need experience to trade on BeFinance?",
-    a: "Not at all! Our platform was designed for beginners and professionals alike. We have integrated tutorials, a library with over 200 hours of educational content, live webinars with experts and automatic analysis tools to guide you in every decision.",
-  },
-  {
-    q: "Is BeFinance a safe and regulated platform?",
-    a: "Yes. We are fully regulated and compliant with international financial standards. We use SSL 256-bit encryption, two-factor authentication and account segregation to ensure maximum protection of your funds.",
-  },
-  {
-    q: "What is the minimum amount to start trading?",
-    a: "You can start with just $10 on BeFinance. We don't require a high minimum deposit — we democratize access to financial markets so anyone can invest. We operate with 0% commission and the lowest spreads in the market.",
-  },
-  {
-    q: "Can I withdraw my profits whenever I want?",
-    a: "Yes, you can request withdrawals at any time without bureaucracy. We process withdrawals within 24 hours via wire transfer, credit/debit card or e-wallets. There are no hidden fees or waiting periods for withdrawals.",
-  },
-  {
-    q: "What assets can I trade on BeFinance?",
-    a: "We offer over 1,000 assets including: international stocks (NYSE, NASDAQ, LSE), ETFs, commodities (gold, oil, silver), global indices and futures contracts. All on a single platform.",
-  },
+const faqKeys = [
+  { qKey: "faq.q1", aKey: "faq.a1" },
+  { qKey: "faq.q2", aKey: "faq.a2" },
+  { qKey: "faq.q3", aKey: "faq.a3" },
+  { qKey: "faq.q4", aKey: "faq.a4" },
+  { qKey: "faq.q5", aKey: "faq.a5" },
+  { qKey: "faq.q6", aKey: "faq.a6" },
 ];
 
 export default function FAQSection() {
+  const { t } = useLanguage();
   const [open, setOpen] = useState<number | null>(null);
 
   return (
@@ -50,8 +34,8 @@ export default function FAQSection() {
             className="inline-flex justify-center mb-5"
           >
             <div className="hero-badge">
-              <span className="badge-tag">FAQ</span>
-              <span className="badge-text">Frequently asked questions</span>
+              <span className="badge-tag">{t("faq.badge")}</span>
+              <span className="badge-text">{t("faq.badgeText")}</span>
             </div>
           </motion.div>
 
@@ -66,8 +50,8 @@ export default function FAQSection() {
               color: "#fff", letterSpacing: "-0.035em", marginBottom: "1rem",
             }}
           >
-            Frequently{" "}
-            <span className="shimmer-text">asked questions</span>
+            {t("faq.title")}{" "}
+            <span className="shimmer-text">{t("faq.titleHighlight")}</span>
           </motion.h2>
 
           <motion.p
@@ -80,12 +64,12 @@ export default function FAQSection() {
               color: "rgba(240,248,255,0.6)", maxWidth: "440px", margin: "0 auto", lineHeight: 1.65, letterSpacing: "-0.01em",
             }}
           >
-            Find answers to the most common questions about BeFinance.
+            {t("faq.body")}
           </motion.p>
         </div>
 
         <div className="flex flex-col gap-3">
-          {faqs.map((faq, i) => (
+          {faqKeys.map((faq, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}
@@ -111,7 +95,7 @@ export default function FAQSection() {
                   letterSpacing: "-0.02em", lineHeight: 1.4,
                   transition: "color 0.2s ease",
                 }}>
-                  {faq.q}
+                  {t(faq.qKey)}
                 </span>
                 <motion.div
                   animate={{ rotate: open === i ? 45 : 0 }}
@@ -147,7 +131,7 @@ export default function FAQSection() {
                         lineHeight: 1.7,
                         letterSpacing: "-0.01em",
                       }}>
-                        {faq.a}
+                        {t(faq.aKey)}
                       </p>
                     </div>
                   </motion.div>
@@ -165,7 +149,7 @@ export default function FAQSection() {
           className="text-center mt-12"
         >
           <p style={{ fontFamily: "'DM Sans','Inter',sans-serif", fontSize: "0.9rem", color: "rgba(240,248,255,0.5)", marginBottom: "1rem", letterSpacing: "-0.01em" }}>
-            Still have questions?
+            {t("faq.stillQuestions")}
           </p>
           <a href="#"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium"
@@ -180,7 +164,7 @@ export default function FAQSection() {
             onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "rgba(0,191,255,0.1)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,191,255,0.4)"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "rgba(0,191,255,0.05)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,191,255,0.25)"; }}
           >
-            Talk to support
+            {t("faq.talkSupport")}
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M2.5 7H11.5M8 3.5L11.5 7L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>

@@ -1,9 +1,10 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const expo = { type: "tween", duration: 0.85, ease: [0.16, 1, 0.3, 1] } as const;
 
-const featureCards = [
+const featureCardKeys = [
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
@@ -12,8 +13,8 @@ const featureCards = [
         <circle cx="17" cy="6" r="1.8" fill="#00bfff"/>
       </svg>
     ),
-    title: "Advanced Charts",
-    desc: "+50 real-time technical indicators",
+    titleKey: "platform.advancedCharts",
+    descKey: "platform.advancedCharts.desc",
   },
   {
     icon: (
@@ -23,8 +24,8 @@ const featureCards = [
         <circle cx="11" cy="11" r="1.5" fill="#00bfff"/>
       </svg>
     ),
-    title: "Execution < 1ms",
-    desc: "Orders executed in milliseconds",
+    titleKey: "platform.execution",
+    descKey: "platform.execution.desc",
   },
   {
     icon: (
@@ -35,8 +36,8 @@ const featureCards = [
         <rect x="13" y="11" width="4" height="3" rx="1" fill="#00bfff" opacity="0.35"/>
       </svg>
     ),
-    title: "Free Demo Account",
-    desc: "$10,000 to practice risk-free",
+    titleKey: "platform.demoAccount",
+    descKey: "platform.demoAccount.desc",
   },
   {
     icon: (
@@ -45,8 +46,8 @@ const featureCards = [
         <path d="M7.5 11L10 13.5L14.5 8.5" stroke="#00bfff" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
-    title: "Multi-Assets",
-    desc: "+1,000 assets on one platform",
+    titleKey: "platform.multiAssets",
+    descKey: "platform.multiAssets.desc",
   },
 ];
 
@@ -70,8 +71,6 @@ function LaptopMockup() {
       style={{ width: "100%", maxWidth: "680px", margin: "0 auto", perspective: "1400px" }}
     >
       <motion.div style={{ transformStyle: "preserve-3d", scale: baseScale }}>
-
-        {/* ── Lid / Screen ── */}
         <motion.div
           style={{
             transformOrigin: "bottom center",
@@ -94,17 +93,12 @@ function LaptopMockup() {
             position: "relative",
             overflow: "hidden",
           }}>
-            {/* Top bezel glow */}
             <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "2px", background: "linear-gradient(90deg, transparent, rgba(0,191,255,0.18), transparent)", zIndex: 2 }}/>
-
-            {/* Camera dot */}
             <div style={{
               position: "absolute", top: "5px", left: "50%", transform: "translateX(-50%)",
               width: "6px", height: "6px", borderRadius: "50%",
               background: "#0c1120", border: "1px solid #1a2238", zIndex: 3
             }}/>
-
-            {/* Screen */}
             <motion.div style={{
               width: "100%", height: "100%",
               background: "#060c1a",
@@ -123,14 +117,11 @@ function LaptopMockup() {
                   display: "block",
                 }}
               />
-              {/* Subtle screen glare */}
               <div style={{
                 position: "absolute", inset: 0, pointerEvents: "none",
                 background: "linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 50%)",
               }}/>
             </motion.div>
-
-            {/* Metallic side shine */}
             <div style={{
               position: "absolute", top: 0, left: 0, width: "3px", height: "100%",
               background: "linear-gradient(180deg, rgba(255,255,255,0.06), transparent)",
@@ -139,7 +130,6 @@ function LaptopMockup() {
           </div>
         </motion.div>
 
-        {/* ── Hinge strip ── */}
         <div style={{
           width: "100%", height: "7px",
           background: "linear-gradient(180deg, #1a2438 0%, #0e1624 100%)",
@@ -153,7 +143,6 @@ function LaptopMockup() {
           }}/>
         </div>
 
-        {/* ── Base / Keyboard ── */}
         <div style={{
           width: "103%", marginLeft: "-1.5%",
           background: "linear-gradient(180deg, #111928 0%, #0c1420 100%)",
@@ -164,7 +153,6 @@ function LaptopMockup() {
           boxShadow: "0 28px 70px rgba(0,0,0,0.75)",
           position: "relative",
         }}>
-          {/* Keyboard rows */}
           {[13, 12, 11, 5].map((cols, ri) => (
             <div key={ri} style={{
               display: "flex", gap: "5px", marginBottom: ri < 3 ? "5px" : "0",
@@ -182,8 +170,6 @@ function LaptopMockup() {
               ))}
             </div>
           ))}
-
-          {/* Touchpad */}
           <div style={{
             width: "26%", height: "28px",
             background: "rgba(255,255,255,0.022)",
@@ -191,8 +177,6 @@ function LaptopMockup() {
             borderRadius: "6px",
             margin: "9px auto 0",
           }}/>
-
-          {/* Bottom edge shine */}
           <div style={{
             position: "absolute", bottom: 0, left: 0, right: 0, height: "3px",
             background: "linear-gradient(90deg, transparent, rgba(0,191,255,0.05), transparent)",
@@ -213,20 +197,20 @@ function LaptopMockup() {
 }
 
 export default function PlatformSection() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="plataforma"
       className="relative py-24 overflow-hidden"
       style={{ background: "linear-gradient(180deg, #020814 0%, #040d18 100%)" }}
     >
-      {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[700px] pointer-events-none"
         style={{ background: "radial-gradient(ellipse, rgba(0,191,255,0.05) 0%, transparent 65%)", filter: "blur(40px)" }}/>
       <div className="absolute top-0 left-0 right-0 h-px"
         style={{ background: "linear-gradient(90deg, transparent, rgba(0,191,255,0.15), transparent)" }}/>
 
       <div className="max-w-7xl mx-auto px-6">
-        {/* Section header */}
         <div className="text-center mb-14">
           <motion.div
             initial={{ opacity: 0, filter: "blur(10px)", y: 16 }}
@@ -236,8 +220,8 @@ export default function PlatformSection() {
             className="inline-flex justify-center mb-5"
           >
             <div className="hero-badge">
-              <span className="badge-tag">Platform</span>
-              <span className="badge-text">Cutting-edge technology</span>
+              <span className="badge-tag">{t("platform.badge")}</span>
+              <span className="badge-text">{t("platform.badgeText")}</span>
             </div>
           </motion.div>
 
@@ -252,8 +236,8 @@ export default function PlatformSection() {
               color: "#fff", letterSpacing: "-0.035em", marginBottom: "1rem",
             }}
           >
-            Everything you need to{" "}
-            <span className="shimmer-text">invest better</span>
+            {t("platform.title")}{" "}
+            <span className="shimmer-text">{t("platform.titleHighlight")}</span>
           </motion.h2>
 
           <motion.p
@@ -267,18 +251,15 @@ export default function PlatformSection() {
               lineHeight: 1.65, letterSpacing: "-0.01em",
             }}
           >
-            Our platform was built by experts to deliver the best trading experience worldwide.
+            {t("platform.body")}
           </motion.p>
         </div>
 
-        {/* Main layout: feature cards + laptop */}
         <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
-
-          {/* Left feature cards */}
           <div className="flex flex-row lg:flex-col gap-4 lg:gap-5 flex-shrink-0 w-full lg:w-60 order-2 lg:order-1">
-            {featureCards.slice(0, 2).map((f, i) => (
+            {featureCardKeys.slice(0, 2).map((f, i) => (
               <motion.div
-                key={f.title}
+                key={f.titleKey}
                 initial={{ opacity: 0, filter: "blur(12px)", x: -24 }}
                 whileInView={{ opacity: 1, filter: "blur(0px)", x: 0 }}
                 viewport={{ once: true }}
@@ -291,25 +272,23 @@ export default function PlatformSection() {
                   {f.icon}
                 </div>
                 <h4 style={{ fontFamily: "'DM Sans','Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: "0.9rem", color: "#fff", letterSpacing: "-0.02em", marginBottom: "0.3rem" }}>
-                  {f.title}
+                  {t(f.titleKey)}
                 </h4>
                 <p style={{ fontFamily: "'DM Sans','Inter',sans-serif", fontSize: "0.78rem", color: "rgba(240,248,255,0.5)", letterSpacing: "-0.01em", lineHeight: 1.5 }}>
-                  {f.desc}
+                  {t(f.descKey)}
                 </p>
               </motion.div>
             ))}
           </div>
 
-          {/* Center — laptop with scroll-open animation */}
           <div className="flex-1 w-full max-w-2xl order-1 lg:order-2">
             <LaptopMockup />
           </div>
 
-          {/* Right feature cards */}
           <div className="flex flex-row lg:flex-col gap-4 lg:gap-5 flex-shrink-0 w-full lg:w-60 order-3">
-            {featureCards.slice(2, 4).map((f, i) => (
+            {featureCardKeys.slice(2, 4).map((f, i) => (
               <motion.div
-                key={f.title}
+                key={f.titleKey}
                 initial={{ opacity: 0, filter: "blur(12px)", x: 24 }}
                 whileInView={{ opacity: 1, filter: "blur(0px)", x: 0 }}
                 viewport={{ once: true }}
@@ -322,10 +301,10 @@ export default function PlatformSection() {
                   {f.icon}
                 </div>
                 <h4 style={{ fontFamily: "'DM Sans','Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: "0.9rem", color: "#fff", letterSpacing: "-0.02em", marginBottom: "0.3rem" }}>
-                  {f.title}
+                  {t(f.titleKey)}
                 </h4>
                 <p style={{ fontFamily: "'DM Sans','Inter',sans-serif", fontSize: "0.78rem", color: "rgba(240,248,255,0.5)", letterSpacing: "-0.01em", lineHeight: 1.5 }}>
-                  {f.desc}
+                  {t(f.descKey)}
                 </p>
               </motion.div>
             ))}

@@ -1,17 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValue } from "framer-motion";
+import { useLanguage } from "@/i18n/LanguageContext";
 import heroBg from "/hero-bg.png";
 
-const cycleWords = ["options", "stocks", "commodities", "indices", "futures"];
+const cycleWordKeys = ["hero.word.options", "hero.word.stocks", "hero.word.commodities", "hero.word.indices", "hero.word.futures"];
 
-// Kyvoo-style spring presets
 const springFast   = { type: "spring", stiffness: 400, damping: 40 } as const;
 const springMedium = { type: "spring", duration: 0.6, bounce: 0.15 } as const;
 const tweenExpoOut = { type: "tween", duration: 0.9, ease: [0.16, 1, 0.3, 1] } as const;
 
 export default function Hero() {
+  const { t } = useLanguage();
   const [wordIndex,   setWordIndex]   = useState(0);
-  const [displayWord, setDisplayWord] = useState(cycleWords[0]);
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY }  = useScroll();
   const bgY          = useTransform(scrollY, [0, 600], [0, 120]);
@@ -22,11 +22,7 @@ export default function Hero() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setWordIndex((prev) => {
-        const next = (prev + 1) % cycleWords.length;
-        setDisplayWord(cycleWords[next]);
-        return next;
-      });
+      setWordIndex((prev) => (prev + 1) % cycleWordKeys.length);
     }, 2800);
     return () => clearInterval(interval);
   }, []);
@@ -68,6 +64,8 @@ export default function Hero() {
     };
   }, [sharkXVal, sharkYVal, sharkRotVal]);
 
+  const displayWord = t(cycleWordKeys[wordIndex]);
+
   return (
     <section
       id="inicio"
@@ -75,7 +73,6 @@ export default function Hero() {
       className="relative min-h-screen flex flex-col justify-center overflow-hidden"
       style={{ paddingTop: "72px" }}
     >
-      {/* ── Parallax background ── */}
       <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
         <div
           className="w-full h-full"
@@ -87,14 +84,12 @@ export default function Hero() {
             marginTop: "-10%",
           }}
         />
-        {/* Dark overlays for text legibility */}
         <div className="absolute inset-0"
           style={{ background: "linear-gradient(to bottom, rgba(4,13,24,0.35) 0%, rgba(4,13,24,0.1) 35%, rgba(4,13,24,0.6) 70%, rgba(4,13,24,1) 100%)" }} />
         <div className="absolute inset-0"
           style={{ background: "linear-gradient(to right, rgba(4,13,24,0.75) 0%, rgba(4,13,24,0.5) 40%, transparent 70%)" }} />
       </motion.div>
 
-      {/* ── Holographic shark overlay ── */}
       <motion.div
         className="absolute z-[2] pointer-events-none"
         initial={{ opacity: 0, scale: 0.92 }}
@@ -122,9 +117,7 @@ export default function Hero() {
         />
       </motion.div>
 
-      {/* ── Kyvoo-style glow orbs ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Large diffuse cyan orb — center left */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -138,7 +131,6 @@ export default function Hero() {
             filter: "blur(60px)",
           }}
         />
-        {/* Secondary orb — right */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -154,7 +146,6 @@ export default function Hero() {
         />
       </div>
 
-      {/* ── Floating particles ── */}
       <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
         {Array.from({ length: 18 }).map((_, i) => (
           <motion.div
@@ -173,11 +164,9 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* ── Hero content ── */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 w-full">
         <div className="max-w-2xl">
 
-          {/* Hero badge pill — Kyvoo signature */}
           <motion.div
             initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -186,11 +175,10 @@ export default function Hero() {
           >
             <div className="hero-badge">
               <span className="badge-tag">NEW</span>
-              <span className="badge-text">The best broker in the world.</span>
+              <span className="badge-text">{t("hero.badge")}</span>
             </div>
           </motion.div>
 
-          {/* H1 — Kyvoo-style tight tracking */}
           <motion.h1
             initial={{ opacity: 0, y: 32, filter: "blur(14px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -206,11 +194,9 @@ export default function Hero() {
               paddingBottom: "0.08em",
             }}
           >
-            Boost your confidence{" "}
-            with every trade in
+            {t("hero.title")}
           </motion.h1>
 
-          {/* Cycling word — blur-swap animation */}
           <div style={{ height: "clamp(2.9rem, 6vw, 4.8rem)", overflow: "hidden", marginBottom: "1.6rem" }}>
             <AnimatePresence mode="wait">
               <motion.span
@@ -238,7 +224,6 @@ export default function Hero() {
             </AnimatePresence>
           </div>
 
-          {/* Body copy */}
           <motion.p
             initial={{ opacity: 0, y: 24, filter: "blur(10px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -254,29 +239,26 @@ export default function Hero() {
               maxWidth: "440px",
             }}
           >
-            Start now with a{" "}
+            {t("hero.body")}{" "}
             <strong style={{ color: "#00bfff", fontWeight: 700 }}>$10</strong>{" "}
-            minimum deposit. Practice risk-free on our demo account and trade with confidence.
+            {t("hero.body2")}
           </motion.p>
 
-          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ ...tweenExpoOut, delay: 0.65 }}
             className="flex flex-wrap gap-3"
           >
-            {/* Primary — radial glow (Kyvoo pattern) */}
             <a href="#" className="btn-glow">
               <span className="btn-glow-face">
-                Start with $10
+                {t("hero.cta")}
                 <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
                   <path d="M2.5 7H11.5M8 3.5L11.5 7L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </span>
             </a>
 
-            {/* Secondary */}
             <motion.a
               href="#negociacao"
               whileHover={{ borderColor: "rgba(0,191,255,0.45)", background: "rgba(0,191,255,0.08)" } as any}
@@ -293,11 +275,10 @@ export default function Hero() {
                 letterSpacing: "-0.01em",
               }}
             >
-              Learn more
+              {t("hero.cta2")}
             </motion.a>
           </motion.div>
 
-          {/* Trust indicators — Kyvoo-style inline badges */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -305,15 +286,15 @@ export default function Hero() {
             className="mt-10 flex flex-wrap items-center gap-0"
           >
             {[
-              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="2.5" y="5.5" width="8" height="6" rx="1.2" stroke="#00bfff" strokeWidth="1.2"/><path d="M4.5 5.5V4C4.5 3 5.2 2.3 6.5 2.3C7.8 2.3 8.5 3 8.5 4V5.5" stroke="#00bfff" strokeWidth="1.2" strokeLinecap="round"/></svg>, text: "SSL 256-bit" },
-              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L7.8 4.5H11L8.5 6.5L9.5 10L6.5 8L3.5 10L4.5 6.5L2 4.5H5.2L6.5 1Z" stroke="#00bfff" strokeWidth="1.2" strokeLinejoin="round"/></svg>, text: "Regulated" },
-              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M7 1.5L4 7H7L6 11.5L9.5 6H6.5L7 1.5Z" stroke="#00bfff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>, text: "Exec. < 1ms" },
-              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="#00bfff" strokeWidth="1.2"/><path d="M1.5 6.5H11.5M6.5 1.5C6.5 1.5 4.5 3.8 4.5 6.5C4.5 9.2 6.5 11.5 6.5 11.5M6.5 1.5C6.5 1.5 8.5 3.8 8.5 6.5C8.5 9.2 6.5 11.5 6.5 11.5" stroke="#00bfff" strokeWidth="1.2"/></svg>, text: "+40 countries" },
+              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="2.5" y="5.5" width="8" height="6" rx="1.2" stroke="#00bfff" strokeWidth="1.2"/><path d="M4.5 5.5V4C4.5 3 5.2 2.3 6.5 2.3C7.8 2.3 8.5 3 8.5 4V5.5" stroke="#00bfff" strokeWidth="1.2" strokeLinecap="round"/></svg>, textKey: "hero.badge.ssl" },
+              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L7.8 4.5H11L8.5 6.5L9.5 10L6.5 8L3.5 10L4.5 6.5L2 4.5H5.2L6.5 1Z" stroke="#00bfff" strokeWidth="1.2" strokeLinejoin="round"/></svg>, textKey: "hero.badge.regulated" },
+              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M7 1.5L4 7H7L6 11.5L9.5 6H6.5L7 1.5Z" stroke="#00bfff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>, textKey: "hero.badge.exec" },
+              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="#00bfff" strokeWidth="1.2"/><path d="M1.5 6.5H11.5M6.5 1.5C6.5 1.5 4.5 3.8 4.5 6.5C4.5 9.2 6.5 11.5 6.5 11.5M6.5 1.5C6.5 1.5 8.5 3.8 8.5 6.5C8.5 9.2 6.5 11.5 6.5 11.5" stroke="#00bfff" strokeWidth="1.2"/></svg>, textKey: "hero.badge.countries" },
             ].map((b, i) => (
-              <div key={b.text} className="flex items-center">
+              <div key={b.textKey} className="flex items-center">
                 <div className="flex items-center gap-1.5"
                   style={{ color: "rgba(240,248,255,0.45)", fontSize: "0.75rem", fontFamily: "'DM Sans','Inter',sans-serif", letterSpacing: "-0.01em" }}>
-                  {b.icon}<span>{b.text}</span>
+                  {b.icon}<span>{t(b.textKey)}</span>
                 </div>
                 {i < 3 && <div className="mx-4 h-3" style={{ width: "1px", background: "rgba(255,255,255,0.12)" }} />}
               </div>
@@ -322,7 +303,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ── Scroll indicator ── */}
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
         initial={{ opacity: 0 }}
@@ -330,7 +310,7 @@ export default function Hero() {
         transition={{ delay: 1.6, duration: 0.8 }}
       >
         <span style={{ color: "rgba(240,248,255,0.35)", fontSize: "0.65rem", fontFamily: "'Inter',sans-serif", letterSpacing: "0.15em" }}>
-          SCROLL
+          {t("hero.scroll")}
         </span>
         <motion.div
           animate={{ y: [0, 8, 0] }}

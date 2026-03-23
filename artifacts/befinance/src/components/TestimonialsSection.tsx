@@ -1,61 +1,14 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
-const testimonials = [
-  {
-    name: "James Mitchell",
-    role: "Professional Trader",
-    location: "New York, USA",
-    avatar: "JM",
-    rating: 5,
-    text: "BeFinance transformed the way I invest. The platform is incredible, the spreads are the lowest I've seen and the customer support is exceptional. I grew my portfolio by 40% in the last 6 months.",
-    color: "#00bfff",
-  },
-  {
-    name: "Sarah Williams",
-    role: "Beginner Investor",
-    location: "London, UK",
-    avatar: "SW",
-    rating: 5,
-    text: "I started investing 3 months ago with BeFinance and already feel confident. The demo account with $10,000 was essential to learn risk-free. The tutorials are excellent and the interface is super intuitive.",
-    color: "#0099ff",
-  },
-  {
-    name: "Robert Chen",
-    role: "Financial Manager",
-    location: "Singapore",
-    avatar: "RC",
-    rating: 5,
-    text: "After testing several brokers, BeFinance stood out for its transparency in fees and speed of order execution. I recommend it to anyone who wants to invest seriously.",
-    color: "#00d4ff",
-  },
-  {
-    name: "Emily Rodriguez",
-    role: "Day Trader",
-    location: "Miami, USA",
-    avatar: "ER",
-    rating: 5,
-    text: "The advanced charts and 50+ technical indicators allow me to make precise analyses. The platform is fast, reliable and has never crashed during critical market moments.",
-    color: "#0066ff",
-  },
-  {
-    name: "Marcus Thompson",
-    role: "Entrepreneur",
-    location: "Toronto, Canada",
-    avatar: "MT",
-    rating: 5,
-    text: "I've been investing for 10 years and BeFinance is definitely the best broker I've ever used. Maximum security, competitive fees and personalized service that goes beyond expectations.",
-    color: "#00e5ff",
-  },
-  {
-    name: "Julia Andersen",
-    role: "Doctor & Investor",
-    location: "Copenhagen, Denmark",
-    avatar: "JA",
-    rating: 5,
-    text: "As a doctor, I don't have much time to follow the market all day. BeFinance gave me automated tools that work for me. Excellent results with little time invested.",
-    color: "#00bfff",
-  },
+const testimonialDefs = [
+  { nameKey: "testimonials.t1.name", roleKey: "testimonials.t1.role", locationKey: "testimonials.t1.location", textKey: "testimonials.t1.text", avatar: "JM", rating: 5, color: "#00bfff" },
+  { nameKey: "testimonials.t2.name", roleKey: "testimonials.t2.role", locationKey: "testimonials.t2.location", textKey: "testimonials.t2.text", avatar: "SW", rating: 5, color: "#0099ff" },
+  { nameKey: "testimonials.t3.name", roleKey: "testimonials.t3.role", locationKey: "testimonials.t3.location", textKey: "testimonials.t3.text", avatar: "RC", rating: 5, color: "#00d4ff" },
+  { nameKey: "testimonials.t4.name", roleKey: "testimonials.t4.role", locationKey: "testimonials.t4.location", textKey: "testimonials.t4.text", avatar: "ER", rating: 5, color: "#0066ff" },
+  { nameKey: "testimonials.t5.name", roleKey: "testimonials.t5.role", locationKey: "testimonials.t5.location", textKey: "testimonials.t5.text", avatar: "MT", rating: 5, color: "#00e5ff" },
+  { nameKey: "testimonials.t6.name", roleKey: "testimonials.t6.role", locationKey: "testimonials.t6.location", textKey: "testimonials.t6.text", avatar: "JA", rating: 5, color: "#00bfff" },
 ];
 
 function StarRating({ count }: { count: number }) {
@@ -71,19 +24,20 @@ function StarRating({ count }: { count: number }) {
 }
 
 export default function TestimonialsSection() {
+  const { t } = useLanguage();
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % testimonials.length);
+      setCurrent((prev) => (prev + 1) % testimonialDefs.length);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
 
   const visible = [
-    testimonials[current % testimonials.length],
-    testimonials[(current + 1) % testimonials.length],
-    testimonials[(current + 2) % testimonials.length],
+    testimonialDefs[current % testimonialDefs.length],
+    testimonialDefs[(current + 1) % testimonialDefs.length],
+    testimonialDefs[(current + 2) % testimonialDefs.length],
   ];
 
   return (
@@ -92,7 +46,6 @@ export default function TestimonialsSection() {
       className="relative py-24 overflow-hidden"
       style={{ background: "linear-gradient(180deg, #020810 0%, #040d18 100%)" }}
     >
-      {/* Glow */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] pointer-events-none"
         style={{
@@ -101,7 +54,6 @@ export default function TestimonialsSection() {
       />
 
       <div className="max-w-7xl mx-auto px-6">
-        {/* Section header */}
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -113,7 +65,7 @@ export default function TestimonialsSection() {
           >
             <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#00bfff" }} />
             <span style={{ color: "#00bfff", fontSize: "0.75rem", fontFamily: "'Inter', sans-serif", fontWeight: 600, letterSpacing: "0.08em" }}>
-              TESTIMONIALS
+              {t("testimonials.badge")}
             </span>
           </motion.div>
 
@@ -131,11 +83,11 @@ export default function TestimonialsSection() {
               marginBottom: "1rem",
             }}
           >
-            What our{" "}
+            {t("testimonials.title1")}{" "}
             <span style={{ background: "linear-gradient(135deg, #00bfff, #0099ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              investors
+              {t("testimonials.titleHighlight")}
             </span>{" "}
-            say
+            {t("testimonials.title2")}
           </motion.h2>
 
           <motion.p
@@ -152,16 +104,15 @@ export default function TestimonialsSection() {
               lineHeight: 1.7,
             }}
           >
-            Over 500,000 investors already trust BeFinance to make their money work for them.
+            {t("testimonials.body")}
           </motion.p>
         </div>
 
-        {/* Testimonials carousel */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10" style={{ minHeight: "320px" }}>
           <AnimatePresence mode="popLayout">
             {visible.map((testimonial, idx) => (
               <motion.div
-                key={`${testimonial.name}-${current}`}
+                key={`${testimonial.nameKey}-${current}`}
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
@@ -173,15 +124,12 @@ export default function TestimonialsSection() {
                   backdropFilter: "blur(10px)",
                 }}
               >
-                {/* Quote icon */}
                 <div className="mb-4" style={{ color: "rgba(0,191,255,0.3)", fontSize: "2rem", lineHeight: 1, fontFamily: "Georgia, serif" }}>
-                  "
+                  &ldquo;
                 </div>
 
-                {/* Rating */}
                 <StarRating count={testimonial.rating} />
 
-                {/* Text */}
                 <p
                   className="mt-4 mb-6"
                   style={{
@@ -191,10 +139,9 @@ export default function TestimonialsSection() {
                     lineHeight: 1.7,
                   }}
                 >
-                  {testimonial.text}
+                  {t(testimonial.textKey)}
                 </p>
 
-                {/* Author */}
                 <div className="flex items-center gap-3">
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0"
@@ -204,10 +151,10 @@ export default function TestimonialsSection() {
                   </div>
                   <div>
                     <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: "0.9rem", color: "#fff" }}>
-                      {testimonial.name}
+                      {t(testimonial.nameKey)}
                     </p>
                     <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.75rem", color: "rgba(240,248,255,0.45)" }}>
-                      {testimonial.role} · {testimonial.location}
+                      {t(testimonial.roleKey)} · {t(testimonial.locationKey)}
                     </p>
                   </div>
                 </div>
@@ -216,9 +163,8 @@ export default function TestimonialsSection() {
           </AnimatePresence>
         </div>
 
-        {/* Dot navigation */}
         <div className="flex justify-center gap-2">
-          {testimonials.map((_, i) => (
+          {testimonialDefs.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
