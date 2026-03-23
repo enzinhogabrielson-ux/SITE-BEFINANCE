@@ -279,6 +279,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // Footer
     "footer.desc": "The best trading platform for investors seeking real results in financial markets.",
     "footer.copyright": "© 2026 BeFinance. All rights reserved. Trading involves risk. Read our terms.",
+    "footer.legal": "CFDs are complex financial instruments and carry a high risk of losing money quickly due to leverage. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your capital.",
     "footer.privacy": "Privacy Policy",
     "footer.terms": "Terms of Use",
     "footer.cookies": "Cookies",
@@ -557,6 +558,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // Footer
     "footer.desc": "A melhor plataforma de trading para investidores que buscam resultados reais nos mercados financeiros.",
     "footer.copyright": "© 2026 BeFinance. Todos os direitos reservados. Negociação envolve riscos. Leia nossos termos.",
+    "footer.legal": "CFDs são instrumentos financeiros complexos e apresentam um alto risco de perda rápida de dinheiro devido à alavancagem. Você deve considerar se entende como os CFDs funcionam e se pode arcar com o alto risco de perder seu capital.",
     "footer.privacy": "Política de Privacidade",
     "footer.terms": "Termos de Uso",
     "footer.cookies": "Cookies",
@@ -835,6 +837,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // Footer
     "footer.desc": "La mejor plataforma de trading para inversores que buscan resultados reales en los mercados financieros.",
     "footer.copyright": "© 2026 BeFinance. Todos los derechos reservados. El trading implica riesgo. Lee nuestros términos.",
+    "footer.legal": "Los CFDs son instrumentos financieros complejos y conllevan un alto riesgo de perder dinero rápidamente debido al apalancamiento. Debe considerar si comprende cómo funcionan los CFDs y si puede permitirse asumir el alto riesgo de perder su capital.",
     "footer.privacy": "Política de Privacidad",
     "footer.terms": "Términos de Uso",
     "footer.cookies": "Cookies",

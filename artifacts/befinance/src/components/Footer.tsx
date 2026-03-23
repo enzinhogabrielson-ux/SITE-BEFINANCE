@@ -187,6 +187,19 @@ export default function Footer() {
           ))}
         </div>
 
+        <div className="py-6 border-b" style={{ borderColor: "rgba(0,191,255,0.08)" }}>
+          <p style={{
+            fontFamily: "'DM Sans','Inter', sans-serif",
+            fontSize: "0.7rem",
+            lineHeight: 1.7,
+            letterSpacing: "-0.01em",
+            color: "rgba(240,248,255,0.25)",
+            maxWidth: "960px",
+          }}>
+            {t("footer.legal")}
+          </p>
+        </div>
+
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p style={{
             fontFamily: "'DM Sans','Inter', sans-serif",
