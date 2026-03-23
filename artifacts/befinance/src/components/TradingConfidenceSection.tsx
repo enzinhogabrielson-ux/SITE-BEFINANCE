@@ -75,7 +75,7 @@ export default function TradingConfidenceSection() {
         </motion.div>
 
         <motion.div
-          className="kyvoo-card rounded-2xl p-7 flex flex-col gap-4"
+          className="kyvoo-card rounded-2xl p-7 flex flex-col gap-4 items-center text-center"
           style={{
             background: "linear-gradient(135deg, rgba(0,191,255,0.1), rgba(0,60,120,0.08))",
             border: "1px solid rgba(0,191,255,0.2)",
