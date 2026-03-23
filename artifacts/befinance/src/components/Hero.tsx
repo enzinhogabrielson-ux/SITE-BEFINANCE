@@ -80,8 +80,8 @@ export default function Hero() {
           playsInline
           className="w-full h-full object-cover"
           style={{
-            minHeight: "120%",
-            marginTop: "5%",
+            minHeight: "100%",
+            objectPosition: "center 30%",
           }}
         >
           <source src="/hero-bg.mp4" type="video/mp4" />
