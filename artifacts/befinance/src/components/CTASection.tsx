@@ -30,7 +30,11 @@ export default function CTASection() {
       </div>
       <div
         className="absolute top-0 left-0 right-0 pointer-events-none"
-        style={{ height: "120px", background: "linear-gradient(to bottom, #040d18, transparent)" }}
+        style={{ height: "200px", background: "linear-gradient(to bottom, #040d18 0%, rgba(4,13,24,0.7) 50%, transparent 100%)" }}
+      />
+      <div
+        className="absolute bottom-0 left-0 right-0 pointer-events-none"
+        style={{ height: "120px", background: "linear-gradient(to top, #020810, transparent)" }}
       />
       <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(0,191,255,0.14) 0%, transparent 70%)", filter: "blur(60px)" }} />
