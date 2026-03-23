@@ -74,20 +74,43 @@ export default function TradingConfidenceSection() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-          {featureDefs.map((f, i) => (
+        <motion.div
+          className="kyvoo-card rounded-2xl p-7 flex flex-col gap-4"
+          style={{
+            background: "linear-gradient(135deg, rgba(0,191,255,0.1), rgba(0,60,120,0.08))",
+            border: "1px solid rgba(0,191,255,0.2)",
+          }}
+          {...blur}
+          animate={inView ? blur.animate : blur.initial}
+          transition={{ duration: 0.7, ease }}
+        >
+          <div>{featureDefs[0].icon}</div>
+          <h3
+            className="text-xl font-semibold"
+            style={{ color: "#fff", fontFamily: "'DM Sans',sans-serif", letterSpacing: "-0.02em", lineHeight: 1.3 }}
+          >
+            {t(featureDefs[0].titleKey)}
+          </h3>
+          <p
+            className="text-sm"
+            style={{ color: "rgba(240,248,255,0.55)", fontFamily: "'Inter',sans-serif", lineHeight: 1.6 }}
+          >
+            {t(featureDefs[0].descKey)}
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
+          {featureDefs.slice(1).map((f, i) => (
             <motion.div
               key={f.titleKey}
-              className={`kyvoo-card rounded-2xl p-7 flex flex-col gap-4 ${i === 0 ? "lg:col-span-3" : ""}`}
+              className="kyvoo-card rounded-2xl p-7 flex flex-col gap-4"
               style={{
-                background: i === 0
-                  ? "linear-gradient(135deg, rgba(0,191,255,0.1), rgba(0,60,120,0.08))"
-                  : "rgba(0,191,255,0.04)",
-                border: `1px solid rgba(0,191,255,${i === 0 ? "0.2" : "0.08"})`,
+                background: "rgba(0,191,255,0.04)",
+                border: "1px solid rgba(0,191,255,0.08)",
               }}
               {...blur}
               animate={inView ? blur.animate : blur.initial}
-              transition={{ duration: 0.7, delay: 0.1 * i, ease }}
+              transition={{ duration: 0.7, delay: 0.1 * (i + 1), ease }}
             >
               <div>{f.icon}</div>
               <h3
