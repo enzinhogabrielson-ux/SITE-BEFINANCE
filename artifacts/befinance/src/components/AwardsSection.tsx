@@ -65,9 +65,9 @@ export default function AwardsSection() {
                     border: "1px solid rgba(0,191,255,0.08)",
                   }}
                   initial={{ opacity: 0, y: 16 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  animate={inView ? { opacity: 1, y: 0, background: "rgba(0,191,255,0.04)", borderColor: "rgba(0,191,255,0.08)" } : {}}
                   transition={{ duration: 0.6, delay: 0.08 * i, ease }}
-                  whileHover={{ borderColor: "rgba(0,191,255,0.25)", y: -2 }}
+                  whileHover={{ borderColor: "rgba(0,191,255,0.25)", background: "rgba(0,191,255,0.08)", y: -2 }}
                 >
                   <span className="text-xs font-semibold" style={{ color: "#00bfff", fontFamily: "'Inter',sans-serif" }}>
                     {award.year}
