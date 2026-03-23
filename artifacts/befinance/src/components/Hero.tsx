@@ -100,7 +100,7 @@ export default function Hero() {
         style={{
           right: "-120px",
           top: "50%",
-          marginTop: "-280px",
+          marginTop: "-230px",
           width: "900px",
           x: sharkXVal,
           y: sharkYVal,
