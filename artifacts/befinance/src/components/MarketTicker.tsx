@@ -77,6 +77,9 @@ function TickerItem({ asset }: { asset: typeof assets[0] }) {
   );
 }
 
+const row1 = [assets[4], assets[5], assets[6], assets[7], assets[0], assets[3], assets[1], assets[2]];
+const row2 = [assets[3], assets[1], assets[0], assets[6], assets[2], assets[7], assets[4], assets[5]];
+
 export default function MarketTicker() {
   return (
     <section
@@ -132,7 +135,7 @@ export default function MarketTicker() {
 
         <div className="ticker-wrapper mb-3">
           <div className="ticker-inner">
-            {[...assets, ...assets].map((asset, i) => (
+            {[...row1, ...row1].map((asset, i) => (
               <TickerItem key={`${asset.symbol}-${i}`} asset={asset} />
             ))}
           </div>
@@ -143,7 +146,7 @@ export default function MarketTicker() {
             className="ticker-inner"
             style={{ animation: "ticker 35s linear infinite reverse" }}
           >
-            {[...assets.slice().reverse(), ...assets.slice().reverse()].map((asset, i) => (
+            {[...row2, ...row2].map((asset, i) => (
               <TickerItem key={`rev-${asset.symbol}-${i}`} asset={asset} />
             ))}
           </div>
