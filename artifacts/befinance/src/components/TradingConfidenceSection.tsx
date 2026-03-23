@@ -55,33 +55,7 @@ export default function TradingConfidenceSection() {
 
   return (
     <section ref={ref} className="relative py-24 overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
-        <iframe
-          src="https://player.vimeo.com/video/1176336727?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479"
-          allow="autoplay; fullscreen"
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            width: "177.78vh",
-            height: "100vh",
-            minWidth: "100%",
-            minHeight: "100%",
-            transform: "translate(-50%, -50%)",
-            border: "none",
-            pointerEvents: "none",
-          }}
-          title="Background"
-        />
-        <div className="absolute inset-0" style={{ background: "rgba(4,13,24,0.6)" }} />
-      </div>
-      <div
-        className="absolute top-0 left-0 right-0 pointer-events-none"
-        style={{
-          height: "120px",
-          background: "linear-gradient(to bottom, #040d18, transparent)",
-        }}
-      />
+      <div className="absolute inset-0" style={{ background: "#040d18" }} />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <motion.div

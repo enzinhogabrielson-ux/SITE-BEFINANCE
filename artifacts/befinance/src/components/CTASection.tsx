@@ -8,14 +8,34 @@ export default function CTASection() {
 
   return (
     <section className="relative py-28 overflow-hidden">
-      <div className="absolute inset-0"
-        style={{ background: "linear-gradient(135deg, rgba(0,60,120,0.35) 0%, rgba(4,13,24,0.95) 50%, rgba(0,40,80,0.35) 100%)" }} />
+      <div className="absolute inset-0 overflow-hidden">
+        <iframe
+          src="https://player.vimeo.com/video/1176336727?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479"
+          allow="autoplay; fullscreen"
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            width: "177.78vh",
+            height: "100vh",
+            minWidth: "100%",
+            minHeight: "100%",
+            transform: "translate(-50%, -50%)",
+            border: "none",
+            pointerEvents: "none",
+          }}
+          title="Background"
+        />
+        <div className="absolute inset-0" style={{ background: "rgba(4,13,24,0.55)" }} />
+      </div>
+      <div
+        className="absolute top-0 left-0 right-0 pointer-events-none"
+        style={{ height: "120px", background: "linear-gradient(to bottom, #040d18, transparent)" }}
+      />
       <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(0,191,255,0.14) 0%, transparent 70%)", filter: "blur(60px)" }} />
       <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(0,102,255,0.10) 0%, transparent 70%)", filter: "blur(60px)" }} />
-      <div className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: "linear-gradient(90deg, transparent, rgba(0,191,255,0.45), transparent)" }} />
 
       <div className="relative max-w-3xl mx-auto px-6 text-center">
         <motion.div
