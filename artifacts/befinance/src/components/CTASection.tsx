@@ -7,7 +7,7 @@ export default function CTASection() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative py-28 overflow-hidden">
+    <section className="relative py-40 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
         <iframe
           src="https://player.vimeo.com/video/1176336727?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479"
