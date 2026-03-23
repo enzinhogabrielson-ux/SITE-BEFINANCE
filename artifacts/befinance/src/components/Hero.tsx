@@ -108,7 +108,7 @@ export default function Hero() {
         }}
       >
         <img
-          src="/TUBASVG.svg"
+          src="/tuba01.png"
           alt=""
           style={{
             width: "100%",
