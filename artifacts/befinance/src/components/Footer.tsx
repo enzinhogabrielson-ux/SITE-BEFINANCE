@@ -195,6 +195,8 @@ export default function Footer() {
             letterSpacing: "-0.01em",
             color: "rgba(240,248,255,0.25)",
             maxWidth: "960px",
+            margin: "0 auto",
+            textAlign: "center",
           }}>
             CFDs are complex financial instruments and carry a high risk of losing money quickly due to leverage. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your capital.
           </p>
