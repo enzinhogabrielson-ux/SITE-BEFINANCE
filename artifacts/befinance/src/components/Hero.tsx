@@ -81,7 +81,7 @@ export default function Hero() {
           className="w-full h-full object-cover"
           style={{
             minHeight: "120%",
-            marginTop: "-10%",
+            marginTop: "5%",
           }}
         >
           <source src="/hero-bg.mp4" type="video/mp4" />
