@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValue } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
-import heroBg from "/hero-bg.png";
 
 const cycleWordKeys = ["hero.word.options", "hero.word.stocks", "hero.word.commodities", "hero.word.indices", "hero.word.futures"];
 
@@ -74,16 +73,19 @@ export default function Hero() {
       style={{ paddingTop: "72px" }}
     >
       <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
-        <div
-          className="w-full h-full"
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
           style={{
-            backgroundImage: `url(${heroBg})`,
-            backgroundPosition: "center top",
-            backgroundSize: "cover",
             minHeight: "120%",
             marginTop: "-10%",
           }}
-        />
+        >
+          <source src="/hero-bg.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0"
           style={{ background: "linear-gradient(to bottom, rgba(4,13,24,0.35) 0%, rgba(4,13,24,0.1) 35%, rgba(4,13,24,0.6) 70%, rgba(4,13,24,1) 100%)" }} />
         <div className="absolute inset-0"
