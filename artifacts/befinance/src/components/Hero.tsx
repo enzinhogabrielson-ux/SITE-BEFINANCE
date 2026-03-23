@@ -93,7 +93,7 @@ export default function Hero() {
       </motion.div>
 
       <motion.div
-        className="absolute z-[2] pointer-events-none hidden md:block"
+        className="absolute z-[2] pointer-events-none hidden md:block shark-hero"
         initial={{ opacity: 0, scale: 0.92 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
