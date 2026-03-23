@@ -29,8 +29,8 @@ export default function CTASection() {
         <div className="absolute inset-0" style={{ background: "rgba(4,13,24,0.55)" }} />
       </div>
       <div
-        className="absolute top-0 left-0 right-0 pointer-events-none"
-        style={{ height: "200px", background: "linear-gradient(to bottom, #040d18 0%, rgba(4,13,24,0.7) 50%, transparent 100%)" }}
+        className="absolute top-0 left-0 right-0 pointer-events-none z-[2]"
+        style={{ height: "300px", background: "linear-gradient(to bottom, #020810 0%, rgba(2,8,16,0.85) 30%, rgba(2,8,16,0.4) 65%, transparent 100%)" }}
       />
       <div
         className="absolute bottom-0 left-0 right-0 pointer-events-none"
