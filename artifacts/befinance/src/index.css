@@ -205,7 +205,6 @@ body::after {
   animation: ticker 30s linear infinite;
   width: max-content;
 }
-.ticker-inner:hover { animation-play-state: paused; }
 
 /* ── Shimmer text ────────────────────────────────────────── */
 @keyframes shimmer {

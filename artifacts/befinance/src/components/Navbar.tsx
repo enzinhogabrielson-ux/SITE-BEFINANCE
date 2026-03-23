@@ -4,43 +4,39 @@ import { Menu, X, Lock } from "lucide-react";
 import { Link, useLocation } from "wouter";
 
 const megaMenuData: Record<string, { items: { title: string; desc: string; href: string }[] }> = {
-  Negociação: {
+  Trading: {
     items: [
-      { title: "Opções Digitais", desc: "Retornos de até 92% com operações a partir de $1", href: "/negociacao/opcoes-digitais" },
-      { title: "Ações", desc: "Blue chips globais sem comissão", href: "/negociacao/acoes" },
-      { title: "Commodities", desc: "Ouro, prata, petróleo e mais", href: "/negociacao/commodities" },
+      { title: "Digital Options", desc: "Returns up to 92% with trades from $1", href: "/negociacao/opcoes-digitais" },
+      { title: "Stocks", desc: "Global blue chips commission-free", href: "/negociacao/acoes" },
+      { title: "Commodities", desc: "Gold, silver, oil and more", href: "/negociacao/commodities" },
     ],
   },
-  Plataforma: {
+  Platform: {
     items: [
-      { title: "Trading Web", desc: "Negocie direto do navegador sem downloads", href: "/plataforma/trading-web" },
-      { title: "App Mobile", desc: "iOS e Android com notificações push", href: "/plataforma/app-mobile" },
-      { title: "Conta Demo", desc: "$10.000 virtuais para praticar", href: "/plataforma/conta-demo" },
-      { title: "Ferramentas Analíticas", desc: "+50 indicadores técnicos profissionais", href: "/plataforma/ferramentas" },
-      { title: "Baixar o App", desc: "Disponível na App Store e Google Play", href: "/plataforma/baixar-app" },
+      { title: "Demo Account", desc: "$10,000 virtual funds to practice", href: "/plataforma/conta-demo" },
+      { title: "Web Trading", desc: "Trade directly from your browser", href: "/plataforma/trading-web" },
+      { title: "Analytical Tools", desc: "+50 professional technical indicators", href: "/plataforma/ferramentas" },
+      { title: "Download App", desc: "Available on App Store and Google Play", href: "/plataforma/baixar-app" },
     ],
   },
-  Sobre: {
+  About: {
     items: [
-      { title: "Sobre nós", desc: "Conheça a BeFinance e nossa missão", href: "/sobre/sobre-nos" },
-      { title: "Regulamentação", desc: "CVM, BACEN e conformidade global", href: "/sobre/regulamentacao" },
-      { title: "Premiações", desc: "Prêmios e reconhecimentos da indústria", href: "/sobre/premiacoes" },
-      { title: "Parceiros", desc: "Parceiros institucionais e tecnológicos", href: "/sobre/parceiros" },
-      { title: "Afiliados", desc: "Ganhe comissões de até 60%", href: "/sobre/afiliados" },
+      { title: "About Us", desc: "Meet BeFinance and our mission", href: "/sobre/sobre-nos" },
+      { title: "Regulation", desc: "Global compliance and regulation", href: "/sobre/regulamentacao" },
+      { title: "Affiliates", desc: "Earn commissions up to 60%", href: "/sobre/afiliados" },
     ],
   },
-  Ajuda: {
+  Help: {
     items: [
-      { title: "Central de Ajuda", desc: "Respostas para todas as suas dúvidas", href: "/ajuda/central-de-ajuda" },
-      { title: "Contato", desc: "Fale conosco por chat, e-mail ou telefone", href: "/ajuda/contato" },
-      { title: "Central de Aprendizagem", desc: "Cursos, webinars e tutoriais gratuitos", href: "/ajuda/central-de-aprendizagem" },
-      { title: "FAQ", desc: "Perguntas frequentes sobre a plataforma", href: "/ajuda/faq" },
-      { title: "Suporte 24/7", desc: "Atendimento humanizado em português", href: "/ajuda/suporte" },
+      { title: "Help Center", desc: "Answers to all your questions", href: "/ajuda/central-de-ajuda" },
+      { title: "Contact", desc: "Reach us via chat, email or phone", href: "/ajuda/contato" },
+      { title: "FAQ", desc: "Frequently asked questions", href: "/ajuda/faq" },
+      { title: "24/7 Support", desc: "Humanized support in your language", href: "/ajuda/suporte" },
     ],
   },
 };
 
-const navLabels = ["Negociação", "Plataforma", "Sobre", "Ajuda"];
+const navLabels = ["Trading", "Platform", "About", "Help"];
 
 const FlagBR = () => (
   <svg width="20" height="14" viewBox="0 0 20 14" fill="none" style={{ borderRadius: "2px", flexShrink: 0 }}>
@@ -73,24 +69,20 @@ const languages = [
 ];
 
 const megaIcons: Record<string, React.ReactNode> = {
-  "Opções Digitais": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 20L10 12L14 16L20 8M20 8H15M20 8V13" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  "Ações": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 3V21H21M7 14L11 10L15 14L21 8" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  "Digital Options": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 20L10 12L14 16L20 8M20 8H15M20 8V13" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  "Stocks": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 3V21H21M7 14L11 10L15 14L21 8" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
   "Commodities": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 8.5L22 9.5L17 14.5L18 21.5L12 18L6 21.5L7 14.5L2 9.5L9 8.5L12 2Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  "Trading Web": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4H20V16H4ZM8 20H16M12 16V20" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  "App Mobile": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 18H12.01M7 2H17A2 2 0 0 1 19 4V20A2 2 0 0 1 17 22H7A2 2 0 0 1 5 20V4A2 2 0 0 1 7 2Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  "Conta Demo": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 12L11 14L15 10M21 12A9 9 0 1 1 3 12A9 9 0 0 1 21 12Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  "Ferramentas Analíticas": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3A1 1 0 0 0 13.3 6.3L2 17.6V22H6.4L17.7 10.7A1 1 0 0 0 17.7 9.3L14.7 6.3Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  "Baixar o App": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 15V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V15M7 10L12 15L17 10M12 15V3" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  "Sobre nós": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M17 21V19A4 4 0 0 0 13 15H11A4 4 0 0 0 7 19V21M12 11A4 4 0 1 0 12 3A4 4 0 0 0 12 11Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  "Regulamentação": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L18 6V11C18 16 15 19.5 11 21C7 19.5 4 16 4 11V6L12 2Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  "Premiações": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 8.5L22 9.5L17 14.5L18 21.5L12 18L6 21.5L7 14.5L2 9.5L9 8.5L12 2Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  "Parceiros": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 12H18L15 21L9 3L6 12H2" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  "Afiliados": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2V22M17 5H9.5C7.57 5 6 6.57 6 8.5S7.57 12 9.5 12H14.5C16.43 12 18 13.57 18 15.5S16.43 19 14.5 19H6" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  "Central de Ajuda": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 17H15M9 13H15M9 9H10M13 3H8.2C7 3 6 4 6 5.2V18.8C6 20 7 21 8.2 21H15.8C17 21 18 20 18 18.8V8L13 3Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  "Contato": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 15A2 2 0 0 1 19 17H7L3 21V5A2 2 0 0 1 5 3H19A2 2 0 0 1 21 5V15Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  "Central de Aprendizagem": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M2 7L12 3L22 7L12 11L2 7ZM5 8.5V15L12 18.5L19 15V8.5" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  "Web Trading": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4H20V16H4ZM8 20H16M12 16V20" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  "Demo Account": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 12L11 14L15 10M21 12A9 9 0 1 1 3 12A9 9 0 0 1 21 12Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  "Analytical Tools": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3A1 1 0 0 0 13.3 6.3L2 17.6V22H6.4L17.7 10.7A1 1 0 0 0 17.7 9.3L14.7 6.3Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  "Download App": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 15V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V15M7 10L12 15L17 10M12 15V3" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  "About Us": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M17 21V19A4 4 0 0 0 13 15H11A4 4 0 0 0 7 19V21M12 11A4 4 0 1 0 12 3A4 4 0 0 0 12 11Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  "Regulation": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L18 6V11C18 16 15 19.5 11 21C7 19.5 4 16 4 11V6L12 2Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  "Affiliates": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2V22M17 5H9.5C7.57 5 6 6.57 6 8.5S7.57 12 9.5 12H14.5C16.43 12 18 13.57 18 15.5S16.43 19 14.5 19H6" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  "Help Center": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 17H15M9 13H15M9 9H10M13 3H8.2C7 3 6 4 6 5.2V18.8C6 20 7 21 8.2 21H15.8C17 21 18 20 18 18.8V8L13 3Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  "Contact": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 15A2 2 0 0 1 19 17H7L3 21V5A2 2 0 0 1 5 3H19A2 2 0 0 1 21 5V15Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
   "FAQ": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22C17.5 22 22 17.5 22 12S17.5 2 12 2S2 6.5 2 12S6.5 22 12 22ZM9.09 9A3 3 0 0 1 14.83 10C14.83 12 12 12.5 12 14.5M12 17.5H12.01" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-  "Suporte 24/7": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 6V12L16 14M22 12A10 10 0 1 1 2 12A10 10 0 0 1 22 12Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+  "24/7 Support": <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 6V12L16 14M22 12A10 10 0 1 1 2 12A10 10 0 0 1 22 12Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
 };
 
 export default function Navbar() {
@@ -100,7 +92,7 @@ export default function Navbar() {
   const [lang, setLang]               = useState(languages[0]);
   const [langOpen, setLangOpen]       = useState(false);
   const langRef                       = useRef<HTMLDivElement>(null);
-  const menuTimeout                   = useRef<ReturnType<typeof setTimeout>>();
+  const menuTimeout                   = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [location] = useLocation();
 
   useEffect(() => {
@@ -229,7 +221,7 @@ export default function Navbar() {
           </a>
           <a href="#" className="btn-glow">
             <span className="btn-glow-face">
-              Comece a negociar
+              Start trading
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
                 <path d="M2.5 7H11.5M8 3.5L11.5 7L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -378,7 +370,7 @@ export default function Navbar() {
               </div>
               <Link href="#" className="btn-glow mt-3" style={{ width: "100%", justifyContent: "center", textDecoration: "none" }}>
                 <span className="btn-glow-face" style={{ width: "100%", justifyContent: "center" }}>
-                  Comece a negociar
+                  Start trading
                 </span>
               </Link>
             </div>

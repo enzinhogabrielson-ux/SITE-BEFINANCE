@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 
 const assets = [
-  { name: "Apple", symbol: "AAPL", price: "$198.50", change: "+1,42%", positive: true, color: "#555555" },
-  { name: "Tesla", symbol: "TSLA", price: "$312.80", change: "+2,15%", positive: true, color: "#cc0000" },
-  { name: "Amazon", symbol: "AMZN", price: "$185.30", change: "-0,65%", positive: false, color: "#ff9900" },
-  { name: "Ouro", symbol: "XAU", price: "$2.340,20", change: "+0,83%", positive: true, color: "#d4a017" },
-  { name: "Petróleo", symbol: "WTI", price: "$78,45", change: "+1,71%", positive: true, color: "#2b5f2b" },
-  { name: "S&P 500", symbol: "SPX", price: "5.420,30", change: "+0,52%", positive: true, color: "#1a5276" },
-  { name: "Microsoft", symbol: "MSFT", price: "$428.60", change: "-0,38%", positive: false, color: "#00a4ef" },
-  { name: "Prata", symbol: "XAG", price: "$29,85", change: "+1,66%", positive: true, color: "#c0c0c0" },
+  { name: "Apple", symbol: "AAPL", price: "$198.50", change: "+1.42%", positive: true, color: "#555555" },
+  { name: "Tesla", symbol: "TSLA", price: "$312.80", change: "+2.15%", positive: true, color: "#cc0000" },
+  { name: "Amazon", symbol: "AMZN", price: "$185.30", change: "-0.65%", positive: false, color: "#ff9900" },
+  { name: "Gold", symbol: "XAU", price: "$2,340.20", change: "+0.83%", positive: true, color: "#d4a017" },
+  { name: "Oil", symbol: "WTI", price: "$78.45", change: "+1.71%", positive: true, color: "#2b5f2b" },
+  { name: "S&P 500", symbol: "SPX", price: "$5,420.30", change: "+0.52%", positive: true, color: "#1a5276" },
+  { name: "Microsoft", symbol: "MSFT", price: "$428.60", change: "-0.38%", positive: false, color: "#00a4ef" },
+  { name: "Silver", symbol: "XAG", price: "$29.85", change: "+1.66%", positive: true, color: "#c0c0c0" },
 ];
 
 const assetIcons: Record<string, string> = {
@@ -25,7 +25,7 @@ const assetIcons: Record<string, string> = {
 function TickerItem({ asset }: { asset: typeof assets[0] }) {
   return (
     <div
-      className="flex items-center gap-3 px-5 py-3 rounded-xl mx-3 cursor-pointer transition-all duration-300 hover:scale-105"
+      className="flex items-center gap-3 px-5 py-3 rounded-xl mx-3 cursor-pointer transition-colors duration-300"
       style={{
         background: "rgba(4, 20, 40, 0.7)",
         border: "1px solid rgba(0, 191, 255, 0.1)",
@@ -97,8 +97,8 @@ export default function MarketTicker() {
           className="inline-flex justify-center mb-4"
         >
           <div className="hero-badge">
-            <span className="badge-tag">Mercado</span>
-            <span className="badge-text">Negocie agora mesmo</span>
+            <span className="badge-tag">Market</span>
+            <span className="badge-text">Trade now</span>
           </div>
         </motion.div>
 
@@ -115,8 +115,8 @@ export default function MarketTicker() {
             letterSpacing: "-0.035em",
           }}
         >
-          Principais ativos do{" "}
-          <span className="shimmer-text">mercado</span>
+          Top assets on the{" "}
+          <span className="shimmer-text">market</span>
         </motion.h2>
       </div>
 

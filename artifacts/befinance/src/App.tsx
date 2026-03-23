@@ -11,20 +11,16 @@ const Acoes = lazy(() => import("@/pages/negociacao/Acoes"));
 const Commodities = lazy(() => import("@/pages/negociacao/Commodities"));
 
 const TradingWeb = lazy(() => import("@/pages/plataforma/TradingWeb"));
-const AppMobile = lazy(() => import("@/pages/plataforma/AppMobile"));
 const ContaDemo = lazy(() => import("@/pages/plataforma/ContaDemo"));
 const Ferramentas = lazy(() => import("@/pages/plataforma/Ferramentas"));
 const BaixarApp = lazy(() => import("@/pages/plataforma/BaixarApp"));
 
 const SobreNos = lazy(() => import("@/pages/sobre/SobreNos"));
 const Regulamentacao = lazy(() => import("@/pages/sobre/Regulamentacao"));
-const Premiacoes = lazy(() => import("@/pages/sobre/Premiacoes"));
-const Parceiros = lazy(() => import("@/pages/sobre/Parceiros"));
 const Afiliados = lazy(() => import("@/pages/sobre/Afiliados"));
 
 const CentralAjuda = lazy(() => import("@/pages/ajuda/CentralAjuda"));
 const Contato = lazy(() => import("@/pages/ajuda/Contato"));
-const CentralAprendizagem = lazy(() => import("@/pages/ajuda/CentralAprendizagem"));
 const FAQ = lazy(() => import("@/pages/ajuda/FAQ"));
 const Suporte = lazy(() => import("@/pages/ajuda/Suporte"));
 
@@ -49,20 +45,16 @@ function Router() {
         <Route path="/negociacao/commodities" component={Commodities} />
 
         <Route path="/plataforma/trading-web" component={TradingWeb} />
-        <Route path="/plataforma/app-mobile" component={AppMobile} />
         <Route path="/plataforma/conta-demo" component={ContaDemo} />
         <Route path="/plataforma/ferramentas" component={Ferramentas} />
         <Route path="/plataforma/baixar-app" component={BaixarApp} />
 
         <Route path="/sobre/sobre-nos" component={SobreNos} />
         <Route path="/sobre/regulamentacao" component={Regulamentacao} />
-        <Route path="/sobre/premiacoes" component={Premiacoes} />
-        <Route path="/sobre/parceiros" component={Parceiros} />
         <Route path="/sobre/afiliados" component={Afiliados} />
 
         <Route path="/ajuda/central-de-ajuda" component={CentralAjuda} />
         <Route path="/ajuda/contato" component={Contato} />
-        <Route path="/ajuda/central-de-aprendizagem" component={CentralAprendizagem} />
         <Route path="/ajuda/faq" component={FAQ} />
         <Route path="/ajuda/suporte" component={Suporte} />
 

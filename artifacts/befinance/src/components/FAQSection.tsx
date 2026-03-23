@@ -5,28 +5,28 @@ const expo = { type: "tween", duration: 0.85, ease: [0.16, 1, 0.3, 1] } as const
 
 const faqs = [
   {
-    q: "O que é a BeFinance e como ela funciona?",
-    a: "A BeFinance é uma plataforma de trading regulamentada que permite investir em ações, índices, ETFs, commodities e mais de 1000 ativos. Após criar sua conta gratuita, você recebe $10.000 em conta de treinamento para praticar sem risco antes de investir dinheiro real.",
+    q: "What is BeFinance and how does it work?",
+    a: "BeFinance is a regulated trading platform that allows you to invest in stocks, indices, ETFs, commodities and over 1,000 assets. After creating your free account, you receive $10,000 in a training account to practice risk-free before investing real money.",
   },
   {
-    q: "É preciso ter experiência para operar na BeFinance?",
-    a: "Não! Nossa plataforma foi projetada para iniciantes e profissionais. Temos tutoriais integrados, uma biblioteca com mais de 200 horas de conteúdo educacional, webinars ao vivo com especialistas e ferramentas de análise automática para te guiar em cada decisão.",
+    q: "Do I need experience to trade on BeFinance?",
+    a: "Not at all! Our platform was designed for beginners and professionals alike. We have integrated tutorials, a library with over 200 hours of educational content, live webinars with experts and automatic analysis tools to guide you in every decision.",
   },
   {
-    q: "A BeFinance é uma plataforma segura e regulamentada?",
-    a: "Sim. Somos totalmente regulamentados pela CVM (Comissão de Valores Mobiliários) e pelo Banco Central do Brasil. Utilizamos criptografia SSL 256-bit, autenticação de dois fatores e segregação de contas para garantir máxima proteção dos seus fundos.",
+    q: "Is BeFinance a safe and regulated platform?",
+    a: "Yes. We are fully regulated and compliant with international financial standards. We use SSL 256-bit encryption, two-factor authentication and account segregation to ensure maximum protection of your funds.",
   },
   {
-    q: "Qual o valor mínimo para começar a operar?",
-    a: "Você pode começar com apenas $10 na BeFinance. Não exigimos depósito mínimo alto — democratizamos o acesso ao mercado financeiro para que qualquer pessoa possa investir. Operamos com 0% de comissão e os menores spreads do mercado.",
+    q: "What is the minimum amount to start trading?",
+    a: "You can start with just $10 on BeFinance. We don't require a high minimum deposit — we democratize access to financial markets so anyone can invest. We operate with 0% commission and the lowest spreads in the market.",
   },
   {
-    q: "Posso sacar meus lucros quando quiser?",
-    a: "Sim, você pode solicitar saques a qualquer momento sem burocracia. Processamos retiradas em até 24 horas via PIX (instantâneo), TED/DOC ou transferência bancária. Não há taxas ocultas ou períodos de carência para saques.",
+    q: "Can I withdraw my profits whenever I want?",
+    a: "Yes, you can request withdrawals at any time without bureaucracy. We process withdrawals within 24 hours via wire transfer, credit/debit card or e-wallets. There are no hidden fees or waiting periods for withdrawals.",
   },
   {
-    q: "Quais ativos posso negociar na BeFinance?",
-    a: "Oferecemos mais de 1000 ativos incluindo: ações brasileiras e internacionais (B3, NYSE, NASDAQ), ETFs, commodities (ouro, petróleo, soja), índices globais e contratos futuros. Tudo em uma única plataforma.",
+    q: "What assets can I trade on BeFinance?",
+    a: "We offer over 1,000 assets including: international stocks (NYSE, NASDAQ, LSE), ETFs, commodities (gold, oil, silver), global indices and futures contracts. All on a single platform.",
   },
 ];
 
@@ -41,7 +41,6 @@ export default function FAQSection() {
         style={{ background: "radial-gradient(ellipse, rgba(0,191,255,0.04) 0%, transparent 65%)", filter: "blur(60px)" }}/>
 
       <div className="relative max-w-3xl mx-auto px-6">
-        {/* Header */}
         <div className="text-center mb-14">
           <motion.div
             initial={{ opacity: 0, filter: "blur(10px)", y: 16 }}
@@ -52,7 +51,7 @@ export default function FAQSection() {
           >
             <div className="hero-badge">
               <span className="badge-tag">FAQ</span>
-              <span className="badge-text">Perguntas frequentes</span>
+              <span className="badge-text">Frequently asked questions</span>
             </div>
           </motion.div>
 
@@ -67,8 +66,8 @@ export default function FAQSection() {
               color: "#fff", letterSpacing: "-0.035em", marginBottom: "1rem",
             }}
           >
-            Perguntas{" "}
-            <span className="shimmer-text">mais frequentes</span>
+            Frequently{" "}
+            <span className="shimmer-text">asked questions</span>
           </motion.h2>
 
           <motion.p
@@ -81,11 +80,10 @@ export default function FAQSection() {
               color: "rgba(240,248,255,0.6)", maxWidth: "440px", margin: "0 auto", lineHeight: 1.65, letterSpacing: "-0.01em",
             }}
           >
-            Encontre respostas para as dúvidas mais comuns sobre a BeFinance.
+            Find answers to the most common questions about BeFinance.
           </motion.p>
         </div>
 
-        {/* Accordion */}
         <div className="flex flex-col gap-3">
           {faqs.map((faq, i) => (
             <motion.div
@@ -101,7 +99,6 @@ export default function FAQSection() {
                 transition: "background 0.3s ease, border-color 0.3s ease",
               }}
             >
-              {/* Question */}
               <button
                 onClick={() => setOpen(open === i ? null : i)}
                 className="w-full text-left flex items-center justify-between p-5 gap-4"
@@ -132,7 +129,6 @@ export default function FAQSection() {
                 </motion.div>
               </button>
 
-              {/* Answer */}
               <AnimatePresence initial={false}>
                 {open === i && (
                   <motion.div
@@ -161,7 +157,6 @@ export default function FAQSection() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -170,7 +165,7 @@ export default function FAQSection() {
           className="text-center mt-12"
         >
           <p style={{ fontFamily: "'DM Sans','Inter',sans-serif", fontSize: "0.9rem", color: "rgba(240,248,255,0.5)", marginBottom: "1rem", letterSpacing: "-0.01em" }}>
-            Ainda tem dúvidas?
+            Still have questions?
           </p>
           <a href="#"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium"
@@ -185,7 +180,7 @@ export default function FAQSection() {
             onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "rgba(0,191,255,0.1)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,191,255,0.4)"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "rgba(0,191,255,0.05)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,191,255,0.25)"; }}
           >
-            Falar com suporte
+            Talk to support
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M2.5 7H11.5M8 3.5L11.5 7L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>

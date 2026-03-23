@@ -70,38 +70,41 @@ BeFinance institutional landing page for a financial trading/broker company focu
 - **Framework**: React + Vite + Tailwind CSS + Framer Motion
 - **Fonts**: DM Sans (headings) + Inter (body/nav) via Google Fonts
 - **Colors**: Dark background `#040d18`, cyan accent `#00bfff`
-- **Language**: All content in Portuguese (pt-BR)
+- **Language**: All content in English (en-US). Language switcher (PT/EN/ES) exists in Navbar but translations not wired.
 - **Style reference**: Olymptrade + kyvoo.io
+- **Currency**: USD ($). Minimum deposit $10, demo account $10,000, minimum operation $1
+- **Scope**: Options Binary (O.B.) trading only. NO Forex, NO Crypto.
 
 #### Routing
 - **Router**: wouter with lazy-loaded pages via React.lazy + Suspense
-- **20 internal pages** across 4 categories (Negociação, Plataforma, Sobre, Ajuda)
+- Internal pages across 4 categories (Trading, Platform, About, Help)
 - All footer links and mega-menu links use `<Link>` from wouter for SPA navigation
 
 #### Key Components
-- **Navbar**: Mega-menu dropdown (Olymptrade-style) with icons + descriptions for each link. Desktop: hover-triggered full-width dropdown. Mobile: accordion sections.
-- **Hero**: Kyvoo-style wavy bg with holographic shark SVG (`public/TUBASVG.svg`), `mix-blend-mode: screen`, mouse-follow animation using lerp + RAF (NOT useSpring)
-- **MarketTicker**: Live market data strip
-- **TrustSection**: "Capacitando traders" stats + badge grid with CountUp animation on scroll
+- **Navbar**: Mega-menu dropdown (Olymptrade-style) with icons + descriptions. Desktop: hover-triggered full-width dropdown. Mobile: accordion sections. Menu labels: Trading, Platform, About, Help.
+- **Hero**: Kyvoo-style wavy bg with holographic shark SVG (`public/TUBASVG.svg`), `mix-blend-mode: screen`, mouse-follow animation using lerp + RAF (NOT useSpring). Trust badges: SSL 256-bit, Regulated, Exec. < 1ms, +40 countries.
+- **MarketTicker**: Live market data strip (stocks, commodities, indices — no crypto/forex)
+- **TrustSection**: "Empowering traders" stats + badge grid with CountUp animation on scroll
 - **InternalPageLayout**: Reusable template for all internal pages (badge, title, subtitle, features grid, CTA section)
 - **PlatformSection**: MacBook scroll animation with platform showcase
 - **InstrumentsSection**: Risk-free trading instruments grid (demo account, stop loss, deposits, etc.)
-- **RegulationSection**: Licensing/regulation info (CVM, BACEN, SSL, AML)
-- **TradingConfidenceSection**: Support, signals, strategies, learning materials
-- **WithdrawalsSection**: Fast withdrawals + payment methods (PIX, Boleto, etc.)
-- **DepositsSection**: Deposit security badges
-- **TestimonialsSection**: User reviews
+- **RegulationSection**: Licensing/regulation info (IFMRRC, FCA, SSL, AML)
+- **TradingConfidenceSection**: 3 cards — full-width support card + 2 equal columns (signals, strategies)
+- **WithdrawalsSection**: Fast withdrawals + payment methods (Wire Transfer, Credit Card, Debit Card, PayPal, Skrill)
+- **DepositsSection**: Deposit security badges (Wire Transfer, Credit Card, Debit Card, PayPal, Skrill, Neteller)
+- **TestimonialsSection**: International user reviews carousel (AnimatePresence mode="popLayout")
 - **AwardsSection**: Awards and recognition grid
 - **FAQSection**: Accordion FAQ (home page section)
+- **BlogSection**: 2 small cards (top row) + 1 large featured card (full-width bottom)
 - **FAQ Page**: Full standalone FAQ page at /ajuda/faq with animated accordion
-- **CTASection**: Final CTA with "Comece a negociar com confiança"
+- **CTASection**: Final CTA with "Start trading with confidence"
 - **Footer**: 4-column institutional footer with Link components to all internal pages
 
-#### Internal Pages (20 total)
-- **Negociação**: /negociacao/opcoes-digitais, /forex, /acoes, /criptomoedas, /commodities
-- **Plataforma**: /plataforma/trading-web, /app-mobile, /conta-demo, /ferramentas, /baixar-app
-- **Sobre**: /sobre/sobre-nos, /regulamentacao, /premiacoes, /parceiros, /afiliados
-- **Ajuda**: /ajuda/central-de-ajuda, /contato, /central-de-aprendizagem, /faq, /suporte
+#### Internal Pages
+- **Trading**: /negociacao/opcoes-digitais, /acoes, /commodities
+- **Platform**: /plataforma/conta-demo, /trading-web, /ferramentas, /baixar-app
+- **About**: /sobre/sobre-nos, /regulamentacao, /afiliados
+- **Help**: /ajuda/central-de-ajuda, /contato, /faq, /suporte
 
 #### CSS Classes (index.css)
 - `btn-glow`: Primary CTA with spinning conic-gradient border glow

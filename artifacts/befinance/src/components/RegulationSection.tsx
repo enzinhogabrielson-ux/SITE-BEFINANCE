@@ -5,10 +5,10 @@ const blur = { initial: { opacity: 0, filter: "blur(12px)", y: 24 }, animate: { 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const regulators = [
-  { name: "CVM", desc: "Comissão de Valores Mobiliários" },
-  { name: "BACEN", desc: "Banco Central do Brasil" },
-  { name: "SSL", desc: "Criptografia 256-bit" },
-  { name: "AML", desc: "Anti-lavagem de dinheiro" },
+  { name: "IFMRRC", desc: "International Financial Market Relations Regulation Center" },
+  { name: "FCA", desc: "Financial Conduct Authority" },
+  { name: "SSL", desc: "256-bit encryption" },
+  { name: "AML", desc: "Anti-Money Laundering" },
 ];
 
 export default function RegulationSection() {
@@ -35,16 +35,16 @@ export default function RegulationSection() {
               className="text-3xl md:text-5xl font-bold mb-6"
               style={{ fontFamily: "'DM Sans',sans-serif", color: "#fff", letterSpacing: "-0.03em", lineHeight: 1.15 }}
             >
-              A BeFinance é uma{" "}
-              <span style={{ color: "#00bfff" }}>corretora online</span>{" "}
-              licenciada e regulamentada
+              BeFinance is a licensed and{" "}
+              <span style={{ color: "#00bfff" }}>regulated</span>{" "}
+              online broker
             </h2>
             <p
               className="text-base mb-8"
               style={{ color: "rgba(240,248,255,0.55)", fontFamily: "'Inter',sans-serif", lineHeight: 1.7 }}
             >
-              Operamos seguindo os mais altos padrões regulatórios do mercado financeiro.
-              Sua segurança é nossa prioridade absoluta em todas as operações.
+              We operate following the highest regulatory standards in the financial market.
+              Your security is our absolute priority in every operation.
             </p>
             <a
               href="#"
@@ -56,7 +56,7 @@ export default function RegulationSection() {
                 fontFamily: "'Inter',sans-serif",
               }}
             >
-              Saiba mais sobre regulamentação
+              Learn more about regulation
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path d="M5 3L9 7L5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>

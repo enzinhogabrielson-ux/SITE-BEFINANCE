@@ -5,12 +5,12 @@ const blur = { initial: { opacity: 0, filter: "blur(12px)", y: 24 }, animate: { 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const awards = [
-  { year: "2024", title: "Melhor Plataforma de Trading" },
-  { year: "2024", title: "Corretora Mais Confiável da Latam" },
-  { year: "2023", title: "Melhor Experiência de Negociação" },
-  { year: "2023", title: "Corretora com Melhor Suporte" },
-  { year: "2023", title: "Melhor Plataforma Móvel" },
-  { year: "2022", title: "Corretora Inovadora do Ano" },
+  { year: "2024", title: "Best Trading Platform" },
+  { year: "2024", title: "Most Trusted Broker" },
+  { year: "2023", title: "Best Trading Experience" },
+  { year: "2023", title: "Broker with Best Support" },
+  { year: "2023", title: "Best Mobile Platform" },
+  { year: "2022", title: "Innovative Broker of the Year" },
 ];
 
 export default function AwardsSection() {
@@ -44,11 +44,11 @@ export default function AwardsSection() {
               className="text-3xl md:text-4xl font-bold mb-3"
               style={{ fontFamily: "'DM Sans',sans-serif", color: "#fff", letterSpacing: "-0.03em", lineHeight: 1.15 }}
             >
-              Premiações e{" "}
-              <span style={{ color: "#00bfff" }}>reconhecimento</span>
+              Awards &{" "}
+              <span style={{ color: "#00bfff" }}>recognition</span>
             </h2>
             <p className="text-sm" style={{ color: "rgba(240,248,255,0.5)", fontFamily: "'Inter',sans-serif", lineHeight: 1.6 }}>
-              Reconhecida globalmente pela excelência em serviços financeiros.
+              Globally recognized for excellence in financial services.
             </p>
           </div>
 

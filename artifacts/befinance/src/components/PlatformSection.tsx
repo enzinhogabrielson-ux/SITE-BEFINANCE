@@ -12,8 +12,8 @@ const featureCards = [
         <circle cx="17" cy="6" r="1.8" fill="#00bfff"/>
       </svg>
     ),
-    title: "Gráficos Avançados",
-    desc: "+50 indicadores técnicos em tempo real",
+    title: "Advanced Charts",
+    desc: "+50 real-time technical indicators",
   },
   {
     icon: (
@@ -23,8 +23,8 @@ const featureCards = [
         <circle cx="11" cy="11" r="1.5" fill="#00bfff"/>
       </svg>
     ),
-    title: "Execução < 1ms",
-    desc: "Ordens executadas em milissegundos",
+    title: "Execution < 1ms",
+    desc: "Orders executed in milliseconds",
   },
   {
     icon: (
@@ -35,8 +35,8 @@ const featureCards = [
         <rect x="13" y="11" width="4" height="3" rx="1" fill="#00bfff" opacity="0.35"/>
       </svg>
     ),
-    title: "Conta Demo Grátis",
-    desc: "$10.000 para treinar sem risco",
+    title: "Free Demo Account",
+    desc: "$10,000 to practice risk-free",
   },
   {
     icon: (
@@ -45,8 +45,8 @@ const featureCards = [
         <path d="M7.5 11L10 13.5L14.5 8.5" stroke="#00bfff" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
-    title: "Multi-Ativos",
-    desc: "+1000 ativos em uma plataforma",
+    title: "Multi-Assets",
+    desc: "+1,000 assets on one platform",
   },
 ];
 
@@ -200,11 +200,12 @@ function LaptopMockup() {
           }}/>
         </div>
 
-        {/* Shadow / ground */}
         <div style={{
           width: "75%", height: "18px", margin: "3px auto 0",
-          background: "radial-gradient(ellipse, rgba(0,0,0,0.55) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(0,0,0,0.35) 0%, transparent 70%)",
           filter: "blur(8px)",
+          position: "relative",
+          zIndex: 0,
         }}/>
       </motion.div>
     </div>
@@ -235,8 +236,8 @@ export default function PlatformSection() {
             className="inline-flex justify-center mb-5"
           >
             <div className="hero-badge">
-              <span className="badge-tag">Plataforma</span>
-              <span className="badge-text">Tecnologia de ponta</span>
+              <span className="badge-tag">Platform</span>
+              <span className="badge-text">Cutting-edge technology</span>
             </div>
           </motion.div>
 
@@ -251,8 +252,8 @@ export default function PlatformSection() {
               color: "#fff", letterSpacing: "-0.035em", marginBottom: "1rem",
             }}
           >
-            Tudo que você precisa para{" "}
-            <span className="shimmer-text">investir melhor</span>
+            Everything you need to{" "}
+            <span className="shimmer-text">invest better</span>
           </motion.h2>
 
           <motion.p
@@ -266,7 +267,7 @@ export default function PlatformSection() {
               lineHeight: 1.65, letterSpacing: "-0.01em",
             }}
           >
-            Nossa plataforma foi desenvolvida por especialistas para oferecer a melhor experiência de trading do Brasil.
+            Our platform was built by experts to deliver the best trading experience worldwide.
           </motion.p>
         </div>
 

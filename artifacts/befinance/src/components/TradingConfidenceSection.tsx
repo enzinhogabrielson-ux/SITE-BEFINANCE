@@ -6,8 +6,8 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 const features = [
   {
-    title: "Suporte ininterrupto em seu idioma",
-    description: "Atendimento 24/7 em português com especialistas do mercado financeiro prontos para te ajudar.",
+    title: "Round-the-clock support in your language",
+    description: "24/7 support with financial market specialists ready to help you at any time.",
     span: "lg:col-span-2",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -19,8 +19,8 @@ const features = [
     ),
   },
   {
-    title: "Sinais de negociação para identificar tendências lucrativas",
-    description: "Receba alertas em tempo real sobre as melhores oportunidades do mercado.",
+    title: "Trading signals to identify profitable trends",
+    description: "Receive real-time alerts on the best market opportunities.",
     span: "",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -31,10 +31,10 @@ const features = [
     ),
   },
   {
-    title: "Estratégias de negociação prontas para uso",
-    description: "Estratégias testadas por especialistas, prontas para aplicar nas suas operações.",
+    title: "Ready-to-use trading strategies",
+    description: "Expert-tested strategies, ready to apply in your operations.",
     span: "",
-    cta: "Experimente de graça",
+    cta: "Try for free",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <rect x="6" y="8" width="28" height="24" rx="4" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.06)" />
@@ -42,19 +42,6 @@ const features = [
         <rect x="10" y="20" width="8" height="4" rx="1" fill="#00bfff" opacity="0.4" />
         <rect x="22" y="20" width="8" height="4" rx="1" fill="#00bfff" opacity="0.2" />
         <rect x="10" y="26" width="20" height="2" rx="1" fill="#00bfff" opacity="0.15" />
-      </svg>
-    ),
-  },
-  {
-    title: "Materiais de aprendizagem integrados e tutoriais",
-    description: "Biblioteca completa com cursos, vídeos e guias para todos os níveis de experiência.",
-    span: "",
-    cta: "Começar a aprender",
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-        <path d="M4 12L20 6L36 12L20 18L4 12Z" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.06)" />
-        <path d="M8 14V26L20 32L32 26V14" stroke="#00bfff" strokeWidth="1.5" strokeLinejoin="round" />
-        <path d="M36 12V24" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
   },
@@ -79,17 +66,17 @@ export default function TradingConfidenceSection() {
             className="text-3xl md:text-5xl font-bold mb-4"
             style={{ fontFamily: "'DM Sans',sans-serif", color: "#fff", letterSpacing: "-0.03em", lineHeight: 1.15 }}
           >
-            A caminho da{" "}
+            On the path to{" "}
             <br className="hidden md:block" />
-            <span style={{ color: "#00bfff" }}>negociação confiante</span>
+            <span style={{ color: "#00bfff" }}>confident trading</span>
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {features.map((f, i) => (
             <motion.div
               key={f.title}
-              className={`kyvoo-card rounded-2xl p-7 flex flex-col gap-4 ${f.span}`}
+              className={`kyvoo-card rounded-2xl p-7 flex flex-col gap-4 ${i === 0 ? "lg:col-span-3" : ""}`}
               style={{
                 background: i === 0
                   ? "linear-gradient(135deg, rgba(0,191,255,0.1), rgba(0,60,120,0.08))"

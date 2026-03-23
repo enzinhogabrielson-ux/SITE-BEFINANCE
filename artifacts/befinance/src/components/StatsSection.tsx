@@ -25,7 +25,7 @@ function CountUp({ target, suffix, prefix }: { target: number; suffix: string; p
     return () => clearInterval(timer);
   }, [inView, target]);
 
-  const formatted = count >= 1000 ? count.toLocaleString("pt-BR") : count;
+  const formatted = count >= 1000 ? count.toLocaleString("en-US") : count;
   return <span ref={ref}>{prefix}{formatted}{suffix}</span>;
 }
 

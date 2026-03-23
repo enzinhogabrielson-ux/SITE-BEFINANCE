@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValue } from "framer-motion";
 import heroBg from "/hero-bg.png";
 
-const cycleWords = ["opções", "ações", "commodities", "índices", "futuros"];
+const cycleWords = ["options", "stocks", "commodities", "indices", "futures"];
 
 // Kyvoo-style spring presets
 const springFast   = { type: "spring", stiffness: 400, damping: 40 } as const;
@@ -185,8 +185,8 @@ export default function Hero() {
             className="mb-7"
           >
             <div className="hero-badge">
-              <span className="badge-tag">Novo</span>
-              <span className="badge-text">Plataforma de negociação digital do Brasil</span>
+              <span className="badge-tag">NEW</span>
+              <span className="badge-text">The best broker in the world.</span>
             </div>
           </motion.div>
 
@@ -199,14 +199,15 @@ export default function Hero() {
               fontFamily: "'DM Sans','Plus Jakarta Sans',sans-serif",
               fontWeight: 700,
               fontSize: "clamp(2.6rem, 5.5vw, 4.4rem)",
-              lineHeight: 1.08,
+              lineHeight: 1.12,
               letterSpacing: "-0.035em",
               color: "#ffffff",
               marginBottom: "0.2rem",
+              paddingBottom: "0.08em",
             }}
           >
-            Aumente sua confiança{" "}
-            a cada negociação em
+            Boost your confidence{" "}
+            with every trade in
           </motion.h1>
 
           {/* Cycling word — blur-swap animation */}
@@ -253,9 +254,9 @@ export default function Hero() {
               maxWidth: "440px",
             }}
           >
-            Comece agora com{" "}
-            <strong style={{ color: "#00bfff", fontWeight: 700 }}>$0</strong>{" "}
-            na conta demo. Pratique sem riscos e negocie com confiança.
+            Start now with a{" "}
+            <strong style={{ color: "#00bfff", fontWeight: 700 }}>$10</strong>{" "}
+            minimum deposit. Practice risk-free on our demo account and trade with confidence.
           </motion.p>
 
           {/* CTAs */}
@@ -268,7 +269,7 @@ export default function Hero() {
             {/* Primary — radial glow (Kyvoo pattern) */}
             <a href="#" className="btn-glow">
               <span className="btn-glow-face">
-                Comece agora com $0
+                Start with $10
                 <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
                   <path d="M2.5 7H11.5M8 3.5L11.5 7L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -292,7 +293,7 @@ export default function Hero() {
                 letterSpacing: "-0.01em",
               }}
             >
-              Saiba mais
+              Learn more
             </motion.a>
           </motion.div>
 
@@ -305,9 +306,9 @@ export default function Hero() {
           >
             {[
               { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="2.5" y="5.5" width="8" height="6" rx="1.2" stroke="#00bfff" strokeWidth="1.2"/><path d="M4.5 5.5V4C4.5 3 5.2 2.3 6.5 2.3C7.8 2.3 8.5 3 8.5 4V5.5" stroke="#00bfff" strokeWidth="1.2" strokeLinecap="round"/></svg>, text: "SSL 256-bit" },
-              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L7.8 4.5H11L8.5 6.5L9.5 10L6.5 8L3.5 10L4.5 6.5L2 4.5H5.2L6.5 1Z" stroke="#00bfff" strokeWidth="1.2" strokeLinejoin="round"/></svg>, text: "Reg. CVM" },
+              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L7.8 4.5H11L8.5 6.5L9.5 10L6.5 8L3.5 10L4.5 6.5L2 4.5H5.2L6.5 1Z" stroke="#00bfff" strokeWidth="1.2" strokeLinejoin="round"/></svg>, text: "Regulated" },
               { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M7 1.5L4 7H7L6 11.5L9.5 6H6.5L7 1.5Z" stroke="#00bfff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>, text: "Exec. < 1ms" },
-              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="#00bfff" strokeWidth="1.2"/><path d="M1.5 6.5H11.5M6.5 1.5C6.5 1.5 4.5 3.8 4.5 6.5C4.5 9.2 6.5 11.5 6.5 11.5M6.5 1.5C6.5 1.5 8.5 3.8 8.5 6.5C8.5 9.2 6.5 11.5 6.5 11.5" stroke="#00bfff" strokeWidth="1.2"/></svg>, text: "+40 países" },
+              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="#00bfff" strokeWidth="1.2"/><path d="M1.5 6.5H11.5M6.5 1.5C6.5 1.5 4.5 3.8 4.5 6.5C4.5 9.2 6.5 11.5 6.5 11.5M6.5 1.5C6.5 1.5 8.5 3.8 8.5 6.5C8.5 9.2 6.5 11.5 6.5 11.5" stroke="#00bfff" strokeWidth="1.2"/></svg>, text: "+40 countries" },
             ].map((b, i) => (
               <div key={b.text} className="flex items-center">
                 <div className="flex items-center gap-1.5"

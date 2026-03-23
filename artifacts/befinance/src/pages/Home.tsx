@@ -11,6 +11,7 @@ import DepositsSection from "@/components/DepositsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import AwardsSection from "@/components/AwardsSection";
 import FAQSection from "@/components/FAQSection";
+import BlogSection from "@/components/BlogSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -30,6 +31,7 @@ export default function Home() {
       <TestimonialsSection />
       <AwardsSection />
       <FAQSection />
+      <BlogSection />
       <CTASection />
       <Footer />
     </div>

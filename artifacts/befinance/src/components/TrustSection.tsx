@@ -21,13 +21,13 @@ function CountUp({ target, suffix, prefix }: { target: number; suffix: string; p
     return () => clearInterval(timer);
   }, [inView, target]);
 
-  const formatted = count >= 1000 ? count.toLocaleString("pt-BR") : count;
+  const formatted = count >= 1000 ? count.toLocaleString("en-US") : count;
   return <span ref={ref}>{prefix}{formatted}{suffix}</span>;
 }
 
 const badges = [
   {
-    label: "Plataforma moderna",
+    label: "Modern platform",
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <rect x="2" y="4" width="18" height="13" rx="2.5" stroke="#00bfff" strokeWidth="1.5" />
@@ -37,7 +37,7 @@ const badges = [
     ),
   },
   {
-    label: "Recursos exclusivos",
+    label: "Exclusive features",
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <path d="M11 2L13.5 7.5L19.5 8L15 12.5L16.5 18.5L11 15.5L5.5 18.5L7 12.5L2.5 8L8.5 7.5L11 2Z" stroke="#00bfff" strokeWidth="1.5" strokeLinejoin="round" />
@@ -45,7 +45,7 @@ const badges = [
     ),
   },
   {
-    label: "Começo fácil",
+    label: "Easy start",
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <circle cx="11" cy="11" r="8.5" stroke="#00bfff" strokeWidth="1.5" />
@@ -54,16 +54,16 @@ const badges = [
     ),
   },
   {
-    label: "Central de aprendizagem",
+    label: "24/7 Support",
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-        <path d="M2 7L11 3L20 7L11 11L2 7Z" stroke="#00bfff" strokeWidth="1.5" strokeLinejoin="round" />
-        <path d="M5 8.5V15L11 18L17 15V8.5" stroke="#00bfff" strokeWidth="1.5" strokeLinejoin="round" />
+        <circle cx="11" cy="11" r="8.5" stroke="#00bfff" strokeWidth="1.5" />
+        <path d="M11 6V11L14 13" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
   },
   {
-    label: "Saques rápidos",
+    label: "Fast withdrawals",
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <path d="M12 2L6 12H11L10 20L16 10H11L12 2Z" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -71,7 +71,7 @@ const badges = [
     ),
   },
   {
-    label: "Corretora confiável",
+    label: "Trusted broker",
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <path d="M11 2L18 6V11C18 16 15 19.5 11 21C7 19.5 4 16 4 11V6L11 2Z" stroke="#00bfff" strokeWidth="1.5" strokeLinejoin="round" />
@@ -82,10 +82,10 @@ const badges = [
 ];
 
 const stats = [
-  { value: 500, suffix: "K+", prefix: "", label: "Traders ativos" },
-  { value: 10, suffix: "bi+", prefix: "$", label: "Volume negociado" },
-  { value: 98, suffix: "%", prefix: "", label: "Satisfação" },
-  { value: 40, suffix: "+", prefix: "", label: "Países" },
+  { value: 500, suffix: "K+", prefix: "", label: "Active traders" },
+  { value: 10, suffix: "B+", prefix: "$", label: "Trading volume" },
+  { value: 98, suffix: "%", prefix: "", label: "Satisfaction" },
+  { value: 40, suffix: "+", prefix: "", label: "Countries" },
 ];
 
 export default function TrustSection() {
@@ -108,7 +108,7 @@ export default function TrustSection() {
             style={{ background: "rgba(0,191,255,0.08)", border: "1px solid rgba(0,191,255,0.15)" }}
           >
             <span style={{ color: "#00bfff", fontSize: "14px", fontWeight: 600, fontFamily: "'DM Sans',sans-serif" }}>
-              Sobre a BeFinance
+              About BeFinance
             </span>
           </motion.div>
 
@@ -116,17 +116,18 @@ export default function TrustSection() {
             className="text-4xl md:text-6xl font-bold mb-6"
             style={{ fontFamily: "'DM Sans',sans-serif", color: "#fff", letterSpacing: "-0.03em", lineHeight: 1.1 }}
           >
-            Capacitando traders,{" "}
+            A new generation of traders{" "}
             <br className="hidden md:block" />
-            e é apenas o{" "}
-            <span style={{ color: "#00bfff" }}>começo.</span>
+            is being created.{" "}
+            <br className="hidden md:block" />
+            And this is just the{" "}
+            <span style={{ color: "#00bfff" }}>beginning.</span>
           </h2>
           <p
             className="text-lg max-w-2xl mx-auto"
             style={{ color: "rgba(240,248,255,0.6)", fontFamily: "'Inter',sans-serif", lineHeight: 1.7 }}
           >
-            Conheça a BeFinance, transformada e melhor. Receba a atenção que importa
-            para suas operações de trading.
+            Welcome to BeFinance. Evolved to deliver what truly matters: clarity, strategy and control in your operations. Here, you don't trade in the dark.
           </p>
         </motion.div>
 

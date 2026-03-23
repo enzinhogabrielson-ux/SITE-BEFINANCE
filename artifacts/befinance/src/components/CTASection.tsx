@@ -23,7 +23,6 @@ export default function CTASection() {
           className="p-10 md:p-16 rounded-3xl"
           style={{ background: "rgba(4,20,40,0.45)", border: "1px solid rgba(0,191,255,0.12)", backdropFilter: "blur(24px)" }}
         >
-          {/* Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -32,8 +31,8 @@ export default function CTASection() {
             className="inline-flex justify-center mb-7"
           >
             <div className="hero-badge">
-              <span className="badge-tag">Grátis</span>
-              <span className="badge-text">Comece agora, sem cartão de crédito</span>
+              <span className="badge-tag">Free</span>
+              <span className="badge-text">Start now, no credit card required</span>
             </div>
           </motion.div>
 
@@ -48,8 +47,8 @@ export default function CTASection() {
               color: "#fff", letterSpacing: "-0.035em", lineHeight: 1.1, marginBottom: "1.2rem",
             }}
           >
-            Comece a negociar{" "}
-            <span className="shimmer-text">com confiança</span>
+            Start trading{" "}
+            <span className="shimmer-text">with confidence</span>
           </motion.h2>
 
           <motion.p
@@ -63,9 +62,9 @@ export default function CTASection() {
               margin: "0 auto 2.5rem", letterSpacing: "-0.01em",
             }}
           >
-            Plataforma disponível para qualquer dispositivo. Comece a negociar{" "}
-            <strong style={{ color: "#00bfff" }}>agora mesmo</strong>{" "}
-            e descubra o poder das operações digitais.
+            Platform available on any device. Start trading{" "}
+            <strong style={{ color: "#00bfff" }}>right now</strong>{" "}
+            and discover the power of digital options.
           </motion.p>
 
           <motion.div
@@ -77,7 +76,7 @@ export default function CTASection() {
           >
             <a href="#" className="btn-glow">
               <span className="btn-glow-face" style={{ padding: "0 32px" }}>
-                Comece a negociar
+                Start trading
                 <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
                   <path d="M2.5 7H11.5M8 3.5L11.5 7L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -94,11 +93,10 @@ export default function CTASection() {
                 background: "rgba(0,191,255,0.04)", height: "50px", letterSpacing: "-0.01em",
               }}
             >
-              Conhecer a plataforma
+              Explore the platform
             </motion.a>
           </motion.div>
 
-          {/* Trust row */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -108,9 +106,9 @@ export default function CTASection() {
           >
             {[
               { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="2.5" y="5.5" width="8" height="6" rx="1.2" stroke="#00bfff" strokeWidth="1.2"/><path d="M4.5 5.5V4C4.5 3 5.2 2.3 6.5 2.3C7.8 2.3 8.5 3 8.5 4V5.5" stroke="#00bfff" strokeWidth="1.2" strokeLinecap="round"/></svg>, text: "SSL 256-bit" },
-              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L7.8 4.5H11L8.5 6.5L9.5 10L6.5 8L3.5 10L4.5 6.5L2 4.5H5.2L6.5 1Z" stroke="#00bfff" strokeWidth="1.2" strokeLinejoin="round"/></svg>, text: "Regulamentada CVM" },
-              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M7 1.5L4 7H7L6 11.5L9.5 6H6.5L7 1.5Z" stroke="#00bfff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>, text: "Execução < 1ms" },
-              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="#00bfff" strokeWidth="1.2"/><path d="M1.5 6.5H11.5" stroke="#00bfff" strokeWidth="1.2" strokeLinecap="round"/><path d="M6.5 1.5C6.5 1.5 4.5 3.8 4.5 6.5S6.5 11.5 6.5 11.5M6.5 1.5C6.5 1.5 8.5 3.8 8.5 6.5S6.5 11.5 6.5 11.5" stroke="#00bfff" strokeWidth="1.2"/></svg>, text: "+40 países" },
+              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1L7.8 4.5H11L8.5 6.5L9.5 10L6.5 8L3.5 10L4.5 6.5L2 4.5H5.2L6.5 1Z" stroke="#00bfff" strokeWidth="1.2" strokeLinejoin="round"/></svg>, text: "Regulated" },
+              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M7 1.5L4 7H7L6 11.5L9.5 6H6.5L7 1.5Z" stroke="#00bfff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>, text: "Execution < 1ms" },
+              { icon: <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="#00bfff" strokeWidth="1.2"/><path d="M1.5 6.5H11.5" stroke="#00bfff" strokeWidth="1.2" strokeLinecap="round"/><path d="M6.5 1.5C6.5 1.5 4.5 3.8 4.5 6.5S6.5 11.5 6.5 11.5M6.5 1.5C6.5 1.5 8.5 3.8 8.5 6.5S6.5 11.5 6.5 11.5" stroke="#00bfff" strokeWidth="1.2"/></svg>, text: "+40 countries" },
             ].map((b, i) => (
               <div key={b.text} className="flex items-center">
                 <div className="flex items-center gap-1.5"

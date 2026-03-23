@@ -6,9 +6,9 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 const cards = [
   {
-    title: "Conta demo projetada para praticar",
-    description: "Pratique suas estratégias sem riscos com $10.000 virtuais. Aprenda no seu ritmo antes de investir de verdade.",
-    cta: "Experimentar agora",
+    title: "Demo account designed for practice",
+    description: "Practice your strategies risk-free with $10,000 in virtual funds. Learn at your own pace before investing real money.",
+    cta: "Try now",
     highlight: true,
     icon: (
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -19,9 +19,9 @@ const cards = [
     ),
   },
   {
-    title: "Negociações sem riscos permitem que você negocie com confiança",
-    description: "Teste suas estratégias em ambiente seguro. Sem riscos financeiros, com dados do mercado real.",
-    cta: "Saiba mais",
+    title: "Risk-free trading lets you trade with confidence",
+    description: "Test your strategies in a safe environment. No financial risk, with real market data.",
+    cta: "Learn more",
     highlight: false,
     icon: (
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -31,9 +31,9 @@ const cards = [
     ),
   },
   {
-    title: "Stop Loss / Take Profit fecham as negociações nas suas condições",
-    description: "Defina limites automáticos de ganho e perda. Proteja seus investimentos mesmo quando estiver offline.",
-    cta: "Saiba mais",
+    title: "Stop Loss / Take Profit close trades on your terms",
+    description: "Set automatic profit and loss limits. Protect your investments even when you're offline.",
+    cta: "Learn more",
     highlight: false,
     icon: (
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -44,9 +44,9 @@ const cards = [
     ),
   },
   {
-    title: "Proteção contra saldo negativo",
-    description: "Você nunca perde mais do que o valor investido na operação. Sua conta está sempre protegida.",
-    cta: "Saiba mais",
+    title: "Negative balance protection",
+    description: "You never lose more than the amount invested in the operation. Your account is always protected.",
+    cta: "Learn more",
     highlight: false,
     icon: (
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -57,13 +57,13 @@ const cards = [
     ),
   },
   {
-    title: "Você escolhe o valor e a duração de sua negociação",
-    description: "Abra negociações a partir de $1, com durações a partir de 5 segundos. Total flexibilidade.",
+    title: "You choose the amount and duration of your trade",
+    description: "Open trades starting from $1, with durations from 5 seconds. Total flexibility.",
     cta: "",
     highlight: false,
     stats: [
-      { value: "$1", label: "Operação mínima" },
-      { value: "5s", label: "Duração mínima" },
+      { value: "$1", label: "Minimum trade" },
+      { value: "5s", label: "Minimum duration" },
     ],
     icon: (
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -73,9 +73,9 @@ const cards = [
     ),
   },
   {
-    title: "Depósitos assegurados",
-    description: "Seus fundos são mantidos em contas segregadas e seguradas. Máxima proteção para seu capital.",
-    cta: "Saiba mais",
+    title: "Insured deposits",
+    description: "Your funds are kept in segregated and insured accounts. Maximum protection for your capital.",
+    cta: "Learn more",
     highlight: false,
     icon: (
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -107,13 +107,13 @@ export default function InstrumentsSection() {
             className="text-3xl md:text-5xl font-bold mb-4"
             style={{ fontFamily: "'DM Sans',sans-serif", color: "#fff", letterSpacing: "-0.03em", lineHeight: 1.15 }}
           >
-            Explore a negociação{" "}
+            Explore trading{" "}
             <br className="hidden md:block" />
-            com instrumentos{" "}
-            <span style={{ color: "#00bfff" }}>sem riscos</span>
+            with{" "}
+            <span style={{ color: "#00bfff" }}>risk-free</span> instruments
           </h2>
           <p className="text-base max-w-xl mx-auto" style={{ color: "rgba(240,248,255,0.55)", fontFamily: "'Inter',sans-serif" }}>
-            Descubra a combinação perfeita entre atenção, confiabilidade e usabilidade
+            Discover the perfect combination of attention, reliability and usability
           </p>
         </motion.div>
 

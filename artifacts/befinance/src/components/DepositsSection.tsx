@@ -4,21 +4,23 @@ const expo = { type: "tween", duration: 0.85, ease: [0.16, 1, 0.3, 1] } as const
 
 const methods = [
   {
-    name: "PIX",
-    detail: "Instantâneo",
-    amount: "$ 10",
+    name: "Wire Transfer",
+    detail: "Bank transfer",
+    amount: "$ 50",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <path d="M14 3L25 14L14 25L3 14L14 3Z" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.08)"/>
-        <path d="M14 8.5L19.5 14L14 19.5L8.5 14L14 8.5Z" fill="#00bfff" opacity="0.6"/>
+        <rect x="4" y="6" width="20" height="16" rx="3" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.06)"/>
+        <path d="M4 11H24" stroke="#00bfff" strokeWidth="1"/>
+        <rect x="8" y="14" width="5" height="3" rx="1" fill="#00bfff" opacity="0.5"/>
+        <rect x="15" y="14" width="5" height="3" rx="1" fill="#00bfff" opacity="0.3"/>
       </svg>
     ),
     color: "#00bfff",
   },
   {
     name: "Visa",
-    detail: "Crédito/Débito",
-    amount: "$ 50",
+    detail: "Credit/Debit",
+    amount: "$ 10",
     icon: (
       <svg width="36" height="18" viewBox="0 0 36 18" fill="none">
         <text x="0" y="14" fontSize="16" fontWeight="800" fontFamily="Arial, sans-serif" fill="#1a1f71">VISA</text>
@@ -29,8 +31,8 @@ const methods = [
   },
   {
     name: "Mastercard",
-    detail: "Crédito/Débito",
-    amount: "$ 30",
+    detail: "Credit/Debit",
+    amount: "$ 10",
     icon: (
       <svg width="32" height="24" viewBox="0 0 32 24" fill="none">
         <circle cx="11" cy="12" r="10" fill="#eb001b"/>
@@ -42,7 +44,7 @@ const methods = [
   },
   {
     name: "PayPal",
-    detail: "Conta PayPal",
+    detail: "PayPal Account",
     amount: "$ 30",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -65,18 +67,16 @@ const methods = [
     color: "#862165",
   },
   {
-    name: "TED / DOC",
-    detail: "Transferência",
-    amount: "$ 50",
+    name: "Neteller",
+    detail: "E-wallet",
+    amount: "$ 10",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <rect x="4" y="6" width="20" height="16" rx="3" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.06)"/>
-        <path d="M4 11H24" stroke="#00bfff" strokeWidth="1"/>
-        <rect x="8" y="14" width="5" height="3" rx="1" fill="#00bfff" opacity="0.5"/>
-        <rect x="15" y="14" width="5" height="3" rx="1" fill="#00bfff" opacity="0.3"/>
+        <circle cx="14" cy="14" r="12" fill="#83c43e" opacity="0.9"/>
+        <text x="14" y="19" fontSize="12" fontWeight="700" textAnchor="middle" fill="white" fontFamily="Arial">N</text>
       </svg>
     ),
-    color: "#00bfff",
+    color: "#83c43e",
   },
 ];
 
@@ -91,7 +91,6 @@ export default function DepositsSection() {
         style={{ background: "radial-gradient(circle, rgba(0,102,255,0.06) 0%, transparent 70%)", filter: "blur(50px)" }}/>
 
       <div className="relative max-w-7xl mx-auto px-6">
-        {/* Header */}
         <div className="text-center mb-14">
           <motion.div
             initial={{ opacity: 0, filter: "blur(10px)", y: 16 }}
@@ -101,8 +100,8 @@ export default function DepositsSection() {
             className="inline-flex justify-center mb-5"
           >
             <div className="hero-badge">
-              <span className="badge-tag">Pagamentos</span>
-              <span className="badge-text">Depósitos e retiradas rápidos</span>
+              <span className="badge-tag">Payments</span>
+              <span className="badge-text">Fast deposits and withdrawals</span>
             </div>
           </motion.div>
 
@@ -117,8 +116,8 @@ export default function DepositsSection() {
               color: "#fff", letterSpacing: "-0.035em", marginBottom: "1rem",
             }}
           >
-            Depósitos e retiradas{" "}
-            <span className="shimmer-text">rápidos e seguros</span>
+            Deposits and withdrawals{" "}
+            <span className="shimmer-text">fast and secure</span>
           </motion.h2>
 
           <motion.p
@@ -131,11 +130,10 @@ export default function DepositsSection() {
               color: "rgba(240,248,255,0.6)", maxWidth: "460px", margin: "0 auto", lineHeight: 1.65, letterSpacing: "-0.01em",
             }}
           >
-            Escolha entre múltiplos métodos de pagamento com processamento instantâneo e sem taxas escondidas.
+            Choose from multiple payment methods with instant processing and no hidden fees.
           </motion.p>
         </div>
 
-        {/* Payment methods grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
           {methods.map((method, i) => (
             <motion.div
@@ -173,7 +171,6 @@ export default function DepositsSection() {
           ))}
         </div>
 
-        {/* Badges row */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -189,7 +186,7 @@ export default function DepositsSection() {
                   <path d="M4.5 9H11.5L11 15H5L4.5 9Z" fill="#FF6B35" opacity="0.7" />
                 </svg>
               ),
-              text: "Depósito instantâneo via PIX"
+              text: "Instant deposit processing"
             },
             {
               icon: (
@@ -198,7 +195,7 @@ export default function DepositsSection() {
                   <path d="M6 7V5C6 3.9 6.9 3 8 3C9.1 3 10 3.9 10 5V7" stroke="#00BFFF" strokeWidth="1.2" strokeLinecap="round" />
                 </svg>
               ),
-              text: "SSL 256-bit em todas transações"
+              text: "SSL 256-bit on all transactions"
             },
             {
               icon: (
@@ -207,7 +204,7 @@ export default function DepositsSection() {
                   <path d="M5 11L8 14L11 11" stroke="#2ECC71" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               ),
-              text: "Saque em até 24 horas"
+              text: "Withdrawal within 24 hours"
             },
             {
               icon: (
@@ -216,7 +213,7 @@ export default function DepositsSection() {
                   <text x="8" y="10" fontSize="10" fontWeight="700" textAnchor="middle" fill="#0066FF" fontFamily="Arial, sans-serif">0</text>
                 </svg>
               ),
-              text: "Zero taxas de depósito"
+              text: "Zero deposit fees"
             },
           ].map((b) => (
             <div key={b.text} className="flex items-center gap-2">

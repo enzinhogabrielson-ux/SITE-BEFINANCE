@@ -3,57 +3,57 @@ import { useState, useEffect } from "react";
 
 const testimonials = [
   {
-    name: "Carlos Mendes",
-    role: "Trader Profissional",
-    location: "São Paulo, SP",
-    avatar: "CM",
+    name: "James Mitchell",
+    role: "Professional Trader",
+    location: "New York, USA",
+    avatar: "JM",
     rating: 5,
-    text: "A BeFinance transformou minha forma de investir. A plataforma é incrível, os spreads são os menores que já vi no mercado e o suporte ao cliente é excepcional. Aumentei meu portfólio em 40% nos últimos 6 meses.",
+    text: "BeFinance transformed the way I invest. The platform is incredible, the spreads are the lowest I've seen and the customer support is exceptional. I grew my portfolio by 40% in the last 6 months.",
     color: "#00bfff",
   },
   {
-    name: "Ana Paula Lima",
-    role: "Investidora Iniciante",
-    location: "Rio de Janeiro, RJ",
-    avatar: "AL",
+    name: "Sarah Williams",
+    role: "Beginner Investor",
+    location: "London, UK",
+    avatar: "SW",
     rating: 5,
-    text: "Comecei a investir há 3 meses pela BeFinance e já me sinto confiante. A conta demo com $10.000 foi fundamental para aprender sem risco. Os tutoriais são excelentes e a interface é super intuitiva.",
+    text: "I started investing 3 months ago with BeFinance and already feel confident. The demo account with $10,000 was essential to learn risk-free. The tutorials are excellent and the interface is super intuitive.",
     color: "#0099ff",
   },
   {
-    name: "Roberto Faria",
-    role: "Gerente Financeiro",
-    location: "Curitiba, PR",
-    avatar: "RF",
+    name: "Robert Chen",
+    role: "Financial Manager",
+    location: "Singapore",
+    avatar: "RC",
     rating: 5,
-    text: "Depois de testar várias corretoras, a BeFinance se destacou pela transparência nas taxas e pela velocidade de execução das ordens. Recomendo para qualquer pessoa que quer investir com seriedade.",
+    text: "After testing several brokers, BeFinance stood out for its transparency in fees and speed of order execution. I recommend it to anyone who wants to invest seriously.",
     color: "#00d4ff",
   },
   {
-    name: "Fernanda Costa",
+    name: "Emily Rodriguez",
     role: "Day Trader",
-    location: "Brasília, DF",
-    avatar: "FC",
+    location: "Miami, USA",
+    avatar: "ER",
     rating: 5,
-    text: "Os gráficos avançados e os mais de 50 indicadores técnicos me permitem fazer análises precisas. A plataforma é rápida, confiável e nunca travou em momentos críticos do mercado.",
+    text: "The advanced charts and 50+ technical indicators allow me to make precise analyses. The platform is fast, reliable and has never crashed during critical market moments.",
     color: "#0066ff",
   },
   {
-    name: "Marcos Oliveira",
-    role: "Empresário",
-    location: "Belo Horizonte, MG",
-    avatar: "MO",
+    name: "Marcus Thompson",
+    role: "Entrepreneur",
+    location: "Toronto, Canada",
+    avatar: "MT",
     rating: 5,
-    text: "Invisto há 10 anos e a BeFinance é definitivamente a melhor corretora que já usei. Segurança máxima, taxas competitivas e atendimento personalizado que vai além das expectativas.",
+    text: "I've been investing for 10 years and BeFinance is definitely the best broker I've ever used. Maximum security, competitive fees and personalized service that goes beyond expectations.",
     color: "#00e5ff",
   },
   {
-    name: "Juliana Santos",
-    role: "Médica e Investidora",
-    location: "Porto Alegre, RS",
-    avatar: "JS",
+    name: "Julia Andersen",
+    role: "Doctor & Investor",
+    location: "Copenhagen, Denmark",
+    avatar: "JA",
     rating: 5,
-    text: "Como médica, não tenho muito tempo para acompanhar o mercado o dia todo. A BeFinance me deu ferramentas automatizadas que trabalham por mim. Resultados excelentes com pouco tempo investido.",
+    text: "As a doctor, I don't have much time to follow the market all day. BeFinance gave me automated tools that work for me. Excellent results with little time invested.",
     color: "#00bfff",
   },
 ];
@@ -113,7 +113,7 @@ export default function TestimonialsSection() {
           >
             <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#00bfff" }} />
             <span style={{ color: "#00bfff", fontSize: "0.75rem", fontFamily: "'Inter', sans-serif", fontWeight: 600, letterSpacing: "0.08em" }}>
-              DEPOIMENTOS
+              TESTIMONIALS
             </span>
           </motion.div>
 
@@ -131,11 +131,11 @@ export default function TestimonialsSection() {
               marginBottom: "1rem",
             }}
           >
-            O que nossos{" "}
+            What our{" "}
             <span style={{ background: "linear-gradient(135deg, #00bfff, #0099ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              investidores
+              investors
             </span>{" "}
-            dizem
+            say
           </motion.h2>
 
           <motion.p
@@ -152,20 +152,20 @@ export default function TestimonialsSection() {
               lineHeight: 1.7,
             }}
           >
-            Mais de 500.000 investidores já confiam na BeFinance para fazer seu dinheiro trabalhar por eles.
+            Over 500,000 investors already trust BeFinance to make their money work for them.
           </motion.p>
         </div>
 
         {/* Testimonials carousel */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
-          <AnimatePresence>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10" style={{ minHeight: "320px" }}>
+          <AnimatePresence mode="popLayout">
             {visible.map((testimonial, idx) => (
               <motion.div
-                key={`${testimonial.name}-${current}-${idx}`}
-                initial={{ opacity: 0, y: 30, scale: 0.97 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: -20, scale: 0.97 }}
-                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                key={`${testimonial.name}-${current}`}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.35, delay: idx * 0.05 }}
                 className="p-6 rounded-2xl"
                 style={{
                   background: "rgba(4, 20, 40, 0.6)",

@@ -2,42 +2,38 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 
 const footerLinks = {
-  negociacao: {
-    title: "Negociação",
+  trading: {
+    title: "Trading",
     links: [
-      { label: "Opções Digitais", href: "/negociacao/opcoes-digitais" },
-      { label: "Ações", href: "/negociacao/acoes" },
+      { label: "Digital Options", href: "/negociacao/opcoes-digitais" },
+      { label: "Stocks", href: "/negociacao/acoes" },
       { label: "Commodities", href: "/negociacao/commodities" },
     ],
   },
-  plataforma: {
-    title: "Plataforma",
+  platform: {
+    title: "Platform",
     links: [
-      { label: "Trading Web", href: "/plataforma/trading-web" },
-      { label: "App Mobile", href: "/plataforma/app-mobile" },
-      { label: "Conta Demo", href: "/plataforma/conta-demo" },
-      { label: "Ferramentas Analíticas", href: "/plataforma/ferramentas" },
-      { label: "Baixar o App", href: "/plataforma/baixar-app" },
+      { label: "Demo Account", href: "/plataforma/conta-demo" },
+      { label: "Web Trading", href: "/plataforma/trading-web" },
+      { label: "Analytical Tools", href: "/plataforma/ferramentas" },
+      { label: "Download App", href: "/plataforma/baixar-app" },
     ],
   },
-  sobre: {
-    title: "Sobre",
+  about: {
+    title: "About",
     links: [
-      { label: "Sobre nós", href: "/sobre/sobre-nos" },
-      { label: "Regulamentação", href: "/sobre/regulamentacao" },
-      { label: "Premiações", href: "/sobre/premiacoes" },
-      { label: "Parceiros", href: "/sobre/parceiros" },
-      { label: "Afiliados", href: "/sobre/afiliados" },
+      { label: "About Us", href: "/sobre/sobre-nos" },
+      { label: "Regulation", href: "/sobre/regulamentacao" },
+      { label: "Affiliates", href: "/sobre/afiliados" },
     ],
   },
-  ajuda: {
-    title: "Ajuda",
+  help: {
+    title: "Help",
     links: [
-      { label: "Central de Ajuda", href: "/ajuda/central-de-ajuda" },
-      { label: "Contato", href: "/ajuda/contato" },
-      { label: "Central de Aprendizagem", href: "/ajuda/central-de-aprendizagem" },
+      { label: "Help Center", href: "/ajuda/central-de-ajuda" },
+      { label: "Contact", href: "/ajuda/contato" },
       { label: "FAQ", href: "/ajuda/faq" },
-      { label: "Suporte 24/7", href: "/ajuda/suporte" },
+      { label: "24/7 Support", href: "/ajuda/suporte" },
     ],
   },
 };
@@ -118,7 +114,7 @@ export default function Footer() {
               marginBottom: "1.5rem",
               maxWidth: "240px",
             }}>
-              A melhor plataforma de trading para investidores que buscam resultados reais no mercado financeiro.
+              The best trading platform for investors seeking real results in financial markets.
             </p>
 
             <div className="flex gap-3">
@@ -189,11 +185,11 @@ export default function Footer() {
             letterSpacing: "-0.01em",
             color: "rgba(240,248,255,0.3)",
           }}>
-            © 2026 BeFinance. Todos os direitos reservados. Trading envolve riscos. Leia nossos termos.
+            © 2026 BeFinance. All rights reserved. Trading involves risk. Read our terms.
           </p>
 
           <div className="flex gap-6">
-            {["Política de Privacidade", "Termos de Uso", "Cookies"].map((item) => (
+            {["Privacy Policy", "Terms of Use", "Cookies"].map((item) => (
               <a
                 key={item}
                 href="#"
