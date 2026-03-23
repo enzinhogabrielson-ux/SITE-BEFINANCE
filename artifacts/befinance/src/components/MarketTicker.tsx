@@ -1,28 +1,34 @@
 import { motion } from "framer-motion";
 
-const assets = [
-  { name: "Apple", symbol: "AAPL", price: "$198.50", change: "+1.42%", positive: true, color: "#555555" },
-  { name: "Tesla", symbol: "TSLA", price: "$312.80", change: "+2.15%", positive: true, color: "#cc0000" },
-  { name: "Amazon", symbol: "AMZN", price: "$185.30", change: "-0.65%", positive: false, color: "#ff9900" },
-  { name: "Gold", symbol: "XAU", price: "$2,340.20", change: "+0.83%", positive: true, color: "#d4a017" },
-  { name: "Oil", symbol: "WTI", price: "$78.45", change: "+1.71%", positive: true, color: "#2b5f2b" },
-  { name: "S&P 500", symbol: "SPX", price: "$5,420.30", change: "+0.52%", positive: true, color: "#1a5276" },
-  { name: "Microsoft", symbol: "MSFT", price: "$428.60", change: "-0.38%", positive: false, color: "#00a4ef" },
-  { name: "Silver", symbol: "XAG", price: "$29.85", change: "+1.66%", positive: true, color: "#c0c0c0" },
+type Asset = { name: string; symbol: string; price: string; change: string; positive: boolean; color: string; icon: string };
+
+const row1Assets: Asset[] = [
+  { name: "Oil", symbol: "WTI", price: "$78.45", change: "+1.71%", positive: true, color: "#2b5f2b", icon: "⛽" },
+  { name: "S&P 500", symbol: "SPX", price: "$5,420.30", change: "+0.52%", positive: true, color: "#1a5276", icon: "S" },
+  { name: "Microsoft", symbol: "MSFT", price: "$428.60", change: "-0.38%", positive: false, color: "#00a4ef", icon: "M" },
+  { name: "Silver", symbol: "XAG", price: "$29.85", change: "+1.66%", positive: true, color: "#c0c0c0", icon: "Ag" },
+  { name: "Apple", symbol: "AAPL", price: "$198.50", change: "+1.42%", positive: true, color: "#555555", icon: "" },
+  { name: "Tesla", symbol: "TSLA", price: "$312.80", change: "+2.15%", positive: true, color: "#cc0000", icon: "T" },
+  { name: "Coca-Cola", symbol: "KO", price: "$62.40", change: "+0.28%", positive: true, color: "#d12a2a", icon: "KO" },
+  { name: "NASDAQ", symbol: "NDX", price: "$18,920.50", change: "+0.91%", positive: true, color: "#0d6efd", icon: "N" },
+  { name: "Dow Jones", symbol: "DJI", price: "$39,150.80", change: "+0.34%", positive: true, color: "#1e3a5f", icon: "DJ" },
+  { name: "Platinum", symbol: "XPT", price: "$1,024.30", change: "-0.22%", positive: false, color: "#8c8c8c", icon: "Pt" },
 ];
 
-const assetIcons: Record<string, string> = {
-  AAPL: "",
-  TSLA: "T",
-  AMZN: "A",
-  XAU: "Au",
-  WTI: "⛽",
-  SPX: "S",
-  MSFT: "M",
-  XAG: "Ag",
-};
+const row2Assets: Asset[] = [
+  { name: "Gold", symbol: "XAU", price: "$2,340.20", change: "+0.83%", positive: true, color: "#d4a017", icon: "Au" },
+  { name: "Amazon", symbol: "AMZN", price: "$185.30", change: "-0.65%", positive: false, color: "#ff9900", icon: "A" },
+  { name: "Nike", symbol: "NKE", price: "$97.25", change: "+0.74%", positive: true, color: "#111111", icon: "NK" },
+  { name: "Disney", symbol: "DIS", price: "$112.80", change: "+1.12%", positive: true, color: "#0057a8", icon: "D" },
+  { name: "Netflix", symbol: "NFLX", price: "$628.40", change: "+1.87%", positive: true, color: "#e50914", icon: "N" },
+  { name: "Copper", symbol: "HG", price: "$4.52", change: "+0.95%", positive: true, color: "#b87333", icon: "Cu" },
+  { name: "Meta", symbol: "META", price: "$502.15", change: "-0.42%", positive: false, color: "#0668E1", icon: "M" },
+  { name: "FTSE 100", symbol: "UKX", price: "$8,245.60", change: "+0.18%", positive: true, color: "#003366", icon: "FT" },
+  { name: "Natural Gas", symbol: "NG", price: "$2.85", change: "+3.12%", positive: true, color: "#4a8f4a", icon: "NG" },
+  { name: "Visa", symbol: "V", price: "$278.90", change: "+0.56%", positive: true, color: "#1a1f71", icon: "V" },
+];
 
-function TickerItem({ asset }: { asset: typeof assets[0] }) {
+function TickerItem({ asset }: { asset: Asset }) {
   return (
     <div
       className="flex items-center gap-3 px-5 py-3 rounded-xl mx-3 cursor-pointer transition-colors duration-300"
@@ -35,9 +41,9 @@ function TickerItem({ asset }: { asset: typeof assets[0] }) {
     >
       <div
         className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0"
-        style={{ background: asset.color, color: "#fff" }}
+        style={{ background: asset.color, color: "#fff", fontSize: asset.icon.length > 1 ? "0.6rem" : "0.8rem" }}
       >
-        {assetIcons[asset.symbol] || asset.symbol[0]}
+        {asset.icon || asset.symbol[0]}
       </div>
       <div>
         <div className="flex items-center gap-2">
@@ -76,9 +82,6 @@ function TickerItem({ asset }: { asset: typeof assets[0] }) {
     </div>
   );
 }
-
-const row1 = [assets[4], assets[5], assets[6], assets[7], assets[0], assets[3], assets[1], assets[2]];
-const row2 = [assets[3], assets[1], assets[0], assets[6], assets[2], assets[7], assets[4], assets[5]];
 
 export default function MarketTicker() {
   return (
@@ -135,8 +138,8 @@ export default function MarketTicker() {
 
         <div className="ticker-wrapper mb-3">
           <div className="ticker-inner">
-            {[...row1, ...row1].map((asset, i) => (
-              <TickerItem key={`${asset.symbol}-${i}`} asset={asset} />
+            {[...row1Assets, ...row1Assets].map((asset, i) => (
+              <TickerItem key={`r1-${asset.symbol}-${i}`} asset={asset} />
             ))}
           </div>
         </div>
@@ -146,8 +149,8 @@ export default function MarketTicker() {
             className="ticker-inner"
             style={{ animation: "ticker 35s linear infinite reverse" }}
           >
-            {[...row2, ...row2].map((asset, i) => (
-              <TickerItem key={`rev-${asset.symbol}-${i}`} asset={asset} />
+            {[...row2Assets, ...row2Assets].map((asset, i) => (
+              <TickerItem key={`r2-${asset.symbol}-${i}`} asset={asset} />
             ))}
           </div>
         </div>
