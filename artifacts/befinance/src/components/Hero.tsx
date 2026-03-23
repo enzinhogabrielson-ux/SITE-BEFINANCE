@@ -98,10 +98,10 @@ export default function Hero() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
         style={{
-          right: "clamp(-2%, 1vw, 4%)",
-          top: "50%",
-          marginTop: "-11%",
-          width: "clamp(380px, 52vw, 880px)",
+          right: "clamp(-15%, -5vw, -2%)",
+          top: "45%",
+          marginTop: "-12%",
+          width: "clamp(600px, 75vw, 1200px)",
           x: sharkXVal,
           y: sharkYVal,
           rotate: sharkRotVal,
