@@ -126,10 +126,8 @@ export default function WithdrawalsSection() {
         >
           {[
             { key: "withdrawals.method.wire" },
-            { key: "withdrawals.method.credit" },
-            { key: "withdrawals.method.debit" },
             { key: "withdrawals.method.paypal" },
-            { key: "withdrawals.method.skrill" },
+            { key: "withdrawals.method.crypto" },
           ].map((method) => (
             <div
               key={method.key}

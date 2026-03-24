@@ -155,10 +155,8 @@ const translations: Record<Lang, Record<string, string>> = {
     "withdrawals.card4.title": "Personal trading advice from experts",
     "withdrawals.card4.desc": "Get personalized guidance from experienced traders to improve your strategies.",
     "withdrawals.method.wire": "Wire Transfer",
-    "withdrawals.method.credit": "Credit Card",
-    "withdrawals.method.debit": "Debit Card",
     "withdrawals.method.paypal": "PayPal",
-    "withdrawals.method.skrill": "Skrill",
+    "withdrawals.method.crypto": "Crypto",
 
     // DepositsSection
     "deposits.badge": "Payments",
@@ -427,10 +425,8 @@ const translations: Record<Lang, Record<string, string>> = {
     "withdrawals.card4.title": "Assessoria pessoal de trading com especialistas",
     "withdrawals.card4.desc": "Receba orientação personalizada de traders experientes para melhorar suas estratégias.",
     "withdrawals.method.wire": "Transferência Bancária",
-    "withdrawals.method.credit": "Cartão de Crédito",
-    "withdrawals.method.debit": "Cartão de Débito",
     "withdrawals.method.paypal": "PayPal",
-    "withdrawals.method.skrill": "Skrill",
+    "withdrawals.method.crypto": "Criptomoedas",
 
     // DepositsSection
     "deposits.badge": "Pagamentos",
@@ -699,10 +695,8 @@ const translations: Record<Lang, Record<string, string>> = {
     "withdrawals.card4.title": "Asesoría personal de trading con expertos",
     "withdrawals.card4.desc": "Recibe orientación personalizada de traders experimentados para mejorar tus estrategias.",
     "withdrawals.method.wire": "Transferencia Bancaria",
-    "withdrawals.method.credit": "Tarjeta de Crédito",
-    "withdrawals.method.debit": "Tarjeta de Débito",
     "withdrawals.method.paypal": "PayPal",
-    "withdrawals.method.skrill": "Skrill",
+    "withdrawals.method.crypto": "Criptomonedas",
 
     // DepositsSection
     "deposits.badge": "Pagos",
