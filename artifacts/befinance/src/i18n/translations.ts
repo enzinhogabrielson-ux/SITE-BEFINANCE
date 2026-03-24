@@ -252,12 +252,6 @@ const translations: Record<Lang, Record<string, string>> = {
     "blog.post1.tag": "Market",
     "blog.post1.title": "S&P 500 hits new all-time high in 2026",
     "blog.post1.excerpt": "The main American index reached a new record, driven by corporate results above expectations and investor confidence in economic growth.",
-    "blog.post2.tag": "Education",
-    "blog.post2.title": "How to diversify your portfolio in 2026: complete guide",
-    "blog.post2.excerpt": "Learn the best diversification strategies to maximize your returns and protect your assets in different economic scenarios.",
-    "blog.post3.tag": "Analysis",
-    "blog.post3.title": "Commodities on the rise: oil and gold hit records",
-    "blog.post3.excerpt": "The commodities market shows strong appreciation in Q1. Understand the macroeconomic factors driving these assets.",
     "blog.readTime": "read",
 
     // CTASection
@@ -530,12 +524,6 @@ const translations: Record<Lang, Record<string, string>> = {
     "blog.post1.tag": "Mercado",
     "blog.post1.title": "S&P 500 atinge nova máxima histórica em 2026",
     "blog.post1.excerpt": "O principal índice americano alcançou um novo recorde, impulsionado por resultados corporativos acima das expectativas e confiança dos investidores no crescimento econômico.",
-    "blog.post2.tag": "Educação",
-    "blog.post2.title": "Como diversificar seu portfólio em 2026: guia completo",
-    "blog.post2.excerpt": "Aprenda as melhores estratégias de diversificação para maximizar seus retornos e proteger seus ativos em diferentes cenários econômicos.",
-    "blog.post3.tag": "Análise",
-    "blog.post3.title": "Commodities em alta: petróleo e ouro batem recordes",
-    "blog.post3.excerpt": "O mercado de commodities mostra forte valorização no 1º trimestre. Entenda os fatores macroeconômicos que impulsionam esses ativos.",
     "blog.readTime": "leitura",
 
     // CTASection
@@ -808,12 +796,6 @@ const translations: Record<Lang, Record<string, string>> = {
     "blog.post1.tag": "Mercado",
     "blog.post1.title": "S&P 500 alcanza nuevo máximo histórico en 2026",
     "blog.post1.excerpt": "El principal índice americano alcanzó un nuevo récord, impulsado por resultados corporativos por encima de las expectativas y la confianza de los inversores en el crecimiento económico.",
-    "blog.post2.tag": "Educación",
-    "blog.post2.title": "Cómo diversificar tu portafolio en 2026: guía completa",
-    "blog.post2.excerpt": "Aprende las mejores estrategias de diversificación para maximizar tus retornos y proteger tus activos en diferentes escenarios económicos.",
-    "blog.post3.tag": "Análisis",
-    "blog.post3.title": "Commodities al alza: petróleo y oro baten récords",
-    "blog.post3.excerpt": "El mercado de commodities muestra una fuerte apreciación en el Q1. Comprende los factores macroeconómicos que impulsan estos activos.",
     "blog.readTime": "lectura",
 
     // CTASection

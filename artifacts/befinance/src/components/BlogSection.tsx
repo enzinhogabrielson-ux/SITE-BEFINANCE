@@ -11,24 +11,6 @@ const postDefs = [
     chartPath: "M0 50L30 35L60 42L90 20L120 30L150 10L200 25",
     chartFill: "M0 50L30 35L60 42L90 20L120 30L150 10L200 25L200 60L0 60Z",
   },
-  {
-    tagKey: "blog.post2.tag",
-    date: "Mar 12, 2026",
-    titleKey: "blog.post2.title",
-    excerptKey: "blog.post2.excerpt",
-    readTime: "8 min",
-    chartPath: "M0 45L40 30L80 38L110 20L150 28L200 15",
-    chartFill: "M0 45L40 30L80 38L110 20L150 28L200 15L200 60L0 60Z",
-  },
-  {
-    tagKey: "blog.post3.tag",
-    date: "Mar 10, 2026",
-    titleKey: "blog.post3.title",
-    excerptKey: "blog.post3.excerpt",
-    readTime: "6 min",
-    chartPath: "M0 40L35 45L70 25L100 35L140 15L175 30L200 20",
-    chartFill: "M0 40L35 45L70 25L100 35L140 15L175 30L200 20L200 60L0 60Z",
-  },
 ];
 
 export default function BlogSection() {
@@ -98,95 +80,13 @@ export default function BlogSection() {
           </motion.a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {postDefs.slice(1).map((post, i) => (
-            <motion.article
-              key={post.titleKey}
-              initial={{ opacity: 0, filter: "blur(12px)", y: 28 }}
-              whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.65, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="kyvoo-card group cursor-pointer rounded-2xl overflow-hidden"
-              style={{
-                background: "rgba(4, 20, 40, 0.45)",
-                border: "1px solid rgba(0, 191, 255, 0.09)",
-              }}
-            >
-              <div
-                className="relative h-36 overflow-hidden"
-                style={{ background: "rgba(2, 8, 20, 0.8)" }}
-              >
-                <div
-                  className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500"
-                  style={{ background: "linear-gradient(135deg, rgba(0,191,255,0.3), rgba(0,60,120,0.3))" }}
-                />
-                <div className="absolute inset-0 flex items-end justify-center pb-4 px-4 opacity-50 group-hover:opacity-70 transition-opacity duration-300">
-                  <svg width="100%" height="60" viewBox="0 0 200 60" fill="none" preserveAspectRatio="none">
-                    <path d={post.chartPath} stroke="#00bfff" strokeWidth="1.8" fill="none"/>
-                    <path d={post.chartFill} fill="rgba(0,191,255,0.07)"/>
-                  </svg>
-                </div>
-                <div className="absolute top-4 left-4">
-                  <span
-                    className="px-3 py-1 rounded-full text-xs font-semibold"
-                    style={{
-                      background: "rgba(0, 191, 255, 0.1)",
-                      color: "#00bfff",
-                      border: "1px solid rgba(0,191,255,0.2)",
-                      fontFamily: "'Inter', sans-serif",
-                      backdropFilter: "blur(10px)",
-                      letterSpacing: "0.02em",
-                    }}
-                  >
-                    {t(post.tagKey)}
-                  </span>
-                </div>
-              </div>
-
-              <div className="p-5">
-                <div
-                  className="flex items-center gap-3 mb-3"
-                  style={{ color: "rgba(240,248,255,0.38)", fontSize: "0.72rem", fontFamily: "'Inter', sans-serif" }}
-                >
-                  <span>{post.date}</span>
-                  <div style={{ width: "2px", height: "2px", borderRadius: "50%", background: "rgba(255,255,255,0.3)" }} />
-                  <span>{post.readTime} {t("blog.readTime")}</span>
-                </div>
-
-                <h3
-                  className="mb-2"
-                  style={{
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontWeight: 700,
-                    fontSize: "0.95rem",
-                    color: "#fff",
-                    letterSpacing: "-0.01em",
-                    lineHeight: 1.45,
-                  }}
-                >
-                  {t(post.titleKey)}
-                </h3>
-
-                <motion.div
-                  className="flex items-center gap-1 text-sm font-semibold"
-                  style={{ color: "#00bfff", fontFamily: "'Inter', sans-serif" }}
-                  whileHover={{ x: 3 }}
-                >
-                  {t("blog.readMore")}
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M2.5 7H11.5M8 3.5L11.5 7L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </motion.div>
-              </div>
-            </motion.article>
-          ))}
-
+        <div>
           <motion.article
             initial={{ opacity: 0, filter: "blur(12px)", y: 28 }}
             whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.65, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="kyvoo-card group cursor-pointer rounded-2xl overflow-hidden md:col-span-2"
+            className="kyvoo-card group cursor-pointer rounded-2xl overflow-hidden"
             style={{
               background: "rgba(4, 20, 40, 0.45)",
               border: "1px solid rgba(0, 191, 255, 0.09)",
