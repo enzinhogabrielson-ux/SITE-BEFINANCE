@@ -6,7 +6,6 @@ const expo = { type: "tween", duration: 0.85, ease: [0.16, 1, 0.3, 1] } as const
 
 const faqKeys = [
   { qKey: "faq.q1", aKey: "faq.a1" },
-  { qKey: "faq.q2", aKey: "faq.a2" },
   { qKey: "faq.q3", aKey: "faq.a3" },
   { qKey: "faq.q4", aKey: "faq.a4" },
   { qKey: "faq.q5", aKey: "faq.a5" },

@@ -7,7 +7,7 @@ export default function SobreNosPage() {
     <InternalPageLayout
       badge="Sobre"
       title={<>Sobre a <span style={{ color: "#00bfff" }}>BeFinance</span></>}
-      subtitle="Somos uma corretora digital focada em democratizar o acesso ao mercado financeiro. Tecnologia, transparência e educação para todos os traders."
+      subtitle="Somos uma corretora digital focada em democratizar o acesso ao mercado financeiro. Tecnologia e transparência para todos os traders."
       features={[
         { title: "Nossa missão", description: "Tornar o mercado financeiro acessível para qualquer pessoa, em qualquer lugar do Brasil.", icon: icon("M12 2L2 7L12 12L22 7L12 2ZM2 17L12 22L22 17M2 12L12 17L22 12") },
         { title: "Fundada em 2020", description: "Anos de experiência no mercado financeiro digital, atendendo traders no Brasil e no mundo.", icon: icon("M8 2V6M16 2V6M3 10H21M5 4H19A2 2 0 0 1 21 6V20A2 2 0 0 1 19 22H5A2 2 0 0 1 3 20V6A2 2 0 0 1 5 4Z") },

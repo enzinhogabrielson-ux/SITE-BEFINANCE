@@ -19,16 +19,9 @@ const differentials = [
   {
     id: 3, number: "03",
     title: "Plataforma Intuitiva",
-    description: "Interface projetada para iniciantes e profissionais. Com nossa plataforma, você aprende enquanto investe, com tutoriais integrados e análises inteligentes em tempo real.",
+    description: "Interface projetada para iniciantes e profissionais. Análises inteligentes em tempo real e mais de 50 indicadores técnicos para maximizar suas decisões de investimento.",
     highlight: "Mais de 50 indicadores",
     icon: (<svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="5" y="8" width="30" height="24" rx="4" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.05)"/><path d="M5 16H35" stroke="#00bfff" strokeWidth="1" opacity="0.4"/><rect x="10" y="20" width="6" height="6" rx="1.5" fill="#00bfff" opacity="0.7"/><rect x="19" y="20" width="10" height="2.5" rx="1" fill="#00bfff" opacity="0.4"/><rect x="19" y="24" width="7" height="2" rx="1" fill="#00bfff" opacity="0.25"/></svg>),
-  },
-  {
-    id: 4, number: "04",
-    title: "Suporte Educacional Completo",
-    description: "Biblioteca completa com cursos, webinars ao vivo, análises de mercado diárias e uma comunidade ativa de traders para te ajudar a crescer no mercado financeiro.",
-    highlight: "+200 horas de conteúdo",
-    icon: (<svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M6 14L20 7L34 14V22C34 29 27.5 35 20 37C12.5 35 6 29 6 22V14Z" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.05)"/><path d="M14 20H26M14 24H22" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round"/></svg>),
   },
 ];
 
