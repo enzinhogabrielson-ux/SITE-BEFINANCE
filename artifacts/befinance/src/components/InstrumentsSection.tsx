@@ -90,11 +90,11 @@ export default function InstrumentsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {cardDefs.map((card, i) => (
             <motion.div
               key={card.titleKey}
-              className={`kyvoo-card rounded-2xl p-6 flex flex-col gap-4 ${card.highlight ? "md:col-span-2 lg:col-span-1" : ""}`}
+              className="kyvoo-card rounded-2xl p-6 flex flex-col gap-4"
               style={{
                 background: card.highlight
                   ? "linear-gradient(135deg, rgba(0,191,255,0.12), rgba(0,102,255,0.08))"
