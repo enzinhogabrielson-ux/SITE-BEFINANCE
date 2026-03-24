@@ -237,7 +237,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "faq.q4": "What is the minimum amount to start trading?",
     "faq.a4": "You can start with just $10 on BeFinance. We don't require a high minimum deposit — we democratize access to financial markets so anyone can invest. We operate with 0% commission and the lowest spreads in the market.",
     "faq.q5": "Can I withdraw my profits whenever I want?",
-    "faq.a5": "Yes, you can request withdrawals at any time without bureaucracy. We process withdrawals within 24 hours via wire transfer, credit/debit card or e-wallets. There are no hidden fees or waiting periods for withdrawals.",
+    "faq.a5": "Yes, you can request withdrawals at any time without bureaucracy. We process withdrawals within 24 hours via wire transfer, credit/debit card or e-wallets.",
     "faq.q6": "What assets can I trade on BeFinance?",
     "faq.a6": "We offer over 1,000 assets including: stocks, FX, and crypto — plus OTC assets. All on a single platform.",
     "faq.stillQuestions": "Still have questions?",
