@@ -45,19 +45,6 @@ const cardDefs = [
     ),
   },
   {
-    titleKey: "instruments.card4.title",
-    descKey: "instruments.card4.desc",
-    ctaKey: "instruments.card4.cta",
-    highlight: false,
-    icon: (
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-        <rect x="8" y="14" width="32" height="20" rx="4" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.06)" />
-        <circle cx="24" cy="24" r="6" stroke="#00bfff" strokeWidth="1.5" />
-        <path d="M22 24H26M24 22V26" stroke="#00bfff" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
     titleKey: "instruments.card5.title",
     descKey: "instruments.card5.desc",
     ctaKey: "",
