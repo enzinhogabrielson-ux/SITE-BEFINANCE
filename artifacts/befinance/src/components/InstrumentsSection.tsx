@@ -153,7 +153,7 @@ export default function InstrumentsSection() {
                     <div className="text-xs" style={{ color: "rgba(240,248,255,0.45)" }}>{t("instruments.card5.stat1")}</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold" style={{ color: "#00bfff", fontFamily: "'DM Sans',sans-serif" }}>5s</div>
+                    <div className="text-2xl font-bold" style={{ color: "#00bfff", fontFamily: "'DM Sans',sans-serif" }}>1 min</div>
                     <div className="text-xs" style={{ color: "rgba(240,248,255,0.45)" }}>{t("instruments.card5.stat2")}</div>
                   </div>
                 </div>
