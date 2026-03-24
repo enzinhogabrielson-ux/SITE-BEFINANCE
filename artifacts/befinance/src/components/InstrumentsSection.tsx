@@ -32,19 +32,6 @@ const cardDefs = [
     ),
   },
   {
-    titleKey: "instruments.card3.title",
-    descKey: "instruments.card3.desc",
-    ctaKey: "instruments.card3.cta",
-    highlight: false,
-    icon: (
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-        <circle cx="24" cy="24" r="18" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.06)" />
-        <path d="M16 24H32M24 16V32" stroke="#00bfff" strokeWidth="2" strokeLinecap="round" />
-        <path d="M18 18L30 30M30 18L18 30" stroke="#00bfff" strokeWidth="1" strokeLinecap="round" opacity="0.3" />
-      </svg>
-    ),
-  },
-  {
     titleKey: "instruments.card5.title",
     descKey: "instruments.card5.desc",
     ctaKey: "",
