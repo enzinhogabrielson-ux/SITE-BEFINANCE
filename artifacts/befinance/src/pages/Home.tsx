@@ -4,7 +4,6 @@ import MarketTicker from "@/components/MarketTicker";
 import TrustSection from "@/components/TrustSection";
 import PlatformSection from "@/components/PlatformSection";
 import InstrumentsSection from "@/components/InstrumentsSection";
-import RegulationSection from "@/components/RegulationSection";
 import TradingConfidenceSection from "@/components/TradingConfidenceSection";
 import WithdrawalsSection from "@/components/WithdrawalsSection";
 import DepositsSection from "@/components/DepositsSection";
@@ -24,7 +23,6 @@ export default function Home() {
       <TrustSection />
       <PlatformSection />
       <InstrumentsSection />
-      <RegulationSection />
       <TradingConfidenceSection />
       <WithdrawalsSection />
       <DepositsSection />
