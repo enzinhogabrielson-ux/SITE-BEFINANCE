@@ -14,13 +14,15 @@ export default function CTASection() {
           allow="autoplay; fullscreen"
           style={{
             position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
+            top: "50%",
+            left: "50%",
+            width: "177.78vh",
+            height: "56.25vw",
+            minWidth: "100%",
+            minHeight: "100%",
+            transform: "translate(-50%, -50%)",
             border: "none",
             pointerEvents: "none",
-            objectFit: "cover",
           }}
           title="Background"
         />
