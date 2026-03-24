@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValue } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-const cycleWordKeys = ["hero.word.options", "hero.word.stocks", "hero.word.commodities", "hero.word.indices", "hero.word.futures"];
+const cycleWordKeys = ["hero.word.options", "hero.word.stocks", "hero.word.commodities", "hero.word.fx"];
 
 const springFast   = { type: "spring", stiffness: 400, damping: 40 } as const;
 const springMedium = { type: "spring", duration: 0.6, bounce: 0.15 } as const;
