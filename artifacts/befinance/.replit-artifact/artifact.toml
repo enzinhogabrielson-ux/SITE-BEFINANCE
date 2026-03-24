@@ -22,7 +22,7 @@ PORT = "18340"
 BASE_PATH = "/"
 
 [services.production]
-build = ["pnpm", "--filter", "@workspace/befinance", "run", "build"]
+build = "pnpm --filter @workspace/befinance run build"
 publicDir = "artifacts/befinance/dist/public"
 serve = "static"
 
