@@ -239,7 +239,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "faq.q5": "Can I withdraw my profits whenever I want?",
     "faq.a5": "Yes, you can request withdrawals at any time without bureaucracy. We process withdrawals within 24 hours via wire transfer, credit/debit card or e-wallets. There are no hidden fees or waiting periods for withdrawals.",
     "faq.q6": "What assets can I trade on BeFinance?",
-    "faq.a6": "We offer over 1,000 assets including: international stocks (NYSE, NASDAQ, LSE), ETFs, commodities (gold, oil, silver) and FX pairs. All on a single platform.",
+    "faq.a6": "We offer over 1,000 assets including: stocks, FX, and crypto — plus OTC assets. All on a single platform.",
     "faq.stillQuestions": "Still have questions?",
     "faq.talkSupport": "Talk to support",
 
@@ -511,7 +511,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "faq.q5": "Posso sacar meus lucros quando quiser?",
     "faq.a5": "Sim, você pode solicitar saques a qualquer momento sem burocracia. Processamos saques em até 24 horas via transferência bancária, cartão de crédito/débito ou carteiras digitais. Não há taxas ocultas ou períodos de espera para saques.",
     "faq.q6": "Quais ativos posso negociar na BeFinance?",
-    "faq.a6": "Oferecemos mais de 1.000 ativos incluindo: ações internacionais (NYSE, NASDAQ, LSE), ETFs, commodities (ouro, petróleo, prata) e pares de FX. Tudo em uma única plataforma.",
+    "faq.a6": "Oferecemos mais de 1.000 ativos incluindo: ações, FX e cripto — além de ativos OTC. Tudo em uma única plataforma.",
     "faq.stillQuestions": "Ainda tem dúvidas?",
     "faq.talkSupport": "Fale com o suporte",
 
@@ -783,7 +783,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "faq.q5": "¿Puedo retirar mis ganancias cuando quiera?",
     "faq.a5": "Sí, puedes solicitar retiros en cualquier momento sin burocracia. Procesamos retiros en 24 horas vía transferencia bancaria, tarjeta de crédito/débito o monederos electrónicos. No hay comisiones ocultas ni períodos de espera para retiros.",
     "faq.q6": "¿Qué activos puedo operar en BeFinance?",
-    "faq.a6": "Ofrecemos más de 1,000 activos incluyendo: acciones internacionales (NYSE, NASDAQ, LSE), ETFs, commodities (oro, petróleo, plata) y pares de FX. Todo en una sola plataforma.",
+    "faq.a6": "Ofrecemos más de 1,000 activos incluyendo: acciones, FX y cripto — además de activos OTC. Todo en una sola plataforma.",
     "faq.stillQuestions": "¿Aún tienes dudas?",
     "faq.talkSupport": "Habla con soporte",
 
