@@ -14,49 +14,20 @@ const BeFinanceIcon = ({ size = 48 }: { size?: number }) => (
   </svg>
 );
 
-const VisaLogo = () => (
-  <svg width="64" height="22" viewBox="0 0 64 22" fill="none">
-    <text x="0" y="18" fontSize="24" fontWeight="800" fontFamily="Arial, sans-serif" fill="#1a1f71" letterSpacing="1">VISA</text>
-  </svg>
-);
-
-const MastercardLogo = () => (
+const WireTransferLogo = () => (
   <svg width="56" height="36" viewBox="0 0 56 36" fill="none">
-    <circle cx="20" cy="18" r="14" fill="#eb001b" />
-    <circle cx="36" cy="18" r="14" fill="#f79e1b" />
-    <path d="M28 7.5C30.8 9.6 32.5 13.1 32.5 18S30.8 26.4 28 28.5C25.2 26.4 23.5 22.9 23.5 18S25.2 9.6 28 7.5Z" fill="#ff5f00" />
-  </svg>
-);
-
-const PayPalLogo = () => (
-  <svg width="56" height="36" viewBox="0 0 56 36" fill="none">
-    <text x="4" y="26" fontSize="20" fontWeight="800" fontFamily="Arial, sans-serif" fill="#003087">Pay</text>
-    <text x="32" y="26" fontSize="20" fontWeight="800" fontFamily="Arial, sans-serif" fill="#0070e0">Pal</text>
-  </svg>
-);
-
-const SkrillLogo = () => (
-  <svg width="48" height="36" viewBox="0 0 48 36" fill="none">
-    <circle cx="24" cy="18" r="16" fill="#862165" opacity="0.15" />
-    <text x="24" y="24" textAnchor="middle" fontSize="16" fontWeight="800" fontFamily="Arial, sans-serif" fill="#862165">S</text>
-  </svg>
-);
-
-const NetellerLogo = () => (
-  <svg width="48" height="36" viewBox="0 0 48 36" fill="none">
-    <circle cx="24" cy="18" r="16" fill="#83c43e" opacity="0.15" />
-    <text x="24" y="24" textAnchor="middle" fontSize="16" fontWeight="800" fontFamily="Arial, sans-serif" fill="#83c43e">N</text>
+    <rect x="4" y="8" width="48" height="20" rx="4" stroke="#00bfff" strokeWidth="1.5" fill="rgba(0,191,255,0.06)" />
+    <path d="M4 15H52" stroke="#00bfff" strokeWidth="1" opacity="0.4" />
+    <rect x="10" y="20" width="10" height="3" rx="1" fill="#00bfff" opacity="0.5" />
+    <rect x="24" y="20" width="18" height="3" rx="1" fill="#00bfff" opacity="0.3" />
   </svg>
 );
 
 const cardDefs = [
   { logo: <BeFinanceIcon size={52} />, amount: "$500.00", labelKey: "deposits.label.deposit", col: 0 },
+  { logo: <WireTransferLogo />, amount: "$250.00", labelKey: "deposits.label.deposit", col: 1 },
+  { logo: <WireTransferLogo />, amount: "$75.00", labelKey: "deposits.label.withdrawal", col: 0 },
   { logo: <BeFinanceIcon size={52} />, amount: "$50.00", labelKey: "deposits.label.withdrawal", col: 1 },
-  { logo: <VisaLogo />, amount: "$50.00", labelKey: "deposits.label.withdrawal", col: 0 },
-  { logo: <MastercardLogo />, amount: "$30.00", labelKey: "deposits.label.deposit", col: 1 },
-  { logo: <PayPalLogo />, amount: "$100.00", labelKey: "deposits.label.deposit", col: 0 },
-  { logo: <SkrillLogo />, amount: "$20.00", labelKey: "deposits.label.withdrawal", col: 1 },
-  { logo: <NetellerLogo />, amount: "$10.00", labelKey: "deposits.label.deposit", col: 0 },
 ];
 
 function PaymentCard({
