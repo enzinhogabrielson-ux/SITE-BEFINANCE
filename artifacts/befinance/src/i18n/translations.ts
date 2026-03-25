@@ -235,7 +235,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "faq.q5": "Can I withdraw my profits whenever I want?",
     "faq.a5": "Yes, you can request withdrawals at any time without bureaucracy. We process withdrawals within 24 hours via wire transfer.",
     "faq.q6": "What assets can I trade on BeFinance?",
-    "faq.a6": "We offer over 1,000 assets including: stocks, Forex, and crypto — plus OTC assets. All on a single platform.",
+    "faq.a6": "We offer over 100 assets including: stocks, Forex, and crypto — plus OTC assets. All on a single platform.",
     "faq.stillQuestions": "Still have questions?",
     "faq.talkSupport": "Talk to support",
 
@@ -503,7 +503,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "faq.q5": "Posso sacar meus lucros quando quiser?",
     "faq.a5": "Sim, você pode solicitar saques a qualquer momento sem burocracia. Processamos saques em até 24 horas via transferência bancária.",
     "faq.q6": "Quais ativos posso negociar na BeFinance?",
-    "faq.a6": "Oferecemos mais de 1.000 ativos incluindo: ações, Forex e cripto — além de ativos OTC. Tudo em uma única plataforma.",
+    "faq.a6": "Oferecemos mais de 100 ativos incluindo: ações, Forex e cripto — além de ativos OTC. Tudo em uma única plataforma.",
     "faq.stillQuestions": "Ainda tem dúvidas?",
     "faq.talkSupport": "Fale com o suporte",
 
@@ -771,7 +771,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "faq.q5": "¿Puedo retirar mis ganancias cuando quiera?",
     "faq.a5": "Sí, puedes solicitar retiros en cualquier momento sin burocracia. Procesamos retiros en 24 horas vía transferencia bancaria.",
     "faq.q6": "¿Qué activos puedo operar en BeFinance?",
-    "faq.a6": "Ofrecemos más de 1,000 activos incluyendo: acciones, Forex y cripto — además de activos OTC. Todo en una sola plataforma.",
+    "faq.a6": "Ofrecemos más de 100 activos incluyendo: acciones, Forex y cripto — además de activos OTC. Todo en una sola plataforma.",
     "faq.stillQuestions": "¿Aún tienes dudas?",
     "faq.talkSupport": "Habla con soporte",
 
