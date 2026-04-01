@@ -376,7 +376,15 @@ export default function Navbar() {
                   </button>
                 ))}
               </div>
-              <Link href="/account/signup" className="btn-glow mt-3" style={{ width: "100%", justifyContent: "center", textDecoration: "none" }}>
+              <a
+                href="/login"
+                className="btn-login mt-3"
+                style={{ width: "100%", justifyContent: "center" }}
+              >
+                <Lock size={13} style={{ opacity: 0.65 }} />
+                {t("nav.login")}
+              </a>
+              <Link href="/account/signup" className="btn-glow mt-2" style={{ width: "100%", justifyContent: "center", textDecoration: "none" }}>
                 <span className="btn-glow-face" style={{ width: "100%", justifyContent: "center" }}>
                   {t("nav.startTrading")}
                 </span>
