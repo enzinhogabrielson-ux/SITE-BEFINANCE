@@ -101,7 +101,7 @@ export default function CTASection() {
             transition={{ ...expo, delay: 0.26 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <a href="#" className="btn-glow">
+            <a href="/account/signup" className="btn-glow">
               <span className="btn-glow-face" style={{ padding: "0 32px" }}>
                 {t("cta.startTrading")}
                 <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
