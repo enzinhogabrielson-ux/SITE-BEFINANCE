@@ -225,11 +225,11 @@ export default function Navbar() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7, duration: 0.5 }}
         >
-          <a href="/login" className="btn-login">
+          <a href="/#login" className="btn-login">
             <Lock size={13} style={{ opacity: 0.65 }} />
             {t("nav.login")}
           </a>
-          <a href="/account/signup" className="btn-glow">
+          <a href="/#account" className="btn-glow">
             <span className="btn-glow-face">
               {t("nav.startTrading")}
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
@@ -377,14 +377,14 @@ export default function Navbar() {
                 ))}
               </div>
               <a
-                href="/login"
+                href="/#login"
                 className="btn-login mt-3"
                 style={{ width: "100%", justifyContent: "center" }}
               >
                 <Lock size={13} style={{ opacity: 0.65 }} />
                 {t("nav.login")}
               </a>
-              <Link href="/account/signup" className="btn-glow mt-2" style={{ width: "100%", justifyContent: "center", textDecoration: "none" }}>
+              <Link href="/#account" className="btn-glow mt-2" style={{ width: "100%", justifyContent: "center", textDecoration: "none" }}>
                 <span className="btn-glow-face" style={{ width: "100%", justifyContent: "center" }}>
                   {t("nav.startTrading")}
                 </span>

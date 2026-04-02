@@ -252,7 +252,7 @@ export default function Hero() {
             transition={{ ...tweenExpoOut, delay: 0.65 }}
             className="flex flex-wrap gap-3"
           >
-            <a href="/account/signup" className="btn-glow">
+            <a href="/#account" className="btn-glow">
               <span className="btn-glow-face">
                 {t("hero.cta")}
                 <svg width="15" height="15" viewBox="0 0 14 14" fill="none">

@@ -100,7 +100,7 @@ export default function InternalPageLayout({ badge, title, subtitle, features, c
             <p className="text-sm mb-6" style={{ color: "rgba(240,248,255,0.55)", fontFamily: "'Inter',sans-serif" }}>
               Abra sua conta gratuita e comece a negociar com confiança.
             </p>
-            <a href="/account/signup" className="btn-glow">
+            <a href="/#account" className="btn-glow">
               <span className="btn-glow-face">
                 Comece a negociar
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M8 3.5L11.5 7L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
