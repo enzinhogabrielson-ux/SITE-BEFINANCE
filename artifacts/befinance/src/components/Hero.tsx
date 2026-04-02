@@ -84,7 +84,7 @@ export default function Hero() {
             objectPosition: "center 30%",
           }}
         >
-          <source src="/hero-bg.mp4" type="video/mp4" />
+          <source src={import.meta.env.BASE_URL + "hero-bg.mp4"} type="video/mp4" />
         </video>
         <div className="absolute inset-0"
           style={{ background: "linear-gradient(to bottom, rgba(4,13,24,0.35) 0%, rgba(4,13,24,0.1) 35%, rgba(4,13,24,0.6) 70%, rgba(4,13,24,1) 100%)" }} />
@@ -108,7 +108,7 @@ export default function Hero() {
         }}
       >
         <img
-          src="/tuba01.png"
+          src={import.meta.env.BASE_URL + "tuba01.png"}
           alt=""
           style={{
             width: "100%",
