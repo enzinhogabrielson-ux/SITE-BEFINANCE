@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -106,12 +107,12 @@ export default function FAQPage() {
             <p className="text-sm mb-6" style={{ color: "rgba(240,248,255,0.55)", fontFamily: "'Inter',sans-serif" }}>
               Fale com nossa equipe de suporte 24/7.
             </p>
-            <a href="/ajuda/contato" className="btn-glow">
+            <Link href="/ajuda/contato" className="btn-glow" style={{ textDecoration: "none" }}>
               <span className="btn-glow-face">
                 Falar com suporte
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M8 3.5L11.5 7L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </span>
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>
