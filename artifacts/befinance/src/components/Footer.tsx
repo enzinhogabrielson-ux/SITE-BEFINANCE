@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { useLanguage } from "@/i18n/LanguageContext";
+import logoImg from "@/assets/logo-befinance.png";
 
 const footerLinkDefs = {
   trading: {
@@ -74,7 +75,6 @@ const socialLinks = [
   },
 ];
 
-const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -99,7 +99,7 @@ export default function Footer() {
           <div className="col-span-2">
             <div className="mb-5" style={{ overflow: "hidden", height: "50px", width: "250px", position: "relative" }}>
               <img
-                src={`${basePath}/logo-befinance.png`}
+                src={logoImg}
                 alt="BeFinance"
                 style={{
                   position: "absolute",

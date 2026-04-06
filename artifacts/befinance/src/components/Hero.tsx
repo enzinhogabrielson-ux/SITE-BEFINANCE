@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValue } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
+import tubaImg from "@/assets/tuba01.png";
+import heroBgVideo from "@/assets/hero-bg.mp4";
 
 const cycleWordKeys = ["hero.word.options", "hero.word.stocks", "hero.word.commodities", "hero.word.fx"];
 
@@ -84,7 +86,7 @@ export default function Hero() {
             objectPosition: "center 30%",
           }}
         >
-          <source src={import.meta.env.BASE_URL + "hero-bg.mp4"} type="video/mp4" />
+          <source src={heroBgVideo} type="video/mp4" />
         </video>
         <div className="absolute inset-0"
           style={{ background: "linear-gradient(to bottom, rgba(4,13,24,0.35) 0%, rgba(4,13,24,0.1) 35%, rgba(4,13,24,0.6) 70%, rgba(4,13,24,1) 100%)" }} />
@@ -108,7 +110,7 @@ export default function Hero() {
         }}
       >
         <img
-          src={import.meta.env.BASE_URL + "tuba01.png"}
+          src={tubaImg}
           alt=""
           style={{
             width: "100%",

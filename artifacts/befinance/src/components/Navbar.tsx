@@ -4,6 +4,7 @@ import { Menu, X, Lock } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { useLanguage } from "@/i18n/LanguageContext";
 import type { Lang } from "@/i18n/translations";
+import logoImg from "@/assets/logo-befinance.png";
 
 const FlagBR = () => (
   <svg width="20" height="14" viewBox="0 0 20 14" fill="none" style={{ borderRadius: "2px", flexShrink: 0 }}>
@@ -133,7 +134,6 @@ export default function Navbar() {
     menuTimeout.current = setTimeout(() => setActiveMenu(null), 200);
   };
 
-  const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 
   return (
     <motion.header
@@ -159,7 +159,7 @@ export default function Navbar() {
         >
           <Link href="/">
             <img
-              src={`${basePath}/logo-befinance.png`}
+              src={logoImg}
               alt="BeFinance"
               style={{
                 position: "absolute",
