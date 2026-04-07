@@ -108,7 +108,7 @@ function LaptopMockup() {
               opacity: screenOpacity,
             }}>
               <img
-                src="/laptop-screen.png"
+                src="/assets/laptop-screen.png"
                 alt="BeFinance trading platform"
                 style={{
                   width: "100%", height: "100%",

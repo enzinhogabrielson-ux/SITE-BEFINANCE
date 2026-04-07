@@ -158,7 +158,7 @@ export default function Navbar() {
         >
           <Link href="/">
             <img
-              src="/logo-befinance.png"
+              src="/assets/logo-befinance.png"
               alt="BeFinance"
               style={{
                 position: "absolute",
