@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
-import laptopScreenImg from "@/assets/laptop-screen.png";
 
 const expo = { type: "tween", duration: 0.85, ease: [0.16, 1, 0.3, 1] } as const;
 
@@ -109,7 +108,7 @@ function LaptopMockup() {
               opacity: screenOpacity,
             }}>
               <img
-                src={laptopScreenImg}
+                src="/laptop-screen.png"
                 alt="BeFinance trading platform"
                 style={{
                   width: "100%", height: "100%",

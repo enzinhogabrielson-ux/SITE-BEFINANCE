@@ -4,7 +4,6 @@ import { Menu, X, Lock } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { useLanguage } from "@/i18n/LanguageContext";
 import type { Lang } from "@/i18n/translations";
-import logoImg from "@/assets/logo-befinance.png";
 
 const FlagBR = () => (
   <svg width="20" height="14" viewBox="0 0 20 14" fill="none" style={{ borderRadius: "2px", flexShrink: 0 }}>
@@ -159,7 +158,7 @@ export default function Navbar() {
         >
           <Link href="/">
             <img
-              src={logoImg}
+              src="/logo-befinance.png"
               alt="BeFinance"
               style={{
                 position: "absolute",
